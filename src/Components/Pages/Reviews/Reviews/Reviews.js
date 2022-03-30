@@ -14,7 +14,7 @@ const Reviews = () => {
     return (
         <div className='bg-gray-50 reviews'>
             <div className='container mx-auto px-4 py-10'>
-                <h1 className='md:text-center mx-auto font-bold text-3xl lg:text-4xl lg:w-2/4'>What Students Think and Say About
+                <h1 className='md:text-center mx-auto font-Roboto font-bold text-3xl lg:text-4xl lg:w-2/4 xl:w-2/6'>What Students Think and Say About
                     <span className='relative ml-2'>
                         Eduman
                         <div className='absolute animate-bounce -bottom-4 left-0 w-20 h-4'>
