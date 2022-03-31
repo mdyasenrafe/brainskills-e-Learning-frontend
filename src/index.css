@@ -1,16 +1,24 @@
 /*  fornt */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&family=Roboto&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&family=Roboto&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* common css */
+p,
+button,
+input {
+  font-family: "Poppins", sans-serif !important;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+}
 
 /* reviews swiper pagination bullet  (Yousuf) */
-.reviews .swiper-pagination-clickable .swiper-pagination-bullet-active{
-    width: 30px !important;
-    height: 8px;
-    border-radius: 10px 10px;
-    transition: all ease-in-out 0.50s;
+.reviews .swiper-pagination-clickable .swiper-pagination-bullet-active {
+  width: 30px !important;
+  height: 8px;
+  border-radius: 10px 10px;
+  transition: all ease-in-out 0.5s;
 }

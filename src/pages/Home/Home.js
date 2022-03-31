@@ -1,14 +1,16 @@
-import React from 'react';
-import Reviews from '../Home/Reviews/Reviews';
-import JoinCommunity from './JoinCommunity/JoinCommunity';
+import React from "react";
+import Reviews from "../Home/Reviews/Reviews";
+import Instructor from "./Instructor/Instructor";
+import JoinCommunity from "./JoinCommunity/JoinCommunity";
 
 const Home = () => {
-    return (
-        <div>
-            <Reviews />
-            <JoinCommunity></JoinCommunity>
-        </div>
-    );
+  return (
+    <div>
+      <Reviews />
+      <Instructor />
+      <JoinCommunity></JoinCommunity>
+    </div>
+  );
 };
 
 export default Home;
