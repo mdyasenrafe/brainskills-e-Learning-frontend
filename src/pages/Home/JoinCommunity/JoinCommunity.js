@@ -35,7 +35,7 @@ const JoinCommunity = () => {
                                     placeholder="your@mail.com"
                                 />
 
-                                <button className="px-8 rounded-r-lg bg-indigo-500  font-bold p-4 text-white uppercase border-indigo-500 border-t border-b border-r">
+                                <button className="px-8 rounded-r-lg bg-indigo-500  font-bold p-4 text-white uppercase border-indigo-500 border-t border-b border-r hover:bg-indigo-800">
                                     Subscribe
                                 </button>
                             </form>
