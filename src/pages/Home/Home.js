@@ -7,9 +7,11 @@ import Courses from './Courses/Courses';
 import Navbar from '../../Components/Navbar/Navbar';
 import TopHader from '../../Components/TopHader/TopHader';
 import AboutUs from '../../Components/AboutUs/AboutUs';
+import { ScrollTop } from '../../Components/Scroll/Scroll';
 const Home = () => {
     return (
         <div>
+
             <Navbar></Navbar>
             <TopHader></TopHader>
             <AboutUs></AboutUs>
@@ -18,6 +20,7 @@ const Home = () => {
             <Reviews />
             <Instructor />
             <JoinCommunity />
+            <ScrollTop></ScrollTop>
         </div>
     );
 
