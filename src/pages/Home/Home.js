@@ -4,9 +4,9 @@ import JoinCommunity from './JoinCommunity/JoinCommunity';
 import TopCategory from './TopCategory/TopCategory';
 import Instructor from "./Instructor/Instructor";
 import Courses from './Courses/Courses';
-import Navbar from '../../Components/Navbar/Navbar';
-import TopHader from '../../Components/TopHader/TopHader';
-import AboutUs from '../../Components/AboutUs/AboutUs';
+import Navbar from './Navbar/Navbar';
+import TopHader from '../Shared/TopHader/TopHader';
+import AboutUs from './AboutUs/AboutUs';
 const Home = () => {
     return (
         <div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import banner from "../images/banner-bg.jpg";
-import banner1 from "../images/banner-img.png"
+import banner from "../../../images/banner-bg.jpg";
+import banner1 from "../../../images/banner-img.png"
 
 const TopHader = () => {
     return (
@@ -11,8 +11,8 @@ const TopHader = () => {
 
                 <div className='grid items-center pl-3 pt-20 md:pt-0'>
                     <div>
-                    <h5 className=''>FOR A BETTER FUTURE</h5>
-                    <h1 className='text-5xl font-extrabold'>We Have All Kinds Of <span className='text-green-600'>Courses</span> Collection</h1>
+                        <h5 className=''>FOR A BETTER FUTURE</h5>
+                        <h1 className='text-5xl font-extrabold'>We Have All Kinds Of <span className='text-green-600'>Courses</span> Collection</h1>
                     </div>
                 </div>
 
