@@ -57,7 +57,7 @@ const courses = [
 
 const TopCategory = () => {
     return (
-        <section className="container py-10">
+        <section className=" py-10">
             <div className='px-4 py-10'>
                 <h1 className='text-center mx-auto font-Roboto font-bold text-3xl lg:text-4xl '><span className="text-indigo-500 ">Explore</span> <br />
                     Our Top Trendy Course
@@ -70,7 +70,7 @@ const TopCategory = () => {
                 </h1>
 
             </div>
-            <div className=' mx-auto '>
+            <div className='container mx-auto '>
 
                 <Swiper
                     slidesPerView={5}
