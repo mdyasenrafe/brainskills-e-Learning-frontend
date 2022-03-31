@@ -1,6 +1,7 @@
 import React from 'react';
 import aboutImg from "../images/about-img-2.jpg"
 
+
 const AboutUs = () => {
     return (
         <div>
@@ -40,24 +41,6 @@ const AboutUs = () => {
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, consequatur quia aperiam aliquid est magnam et a, debitis laborum, sed incidunt aliquam magni? Sint dolorem eum deserunt, maxime laudantium recusandae pariatur debitis quis, error eos eveniet id illo temporibus velit quam facere libero atque tempore perspiciatis quibusdam reiciendis, molestiae odio!</p>
                 </div>
             </div>
-
-
-            {/* These Are Our Instructor */}
-
-            <div className='grid md:grid-cols-2 xs:grid-cols-1 mt-5 p-3'>
-                <div>
-                    <h1 className='text-2xl font-bold'>These Are Our Instructor</h1>
-                    <p className='mb-5'>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                    <p className=''>Proin eget tortor risus. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, egettincidunt nibh pulvinar ultricies ligula sed magna dictum porta.</p>
-
-                </div>
-                <div>
-
-                </div>
-            </div>
-
-
-
         </div>
     );
 };

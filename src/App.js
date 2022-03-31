@@ -2,9 +2,6 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../src/pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
-import AboutUs from './Components/AboutUs/AboutUs';
-import Navbar from './Components/Navbar/Navbar';
-import TopHader from './Components/TopHader/TopHader';
 
 function App() {
   const location = useLocation();
@@ -27,9 +24,7 @@ function App() {
         <Route path="/8" element={<NotFound />} />
       </Routes>
     
-      <Navbar></Navbar>
-      <TopHader></TopHader>
-      <AboutUs></AboutUs>
+      
     </div>
   );
 }
