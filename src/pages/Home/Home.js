@@ -1,16 +1,18 @@
-import React from "react";
-import Reviews from "../Home/Reviews/Reviews";
+import React from 'react';
+import Reviews from '../Home/Reviews/Reviews';
+import JoinCommunity from './JoinCommunity/JoinCommunity';
+import TopCategory from './TopCategory/TopCategory';
 import Instructor from "./Instructor/Instructor";
-import JoinCommunity from "./JoinCommunity/JoinCommunity";
-
 const Home = () => {
-  return (
-    <div>
-      <Reviews />
-      <Instructor />
-      <JoinCommunity></JoinCommunity>
-    </div>
-  );
+    return (
+        <div>
+            <TopCategory />
+            <Reviews />
+            <Instructor />
+            <JoinCommunity></JoinCommunity>
+        </div>
+    );
+
 };
 
 export default Home;
