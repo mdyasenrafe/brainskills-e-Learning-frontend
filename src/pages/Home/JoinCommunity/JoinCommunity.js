@@ -6,8 +6,10 @@ const JoinCommunity = () => {
 
             <div class="max-w-4xl  mx-auto bg-white overflow-hidden ">
                 <div class="md:flex justify-center">
-                    <div class="md:shrink-0">
-                        <img class="" src="https://i.ibb.co/3m97DKW/education.png" alt="Man looking at item at a store" />
+                    <div class="md:shrink-0 ">
+                        <div>
+                            <img class="" src="https://i.ibb.co/3m97DKW/education.png" alt="Man looking at item at a store" />
+                        </div>
                     </div>
                     <div class="p-10">
                         <h1 class=" tracking-wide font-bold text-4xl text-indigo-500 font-semibold">Transform Your Life Through Education</h1>

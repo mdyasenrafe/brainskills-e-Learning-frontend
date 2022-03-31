@@ -7,8 +7,10 @@
 @tailwind utilities;
 
 
+
+
 /* reviews swiper pagination bullet  (Yousuf) */
-.reviews .swiper-pagination-clickable .swiper-pagination-bullet-active{
+.reviews .swiper-pagination-clickable .swiper-pagination-bullet-active {
     width: 30px !important;
     height: 8px;
     border-radius: 10px 10px;
