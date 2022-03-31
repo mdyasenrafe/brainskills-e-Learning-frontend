@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getInstructor } from "../../../API";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import img from "../../../Components/images/swiper.jpg";
 import img2 from "../../../Components/images/swiper2.jpg";
 import img3 from "../../../Components/images/swiper3.jpg";
