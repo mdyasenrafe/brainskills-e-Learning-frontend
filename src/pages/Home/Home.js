@@ -11,7 +11,6 @@ import { ScrollTop } from '../../Components/Scroll/Scroll';
 const Home = () => {
     return (
         <div>
-
             <Navbar></Navbar>
             <TopHader></TopHader>
             <AboutUs></AboutUs>
