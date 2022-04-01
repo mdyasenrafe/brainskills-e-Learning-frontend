@@ -20,7 +20,7 @@
 - In the dashboard users can also see the progress report.
 - User dashboard user can update the information about him.
 
-#For Instructor:
+## For Instructor:
 - Instructor can request for an account . After approval, the user can update her information.
 - Instructors can upload new courses.
 - Instructor can update her course.
@@ -29,10 +29,14 @@
 - Instructor is able to make a quiz on the site and review the quiz and give marks.
 
 
-#For Admin:
+## For Admin:
 - An admin  can approve/remove instructors.
 - Admin can see all the reviews by the instructor name.
 - Admin also makes a sub-admin for managing the site.
 - Review course and make approval for showing on the home page.
 - Admin can take action for anyone from the site.
 - Admin can manage the user/instructor and also the course uploaded by the instructor.
+
+
+## Goal
+Our goal is to do site make and development in 6-7 weeks
