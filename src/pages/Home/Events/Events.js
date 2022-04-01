@@ -55,12 +55,12 @@ const Events = () => {
                 </div>
                 <div className="pl-5">
                   <div className="my-4">
-                    <h1 className="text-1xl font-bold">Location</h1>
+                    <h1 className="text-1xl font-bold">Type : </h1>
                     <h2 className="">{event.eventType}</h2>
                   </div>
                   <div>
-                    <h1 className="text-1xl font-bold">Speaker</h1>
-                    <h2 className="">Darci Gutierrez</h2>
+                    <h1 className="text-1xl font-bold">Speaker : </h1>
+                    <h2 className="">{event?.speaker}</h2>
                   </div>
                 </div>
               </div>
