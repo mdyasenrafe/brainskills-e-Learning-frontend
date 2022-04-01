@@ -65,9 +65,7 @@ const Navbar = () => {
               md:pt-0"
             >
               <li>
-                <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-                >Features</a
-                >
+                <a class="md:p-4 py-2 block hover:text-purple-400" href="/" >Features</a>
               </li>
               <li>
                 <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
@@ -80,9 +78,8 @@ const Navbar = () => {
                 >
               </li>
               <li>
-                <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-                >Blog</a
-                >
+                <a class="md:p-4 py-2 block hover:text-purple-400" href="/aboutus"
+                >About us</a>
               </li>
               <li>
                 <a
