@@ -4,7 +4,7 @@ import banner1 from "../../../images/banner-img.png"
 
 const TopHader = () => {
     return (
-        <div className='relative max-h-full pb-10 md:pb-0 py-10' style={{ backgroundImage: `url(${banner})` }}>
+        <div className='relative max-h-full md:pb-0 pt-10' style={{ backgroundImage: `url(${banner})` }}>
 
 
             <div className='container mx-auto grid md:grid-cols-2 xs:grid-cols-1 py-0 absuolute top-1/2 left-1/2  translate-1/2'>
@@ -27,14 +27,10 @@ const TopHader = () => {
                             </form>
                         </div>
                     </div>
-                    
+
                 </div>
-
-
                 <div >
-
-                    <img className='mt-24 md:mt-0 h-full w-full' src={banner1} alt="" srcset="" />
-
+                    <img className=' ml-2 md:mt-0' src={banner1} alt="" srcset="" />
                 </div>
             </div>
 
