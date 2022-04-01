@@ -4,16 +4,30 @@ import banner1 from "../../../images/banner-img.png"
 
 const TopHader = () => {
     return (
-        <div className='' style={{ backgroundImage: `url(${banner})`, height: "100vh", backgroundSize: "cover", width: "100%" }}>
+        <div className='relative max-h-full pb-10 md:pb-0 py-10' style={{ backgroundImage: `url(${banner})` }}>
 
 
-            <div className='grid md:grid-cols-2 xs:grid-cols-1'>
+            <div className='container mx-auto grid md:grid-cols-2 xs:grid-cols-1 py-0 absuolute top-1/2 left-1/2  translate-1/2'>
 
-                <div className='grid items-center pl-3 pt-20 md:pt-0'>
+                <div className='grid items-center pl-3'>
                     <div>
                         <h5 className=''>FOR A BETTER FUTURE</h5>
-                        <h1 className='text-5xl font-extrabold'>We Have All Kinds Of <span className='text-green-600'>Courses</span> Collection</h1>
+                        <h1 className='text-4xl font-extrabold'>We Have All Kinds Of <span className='text-green-600'>Courses</span> Collection</h1>
+                        <div className="mt-8">
+                            <form className=" flex">
+                                <input
+                                    className="shadow appearance-none border rounded w-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="username"
+                                    type="text"
+                                    placeholder="search your course"
+                                />
+                                <button className="px-6 md:px-8 rounded-r-lg bg-indigo-500  font-bold p-2 text-white uppercase border-indigo-500 border-t border-b border-r hover:bg-indigo-800">
+                                    Search
+                                </button>
+                            </form>
+                        </div>
                     </div>
+                    
                 </div>
 
 
