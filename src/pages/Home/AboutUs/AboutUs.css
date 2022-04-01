@@ -1,0 +1,8 @@
+.aboutImage{
+    background: url(../../../images/about-img.avif) no-repeat center center ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 350px; 
+}
