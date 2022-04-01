@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Instructor = () => {
-  const [instrutors, setInstructors] = useState();
+  const [instructors, setInstructors] = useState();
 
   useEffect(() => {
     fetchData();
@@ -19,11 +19,14 @@ const Instructor = () => {
 
   const fetchData = async () => {
     const res = await getInstructor();
-    if (res.error.true === "") {
+    if (res?.error.true === "") {
     } else {
+      console.log(res);
       setInstructors(res.data);
     }
   };
+
+  console.log(instructors);
 
   return (
     <>
@@ -68,20 +71,17 @@ const Instructor = () => {
                   slidesPerView: 3,
                 },
                 768: {
-                  slidesPerView: 3,
-                  spaceBetween: 40,
+                  slidesPerView: 4,
+                  spaceBetween: 30,
                 },
                 1024: {
                   slidesPerView: 1,
-                  spaceBetween: 50,
                 },
               }}
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
             >
-              <SwiperSlide className="py-12">
-                <h1>Rafi</h1>
-              </SwiperSlide>
+              {instructors?.map((data) => console.log(data))}
             </Swiper>
           </div>
         </div>
