@@ -4,6 +4,7 @@ const url = "https://brainskillapi.herokuapp.com/";
 
 const apiUrl = {
   getInstructor: "instructor/getInstructor",
+  getReview: "review/getReview",
 };
 
 export const getInstructor = async (body) => {
@@ -14,3 +15,12 @@ export const getInstructor = async (body) => {
     console.error({ err });
   }
 };
+
+export const getReview = async (body) => {
+  try {
+    const res = await axios.get(url + apiUrl.getReview);
+    return res.data;
+  } catch (err) {
+    console.log({ err });
+  }
+}

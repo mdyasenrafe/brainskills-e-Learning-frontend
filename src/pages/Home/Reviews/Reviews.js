@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import Review from './Review/Review'
 
@@ -10,8 +10,23 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+import { getReview } from '../../../API';
 
 const Reviews = () => {
+    const [review, setReview] = useState();
+
+    useEffect(() => (
+        fetchData()
+    ), [])
+    const fetchData = async () => {
+        const res = await getReview();
+        if (res?.error.true === "") {
+        } else {
+            console.log(res.data)
+            setReview(res.data)
+        }
+    }
+
     return (
         <section>
             <div className='bg-gray-50 reviews'>
@@ -46,25 +61,13 @@ const Reviews = () => {
                         }}
                         modules={[Pagination]}
                         className="mySwiper">
+                        {
+                            review?.map(item => <SwiperSlide className='py-12'>
+                                <Review key={item._id} item={item} />
+                            </SwiperSlide>
+                            )
+                        }
 
-                        <SwiperSlide className='py-12'>
-                            <Review />
-                        </SwiperSlide>
-                        <SwiperSlide className='py-12'>
-                            <Review />
-                        </SwiperSlide>
-                        <SwiperSlide className='py-12'>
-                            <Review />
-                        </SwiperSlide>
-                        <SwiperSlide className='py-12'>
-                            <Review />
-                        </SwiperSlide>
-                        <SwiperSlide className='py-12'>
-                            <Review />
-                        </SwiperSlide>
-                        <SwiperSlide className='py-12'>
-                            <Review />
-                        </SwiperSlide>
                     </Swiper>
                 </div>
             </div>
