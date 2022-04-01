@@ -16,7 +16,7 @@ h1 {
   font-family: "Roboto", sans-serif;
 }
 
-
+/*  */
 
 /* reviews swiper pagination bullet  (Yousuf) */
 .reviews .swiper-pagination-clickable .swiper-pagination-bullet-active {
@@ -25,6 +25,7 @@ h1 {
   border-radius: 10px 10px;
   transition: all ease-in-out 0.5s;
 }
+<<<<<<< HEAD
 
 .Instructor .swiper-pagination-clickable .swiper-pagination-bullet-active {
   width: 30px !important;
@@ -32,3 +33,7 @@ h1 {
   border-radius: 10px 10px;
   transition: all ease-in-out 0.5s;
 }
+=======
+/*  Footer list link css */
+/*  */
+>>>>>>> 00509c9b813ee12d086a9cbebafaab2c114afc89
