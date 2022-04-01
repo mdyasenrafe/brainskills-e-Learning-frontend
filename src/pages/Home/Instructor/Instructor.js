@@ -29,8 +29,6 @@ const Instructor = () => {
     }
   };
 
-  console.log(instructors);
-
   return (
     <>
       <section className="container mx-auto py-24">
