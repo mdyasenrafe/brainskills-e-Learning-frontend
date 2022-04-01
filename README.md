@@ -3,7 +3,7 @@
 
 #Overview: This is e learning management.There are 3 roles like Users,Instructor And Admin. We Have All Kinds Of Courses Collection.
 ## Features
-##user :
+## user :
 - In the home page users are able to see the best courses, The Course category and the Instructors. 
 - Users can also see how many students successfully complete the course.
 - Homepage also shows how many courses are offered by us.
