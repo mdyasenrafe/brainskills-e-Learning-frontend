@@ -8,6 +8,8 @@ import Navbar from './Navbar/Navbar';
 import TopHader from '../Shared/TopHader/TopHader';
 import AboutUs from './AboutUs/AboutUs';
 import { ScrollTop } from '../Scroll/Scroll';
+import Footer from '../Shared/Footer/Footer';
+
 const Home = () => {
     return (
         <div>
@@ -21,6 +23,7 @@ const Home = () => {
             <Instructor />
             <JoinCommunity />
             <ScrollTop></ScrollTop>
+            <Footer />
         </div>
     );
 
