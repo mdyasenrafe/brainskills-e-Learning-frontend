@@ -8,6 +8,7 @@
 /* common css */
 p,
 button,
+a,li,ul,
 input {
   font-family: "Poppins", sans-serif !important;
 }
