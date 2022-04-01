@@ -82,16 +82,16 @@ const Footer = () => {
             <div className='container mx-auto px-4 space-y-5 py-16'>
                 <div className='grid grid-cols-2  lg:grid-cols-4 gap-4'>
                     <div className='space-y-4'>
-                        <img className='' src="https://edon-ng.envytheme.com/assets/images/white-logo.png" alt="" />
+                        <img className='w-2/4' src="./logo.png" alt="" />
                         <p className='text-white'>
                             Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Curabitu Nulla porttitor accumsan tincidunt.
                         </p>
                         {/* social Media */}
                         <div className='flex space-x-2'>
-                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-green-500 hover:text-gray-900 transition-all hover:rounded-tr-md'><FaFacebookSquare /></span>
-                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-green-500 hover:text-gray-900 transition-all hover:rounded-tr-md'><FaInstagramSquare /></span>
-                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-green-500 hover:text-gray-900 transition-all hover:rounded-tr-md'><FaTwitterSquare /></span>
-                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-green-500 hover:text-gray-900 transition-all hover:rounded-tr-md'><FaLinkedin /></span>
+                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md'><FaFacebookSquare /></span>
+                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md'><FaInstagramSquare /></span>
+                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md'><FaTwitterSquare /></span>
+                            <span className='p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md'><FaLinkedin /></span>
                         </div>
                     </div>
                     {/* Popular Courses */}
@@ -99,7 +99,7 @@ const Footer = () => {
                         <h1 className='text-white text-xl font-bold font-Roboto tracking-wider pb-5'>Popular Courses</h1>
                         <ul className='space-y-2'>
                             {
-                                popularCourse.map(item => <li className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center group'> <div className='w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-green-400 rounded-full bg-green-500' /> {item.name}</li>)
+                                popularCourse.map(item => <li className='font-Roboto cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group'> <div className='w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50' /> {item.name}</li>)
                             }
                         </ul>
                     </div>
@@ -108,7 +108,7 @@ const Footer = () => {
                         <h1 className='text-white text-xl font-bold font-Roboto tracking-wider pb-5'>Company</h1>
                         <ul className='space-y-2'>
                             {
-                                company.map(item => <li className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center group'> <div className='w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-green-400 rounded-full bg-green-500' /> {item.name}</li>)
+                                company.map(item => <li className='font-Roboto cursor-pointer tracking-wider text-gray-300 hover:text-blue-500 flex items-center group'> <div className='w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50' /> {item.name}</li>)
                             }
                         </ul>
                     </div>
@@ -116,11 +116,11 @@ const Footer = () => {
                     <div>
                         <h1 className='text-white text-xl font-bold font-Roboto tracking-wider pb-5'>  Contact Info</h1>
                         <div className='space-y-2'>
-                            <p className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center' ><MdOutlinePlace className='mr-2 text-xl' />bc-25/2f,dhaka,Bangladesh</p>
-                            <p className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center' ><MdPhone className='mr-2 text-xl' />(+880) 17 123 47084</p>
-                            <p className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center' ><MdEmail className='mr-2 text-xl' />help@berenskill.com</p>
-                            <p className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center' ><MdEmail className='mr-2 text-xl' />support@berenskill.com</p>
-                            <p className='font-Roboto tracking-wider text-green-600 hover:text-green-500 flex items-center' ><MdOutlineWatchLater className='mr-2 text-xl' />(8 AM - 7 PM, Monday - Friday)</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdOutlinePlace className='mr-2 text-xl' />bc-25/2f,dhaka,Bangladesh</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdPhone className='mr-2 text-xl' />(+880) 17 123 47084</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdEmail className='mr-2 text-xl' />help@berenskill.com</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdEmail className='mr-2 text-xl' />support@berenskill.com</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdOutlineWatchLater className='mr-2 text-xl' />(8 AM - 7 PM, Monday - Friday)</p>
                         </div>
                     </div>
                 </div>

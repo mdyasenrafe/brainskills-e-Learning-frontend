@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getInstructor } from "../../../API";
 import { Swiper, SwiperSlide } from "swiper/react";
+import img from "../../../images/swiper.jpg";
+import img2 from "../../../images/swiper2.jpg";
+import img3 from "../../../images/swiper3.jpg";
+import img4 from "../../../images/swiper4.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,6 +15,59 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Instructor = () => {
+  const swiperdata = [
+    {
+      img: img,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img2,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img2,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img2,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img2,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img3,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img3,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img3,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img3,
+      name: "abc",
+      propesion: "developer"
+    },
+    {
+      img: img4,
+      name: "abc",
+      propesion: "developer"
+    },
+  ]
+
   const [instructors, setInstructors] = useState();
 
   useEffect(() => {
@@ -56,32 +113,30 @@ const Instructor = () => {
           </div>
           <div>
             <Swiper
-              auto
-              slidesPerView={1}
+              slidesPerView={3}
               spaceBetween={30}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
+              slidesPerGroup={3}
+              loop={true}
+              loopFillGroupWithBlank={true}
               pagination={{
                 clickable: true,
               }}
-              breakpoints={{
-                640: {
-                  slidesPerView: 3,
-                },
-                768: {
-                  slidesPerView: 4,
-                  spaceBetween: 30,
-                },
-                1024: {
-                  slidesPerView: 1,
-                },
-              }}
-              modules={[Autoplay, Pagination, Navigation]}
+              navigation={true}
+              modules={[Pagination, Navigation]}
               className="mySwiper"
             >
-              {instructors?.map((data) => console.log(data))}
+              {
+                swiperdata.map(data => <SwiperSlide>
+                  <div style={{ width: "150px" }}>
+                    <img style={{ height: "150px", width: "100%" }} src={data.img} alt="" srcset="" />
+                  </div>
+                  <h1>{data.name}</h1>
+                  <h1>{data.propesion}</h1>
+
+
+                </SwiperSlide>)
+              }
+
             </Swiper>
           </div>
         </div>
