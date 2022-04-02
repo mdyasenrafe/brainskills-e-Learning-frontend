@@ -3,21 +3,35 @@ import React from "react";
 const Courses = () => {
   return (
 
-    <section className=" py-10">
-      <div className="px-4 py-10">
-        <h1 className="text-center mx-auto font-Roboto font-bold text-3xl lg:text-4xl ">
-          <span className="text-indigo-500 ">Explore</span> <br />
-          Our All
-          <span className="relative ml-2">
-            Course
-            <div className="absolute animate-bounce -bottom-4 left-0 w-20 h-4">
-              <div className="w-16 h-2 animate-pulse  rounded-tr-full bg-red-500"></div>
-            </div>
-          </span>
-        </h1>
-      </div>
-      <div className="container mx-auto pt-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mx-16 ">
+
+    <section className=" container mx-auto">
+
+      < div className="container grid grid-cols-1 md:grid-cols-2 " >
+        <div>
+          <h1 className=" text-start font-Roboto font-bold text-3xl lg:text-4xl ">
+            <span className="text-indigo-500 "> Explore </span>
+            Our All
+            <span className="relative ml-2">
+              Course
+              <div className="absolute animate-bounce -bottom-4 left-0 w-20 h-4">
+                <div className="w-16 h-2 animate-pulse  rounded-tr-full bg-red-500"></div>
+              </div>
+            </span>
+          </h1>
+        </div>
+        <div>
+
+          <ul className="pt-4 text-base text-gray-700 md:flex md:justify-around md:pt-0">
+            <li>View All</li>
+            <li>Web</li>
+            <li>Photography</li>
+            <li>Life Style</li>
+          </ul>
+
+        </div>
+      </div >
+      <div className="container mx-auto p-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mx-auto ">
           <div className="flex justify-center w-30 h-30 md:w-48 h-48 shadow-md rounded-md bg-slate-100">
             <div>
               <img src="" alt="" srcSet="" />
@@ -40,7 +54,7 @@ const Courses = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
