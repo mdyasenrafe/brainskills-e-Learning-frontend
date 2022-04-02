@@ -22,8 +22,8 @@ const Feature = () => {
   ];
 
   return (
-    <div className="pt-20 pb-12 container mx-auto mx-4">
-      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-7 spac-y-4 place-self-center">
+    <div className="p-20">
+      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-7 spac-y-4 place-self-center">
         {data.map((item, index) => (
           <div className="flex items-center" key={index}>
             <div>
