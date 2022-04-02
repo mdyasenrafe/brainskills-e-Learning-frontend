@@ -23,7 +23,7 @@ const Events = () => {
                 <div className='grid grid-cols-3 gap-4'>
                     {
                         events.map(event =>
-                            <div className='border p-10' style={{ borderBottom: "8px solid #eee4dc", borderRadius: "20px" }}>
+                            <div className='border border-b-8 rounded-lg p-10'>
                                 <div style={{ borderBottom: "1px dashed gray" }}>
                                     <h1 className='text-2xl font-bold text-center mb-10' >{event.eventName}</h1>
                                 </div>
