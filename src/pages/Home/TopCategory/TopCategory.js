@@ -53,7 +53,7 @@ const courses = [
 
 const TopCategory = () => {
   return (
-    <section className=" py-10">
+    <section className=" container mx-auto px-4 py-10">
       <div className="px-4 py-10">
         <h1 className="text-center mx-auto font-Roboto font-bold text-3xl lg:text-4xl ">
           <span className="text-indigo-500 ">Explore</span> <br />
