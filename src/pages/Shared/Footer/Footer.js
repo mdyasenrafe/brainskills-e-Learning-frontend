@@ -78,7 +78,7 @@ const company = [
 
 const Footer = () => {
     return (
-        <section className='dark:bg-gray-900'>
+        <section className='bg-gray-900'>
             <div className='container mx-auto px-4 space-y-5 py-16'>
                 <div className='grid grid-cols-2  lg:grid-cols-4 gap-4'>
                     <div className='space-y-4'>
