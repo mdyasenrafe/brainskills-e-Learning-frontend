@@ -5,10 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-x: hidden !important;
+}
+
 /* common css */
 p,
 button,
-a,li,ul,
+a,
+li,
+ul,
 input {
   font-family: "Poppins", sans-serif !important;
 }
