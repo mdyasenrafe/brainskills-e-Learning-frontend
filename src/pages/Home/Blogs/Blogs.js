@@ -23,8 +23,8 @@ const Blogs = () => {
         Latest From Our Blogs
       </h1>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 spac-y-4">
-        {blogs?.map((blog) => (
-          <Blog data={blog}></Blog>
+        {blogs?.map((blog, index) => (
+          <Blog key={index} data={blog}></Blog>
         ))}
       </div>
     </div>

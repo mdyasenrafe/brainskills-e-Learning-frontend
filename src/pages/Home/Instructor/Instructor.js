@@ -11,9 +11,6 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper";
 
 const Instructor = () => {
-
-
-
   const [instructors, setInstructors] = useState();
 
   useEffect(() => {
@@ -74,30 +71,33 @@ const Instructor = () => {
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,
-
                 },
                 "@1.50": {
                   slidesPerView: 2,
-
                 },
                 "@1.75": {
                   slidesPerView: 3,
-
-                }
+                },
               }}
               modules={[Pagination, Autoplay]}
               className="mySwiper"
             >
-              {
-                instructors?.map(data => <SwiperSlide className="py-10">
+              {instructors?.map((data, index) => (
+                <SwiperSlide key={index} className="py-10">
                   <div className="text-center bg-gray-50 p-3 rounded-md shadow-md">
-                    <img className="h-48 w-48 rounded-lg mx-auto" src={data.instructorPhoto} alt="" srcset="" />
-                    <h1 className="text-lg  font-semibold">{data.instructorName}</h1>
+                    <img
+                      className="h-48 w-48 rounded-lg mx-auto"
+                      src={data.instructorPhoto}
+                      alt=""
+                      srcSet=""
+                    />
+                    <h1 className="text-lg  font-semibold">
+                      {data.instructorName}
+                    </h1>
                     <h1>{data.instructorDesignation}</h1>
                   </div>
-                </SwiperSlide>)
-              }
-
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

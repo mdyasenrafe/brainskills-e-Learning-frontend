@@ -30,8 +30,9 @@ const Events = () => {
         </h1>
         {/* box  */}
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-7 spac-y-4">
-          {events.map((event) => (
+          {events.map((event, index) => (
             <div
+              key={index}
               className="border p-10 mt-8"
               style={{
                 borderBottom: "8px solid #eee4dc",
@@ -66,7 +67,7 @@ const Events = () => {
               </div>
               <button
                 type="button"
-                class="bg-indigo-500 ... text-white p-2 flex w-full items-center justify-center text-center mx-auto rounded-md"
+                className="bg-indigo-500 ... text-white p-2 flex w-full items-center justify-center text-center mx-auto rounded-md"
               >
                 Join Now
               </button>

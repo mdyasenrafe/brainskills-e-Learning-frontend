@@ -32,7 +32,7 @@ const TopHader = () => {
           </div>
         </div>
         <div>
-          <img className=" ml-2 md:mt-0" src={banner1} alt="" srcset="" />
+          <img className=" ml-2 md:mt-0" src={banner1} alt="" srcSet="" />
         </div>
       </div>
     </div>
