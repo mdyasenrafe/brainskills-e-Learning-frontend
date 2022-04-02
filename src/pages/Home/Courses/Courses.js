@@ -4,7 +4,7 @@ const Courses = () => {
   return (
 
 
-    <section className=" container mx-auto">
+    <section className=" container mx-auto px-4 py-10">
 
       < div className="container grid grid-cols-1 md:grid-cols-2 " >
         <div>
