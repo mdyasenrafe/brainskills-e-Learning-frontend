@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { RiLinkedinFill, RiFacebookFill, RiGithubLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import { HiOutlineSearch, HiOutlineShoppingCart } from "react-icons/hi";
@@ -96,43 +95,42 @@ const Navbar = () => {
                     <small className="flex items-center justify-center">0</small>
                   </div>
                 </div>
-                <button aria-label="open menu" onClick={() => setShowMenu(true)} className={`${!headerFixed && 'text-black'}  ml-3 focus:outline-none focus:ring-2 rounded focus:ring-gray-600`}>
-                  <svg className="fill-stroke" width={30} height={30} viewBox="0 0 24 24" fill="none" >
-                    <path d="M4 6H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M10 12H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M6 18H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
+                {
+                  showMenu && <button onClick={() => setShowMenu(false)} aria-label="close menu" className="outline-none float-right ease-in-out duration-300 rounded ">
+                    <svg className="fill-stroke text-gray-900" width={30} height={30} viewBox="0 0 16 16" fill="none" >
+                      <path d="M12 4L4 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4 4L12 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                }
+                {
+                  !showMenu && <button aria-label="open menu" onClick={() => setShowMenu(true)} className={`${!headerFixed && 'text-black'}  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}>
+                    <svg className="fill-stroke" width={30} height={30} viewBox="0 0 24 24" fill="none" >
+                      <path d="M4 6H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M10 12H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M6 18H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                }
+
               </div>
             </div>
           </div>
-
-          {/*Screen */}
-          <div className={`${showMenu ? "flex ease-in-out duration-300 " : "hidden"}  absolute -top-5 left-0 z-50 w-full backdrop-blur-sm bg-opacity-80 bg-black h-screen`}>
+          {/*Screen  small*/}
+          <div className={`${showMenu ? "flex ease-in-out duration-300 " : "translate-x-full"} absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}>
             <div className="py-3 px-5 container mx-auto">
-              <div className='py-10'>
-                <button onClick={() => setShowMenu(false)} aria-label="close menu" className="focus:outline-none float-right focus:ring-2 rounded focus:ring-gray-600">
-                  <svg className="fill-stroke text-gray-100" width={40} height={40} viewBox="0 0 16 16" fill="none" >
-                    <path d="M12 4L4 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M4 4L12 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div>
               <div data-aos="fade-down" className='grid justify-center justify-items-center pt-16 '>
 
                 <ul className=" grid gap-5 text-lg md:text-xl  ">
                   {
                     links.map(link => (
-                      <a href={link.url} key={link.id} onClick={() => setShowMenu(false)} className='cursor-pointer hover:text-gray-400 transform hover:translate-x-2 text-white font-semibold uppercase hover:scale-110 ease-in-out duration-300'>{link.name}</a>
+                      <a href={link.url} key={link.id} onClick={() => setShowMenu(false)} className='cursor-pointer hover:text-gray-900 transform hover:translate-x-2 text-black font-semibold uppercase hover:scale-110 ease-in-out duration-300'>{link.name}</a>
                     ))
                   }
                 </ul>
-                <div className="flex space-x-3 py-10">
-                  <button className="  rounded-full text-white hover:bg-gray-400 hover:rotate-45 transform transition-ease p-4 shadow-only"><RiLinkedinFill /></button>
-                  <button className="  rounded-full text-white hover:bg-gray-400 hover:rotate-45 transform transition-ease p-4 shadow-only"><RiGithubLine /></button>
-                  <button className="  rounded-full text-white hover:bg-gray-400 hover:rotate-45 transform transition-ease p-4 shadow-only"><RiFacebookFill /></button>
-                </div>
+                <div>
 
+                </div>
               </div>
             </div>
           </div>

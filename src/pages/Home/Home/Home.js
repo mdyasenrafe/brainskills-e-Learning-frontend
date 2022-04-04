@@ -22,11 +22,11 @@ const Home = () => {
             <Feature />
             <TopCategory />
             <Courses />
-            <Reviews />
-            <Instructor />
-            <Blogs />
             <OurAchivement />
+            <Instructor />
             <Events />
+            <Blogs />
+            <Reviews />
             <JoinCommunity />
             <ScrollTop></ScrollTop>
             <Footer />
