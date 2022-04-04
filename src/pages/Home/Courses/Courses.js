@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
+import { getCourses } from "../../../API";
 const Courses = () => {
+  const [courses, setCourses] = useState();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const res = await getCourses();
+    if (res?.error.true === "") {
+    } else {
+      console.log(res);
+      setCourses(res.data);
+    }
+  };
+
+  console.log(courses);
+
+
   return (
 
 
@@ -29,242 +48,52 @@ const Courses = () => {
 
         </div>
       </div >
-
       <div className="container mx-auto p-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto ">
+          {
+            courses?.map((course, index) =>
 
-          <div className="shadow-md rounded-md bg-slate-100 p-1">
-            {/* <div className="md:w-70 h-48 shadow-md rounded-md bg-slate-100"> */}
-            <div>
-              <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-            </div>
-            <div className="mx-3">
-              <div className="flex justify-between items-center my-2">
-                <h3 >
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    edit={null}
-                    value={4}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                  />
-                </h3>
-                <h3>12 Students</h3>
-              </div>
-              <div>
-                <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-              </div>
-              <div className="flex justify-between my-3">
+              <div className="shadow-md rounded-md bg-slate-100 p-1">
 
-                <h3><span className="font-bold">price:</span> 199$</h3>
-                <h3 >8.5 hours</h3>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <h3 > By: Sullivan</h3>
-                <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+                <div>
+                  <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
+                </div>
+                <div className="mx-3">
+                  <div className="flex justify-between items-center my-2">
+                    <h3 >
+                      <ReactStars
+                        count={5}
+                        size={24}
+                        edit={null}
+                        value={4}
+                        isHalf={true}
+                        emptyIcon={<i className="far fa-star"></i>}
+                        halfIcon={<i className="fa fa-star-half-alt"></i>}
+                        fullIcon={<i className="fa fa-star"></i>}
+                        activeColor="#ffd700"
+                      />
+                    </h3>
+                    <h3>12 Students</h3>
+                  </div>
+                  <div>
+                    <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
+                  </div>
+                  <div className="flex justify-between my-3">
 
+                    <h3><span className="font-bold">price:</span> 199$</h3>
+                    <h3 >8.5 hours</h3>
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 > By: Sullivan</h3>
+                    <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
+                  </div>
+                </div>
 
-          <div className="shadow-md rounded-md bg-slate-100 p-1">
-            {/* <div className="md:w-70 h-48 shadow-md rounded-md bg-slate-100"> */}
-            <div>
-              <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-            </div>
-            <div className="mx-3">
-              <div className="flex justify-between items-center my-2">
-                <h3 >
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    edit={null}
-                    value={4}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                  />
-                </h3>
-                <h3>12 Students</h3>
-              </div>
-              <div>
-                <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-              </div>
-              <div className="flex justify-between my-3">
-
-                <h3><span className="font-bold">price:</span> 199$</h3>
-                <h3 >8.5 hours</h3>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <h3 > By: Sullivan</h3>
-                <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="shadow-md rounded-md bg-slate-100 p-1">
-            {/* <div className="md:w-70 h-48 shadow-md rounded-md bg-slate-100"> */}
-            <div>
-              <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-            </div>
-            <div className="mx-3">
-              <div className="flex justify-between items-center my-2">
-                <h3 >
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    edit={null}
-                    value={4}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                  />
-                </h3>
-                <h3>12 Students</h3>
-              </div>
-              <div>
-                <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-              </div>
-              <div className="flex justify-between my-3">
-
-                <h3><span className="font-bold">price:</span> 199$</h3>
-                <h3 >8.5 hours</h3>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <h3 > By: Sullivan</h3>
-                <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="shadow-md rounded-md bg-slate-100 p-1">
-            {/* <div className="md:w-70 h-48 shadow-md rounded-md bg-slate-100"> */}
-            <div>
-              <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-            </div>
-            <div className="mx-3">
-              <div className="flex justify-between items-center my-2">
-                <h3 >
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    edit={null}
-                    value={4}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                  />
-                </h3>
-                <h3>12 Students</h3>
-              </div>
-              <div>
-                <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-              </div>
-              <div className="flex justify-between my-3">
-
-                <h3><span className="font-bold">price:</span> 199$</h3>
-                <h3 >8.5 hours</h3>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <h3 > By: Sullivan</h3>
-                <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="shadow-md rounded-md bg-slate-100 p-1">
-            {/* <div className="md:w-70 h-48 shadow-md rounded-md bg-slate-100"> */}
-            <div>
-              <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-            </div>
-            <div className="mx-3">
-              <div className="flex justify-between items-center my-2">
-                <h3 >
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    edit={null}
-                    value={4}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                  />
-                </h3>
-                <h3>12 Students</h3>
-              </div>
-              <div>
-                <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-              </div>
-              <div className="flex justify-between my-3">
-
-                <h3><span className="font-bold">price:</span> 199$</h3>
-                <h3 >8.5 hours</h3>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <h3 > By: Sullivan</h3>
-                <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="shadow-md rounded-md bg-slate-100 p-1">
-            {/* <div className="md:w-70 h-48 shadow-md rounded-md bg-slate-100"> */}
-            <div>
-              <img src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-            </div>
-            <div className="mx-3">
-              <div className="flex justify-between items-center my-2">
-                <h3 >
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    edit={null}
-                    value={4}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                  />
-                </h3>
-                <h3>12 Students</h3>
-              </div>
-              <div>
-                <h1 className="text-1xl font-bold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-              </div>
-              <div className="flex justify-between my-3">
-
-                <h3><span className="font-bold">price:</span> 199$</h3>
-                <h3 >8.5 hours</h3>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <h3 > By: Sullivan</h3>
-                <button class=" bg-indigo-400 rounded-lg border-indigo-500 p-2 hover:bg-indigo-800 hover:text-white ">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-
-
-
+              </div>)
+          }
         </div>
       </div>
+
     </section >
   );
 };
