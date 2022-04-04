@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './Ss.css'
+import React from 'react';
+
 
 export class ScrollTop extends React.Component {
     constructor(props) {

@@ -7,7 +7,7 @@ import { AiOutlineLock } from "react-icons/ai";
 
 const TopNavbar = () => {
   return (
-    <div className=' border-b-2 py-3'>
+    <div className=' border-b-2 pt-4 py-3'>
       <div className='container mx-auto flex justify-between px-4'>
         <div className='flex-none md:flex'>
           <h1 className='mr-3 flex items-center'><BsFillTelephoneOutboundFill className='mr-2 text-blue-500' />+(880) 172 354-7084</h1>
