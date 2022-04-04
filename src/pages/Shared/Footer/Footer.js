@@ -92,16 +92,16 @@ const Footer = () => {
             </p>
             {/* social Media */}
             <div className="flex space-x-2">
-              <span className="p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
+              <span className="p-2 bg-gray-700  ease-in duration-300  text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
                 <FaFacebookSquare />
               </span>
-              <span className="p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
+              <span className="p-2 bg-gray-700  ease-in duration-300 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
                 <FaInstagramSquare />
               </span>
-              <span className="p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
+              <span className="p-2 bg-gray-700 ease-in duration-300  text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
                 <FaTwitterSquare />
               </span>
-              <span className="p-2 bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
+              <span className="p-2 bg-gray-700  ease-in duration-300 text-gray-300 hover:bg-blue-500 hover:text-gray-50 transition-all hover:rounded-tr-md">
                 <FaLinkedin />
               </span>
             </div>
@@ -115,9 +115,9 @@ const Footer = () => {
               {popularCourse.map((item, index) => (
                 <li
                   key={index}
-                  className="font-Roboto cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group"
+                  className="font-Roboto ease-in duration-30 cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group"
                 >
-                  <div className="w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50" />{" "}
+                  <div className="w-2 h-2 mr-2  group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50" />{" "}
                   {item.name}
                 </li>
               ))}
@@ -132,7 +132,7 @@ const Footer = () => {
               {company.map((item, index) => (
                 <li
                   key={index}
-                  className="font-Roboto cursor-pointer tracking-wider text-gray-300 hover:text-blue-500 flex items-center group"
+                  className="font-Roboto ease-in duration-30 cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group"
                 >
                   <div className="w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50" />{" "}
                   {item.name}
@@ -147,23 +147,23 @@ const Footer = () => {
               Contact Info
             </h1>
             <div className="space-y-2">
-              <p className="font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center">
+              <p className="font-Roboto tracking-wider text-gray-300 hover:text-gray-500 flex items-center">
                 <MdOutlinePlace className="mr-2 text-xl" />
                 bc-25/2f,dhaka,Bangladesh
               </p>
-              <p className="font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center">
+              <p className="font-Roboto tracking-wider text-gray-300 hover:text-gray-500 flex items-center">
                 <MdPhone className="mr-2 text-xl" />
                 (+880) 17 123 47084
               </p>
-              <p className="font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center">
+              <p className="font-Roboto tracking-wider text-gray-300 hover:text-gray-500 flex items-center">
                 <MdEmail className="mr-2 text-xl" />
                 help@berenskill.com
               </p>
-              <p className="font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center">
+              <p className="font-Roboto tracking-wider text-gray-300 hover:text-gray-500 flex items-center">
                 <MdEmail className="mr-2 text-xl" />
                 support@berenskill.com
               </p>
-              <p className="font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center">
+              <p className="font-Roboto tracking-wider text-gray-300 hover:text-gray-500 flex items-center">
                 <MdOutlineWatchLater className="mr-2 text-xl" />
                 (8 AM - 7 PM, Monday - Friday)
               </p>

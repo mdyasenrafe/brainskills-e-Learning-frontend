@@ -7,9 +7,9 @@ const Reviews = ({ item }) => {
       <header className="flex justify-between">
         <span className="flex space-x-4">
           <img
-            className="rounded-full shadow-sm group-hover:border-red-700 border-2 border-transparent transition delay-150 ease-in-out"
+            className="rounded-full max-h-14 max-w-14 shadow-sm group-hover:border-red-700 border-2 border-transparent transition delay-150 ease-in-out"
             src={`${item.userImage}`}
-            alt=""
+            alt={`$ {item.userName}`}
           />
           <span className="text-left">
             <h2 className="text-lg font-Poppins font-semibold">
