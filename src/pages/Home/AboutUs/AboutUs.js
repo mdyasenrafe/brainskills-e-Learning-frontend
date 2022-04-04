@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import "./AboutUs.css"
 import { Link } from 'react-router-dom';
 import aboutImg from '../../../images/about-img-2.jpg';
 import Particles from 'react-tsparticles';
-import { getInstructor } from '../../../API';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // img
