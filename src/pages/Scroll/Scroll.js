@@ -33,9 +33,9 @@ export class ScrollTop extends React.Component {
 
     render() {
         const progressContainerStyle = {
-            background: "#f8bbd0",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
-            height: "5px",
+            background: "blue",
+
+            height: "4px",
             position: "fixed",
             top: 0,
             left: 0,
@@ -44,7 +44,7 @@ export class ScrollTop extends React.Component {
         };
 
         const progressBarStyle = {
-            height: "5px",
+            height: "4px",
             background: "#e91e63",
             width: this.state.scrolled
         };

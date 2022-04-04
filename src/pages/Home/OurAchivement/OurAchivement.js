@@ -20,7 +20,7 @@ const OurAchivement = () => {
                     </span>
                 </h1>
             </div>
-            {/* <div className="container mx-auto pt-10 mx-16">
+            {/* <div className="container mx-auto pt-10">
                 <div>
                     <div className=' mx-auto md:flex justify-center items-center'>
                         <div className='p-2'>
