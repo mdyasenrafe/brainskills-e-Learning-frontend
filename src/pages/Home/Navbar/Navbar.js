@@ -68,29 +68,34 @@ const Navbar = () => {
               {/* logo */}
               <img className="h-16 py-1" src="./logo.png" alt="" />
               {/* links */}
-              <div className=" flex space-x-4">
+              <div className="hidden lg:flex space-x-4">
                 {
                   links.map(link => (
                     <Link to={link.url} key={link.id} onClick={() => setShowMenu(false)} className='cursor-pointer  transform text-black uppercase hover:scale-105 ease-in-out duration-300'>{link.name}</Link>
                   ))
                 }
               </div>
-              {/* search input and shop */}
-              <div className="flex items-center space-x-3">
+              {/* search input and shop  */}
+              <div className="hidden lg:flex items-center space-x-3">
                 <div className="relative">
                   <HiOutlineShoppingCart className="text-2xl text-blue-500" />
                   <div className="absolute -top-2 -right-1 bg-red-500 text-xs rounded-full w-4 h-4  text-white">
                     <small className="flex items-center justify-center">0</small>
                   </div>
                 </div>
-                <div className="relative">
+                <div className="relative ">
                   <input className="py-3 border px-3 focus:border-blue-500 outline-none" type="text" placeholder="Search courses..." />
                   <button className="absolute top-0 right-0 text-lg h-full px-4"><HiOutlineSearch className="text-blue-500" /></button>
                 </div>
               </div>
               {/* menu button  */}
-              <div className='flex md:hidden items-center space-x-3'>
-
+              <div className='flex lg:hidden items-center space-x-3'>
+                <div className="relative">
+                  <HiOutlineShoppingCart className="text-2xl text-blue-500" />
+                  <div className="absolute -top-2 -right-1 bg-red-500 text-xs rounded-full w-4 h-4  text-white">
+                    <small className="flex items-center justify-center">0</small>
+                  </div>
+                </div>
                 <button aria-label="open menu" onClick={() => setShowMenu(true)} className={`${!headerFixed && 'text-black'}  ml-3 focus:outline-none focus:ring-2 rounded focus:ring-gray-600`}>
                   <svg className="fill-stroke" width={30} height={30} viewBox="0 0 24 24" fill="none" >
                     <path d="M4 6H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
