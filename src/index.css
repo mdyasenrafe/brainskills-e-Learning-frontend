@@ -19,7 +19,12 @@ input {
   font-family: "Poppins", sans-serif !important;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Roboto", sans-serif;
 }
 
@@ -39,7 +44,13 @@ h1 {
   border-radius: 10px 10px;
   transition: all ease-in-out 0.5s;
 }
-
+.avatar {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 /*  Footer list link css */
 /*  */
