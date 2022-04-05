@@ -5,6 +5,7 @@ import CourseDetails from "./pages/CourseDetails/CourseDetails";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
+import EnrollCourse from "./pages/EnrollCourse/EnrollCourse";
 import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
@@ -35,7 +36,7 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <Routes> 
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
@@ -58,6 +59,7 @@ function App() {
         </Route>
         {/* */}
         <Route path="/login" element={<Login />} />
+        <Route path="/enrollcourse" element={<EnrollCourse />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
