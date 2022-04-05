@@ -16,17 +16,32 @@ const CartDetails = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="border border-slate-300 py-4	px-6 font-medium text-sm">Practical Web Development: 22 Courses in 1 with practical examples</td>
+                                <td className="border border-slate-300 py-4	px-6">
+                                    <div className='flex items-center'>
+                                        <img className='w-20 h-11' src="https://i.ibb.co/GPnwYZ8/instructors-2.jpg" alt="" />
+                                        <h4 className='text-sm pl-2 font-medium	'>Practical Web Development: 22 Courses in 1 with practical examples</h4>
+                                    </div>
+                                </td>
                                 <td className="border border-slate-300 py-4	px-6 font-medium text-sm">$11.00</td>
                                 <td className="border border-slate-300 py-4	px-6 font-medium text-sm">**</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-300 py-4	px-6 font-medium text-sm">Lua Programming and Game Development with LOVE in 2021</td>
+                                <td className="border border-slate-300 py-4	px-6">
+                                    <div className='flex items-center'>
+                                        <img className='w-20 h-11' src="https://i.ibb.co/GPnwYZ8/instructors-2.jpg" alt="" />
+                                        <h4 className='text-sm pl-2 font-medium	'>Lua Programming and Game Development with LOVE in 2021</h4>
+                                    </div>
+                                </td>
                                 <td className="border border-slate-300 py-4	px-6 font-medium text-sm">$89.00</td>
                                 <td className="border border-slate-300 py-4	px-6 font-medium text-sm">**</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-300 py-4	px-6 font-medium text-sm">Make a 2D Platformed Character with State Machines in Unity</td>
+                                <td className="border border-slate-300 py-4	px-6">
+                                    <div className='flex items-center'>
+                                        <img className='w-20 h-11' src="https://i.ibb.co/GPnwYZ8/instructors-2.jpg" alt="" />
+                                        <h4 className='text-sm pl-2 font-medium	'>Make a 2D Platformed Character with State Machines in Unity</h4>
+                                    </div>
+                                </td>
                                 <td className="border border-slate-300 py-4	px-6 font-medium text-sm">$49.00</td>
                                 <td className="border border-slate-300 py-4	px-6 font-medium text-sm">**</td>
                             </tr>
@@ -46,3 +61,6 @@ const CartDetails = () => {
 };
 
 export default CartDetails;
+
+
+
