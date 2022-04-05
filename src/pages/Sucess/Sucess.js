@@ -13,7 +13,7 @@ const Sucess = () => {
                 <h3>Successfully enrolled course</h3>
                 <div className='flex '>
                     <Link to="/" className='mr-3 bg-blue-400 md:px-3  rounded-md text-white hover:border-b-2 border-red-600 ease-in duration-100 '>Go Home</Link>
-                    <Link to="/" className=' bg-blue-400 md:px-3  rounded-md text-white hover:border-b-2 border-red-600 ease-in duration-100 '>Deshbord</Link>
+                    <Link to="/" className=' bg-blue-400 md:px-3  rounded-md text-white hover:border-b-2 border-red-600 ease-in duration-100 '>Deshboard</Link>
                 </div>
             </div>
             </div>
