@@ -33,8 +33,12 @@ const CartDetails = () => {
                         </tbody>
                     </table>
                 </div>
-                <div>
-
+                <div className="border-2">
+                    <div className="flex">
+                        <h3 className="text-xl font-medium m-7 px-6">Total</h3>
+                        <h3 className="text-xl font-medium m-7 px-6">$49.00</h3>
+                    </div>
+                    <button className="px-9 py-3 bg-green-600">Proceed to Checkout</button>
                 </div>
             </div>
         </div>
