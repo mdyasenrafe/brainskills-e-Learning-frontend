@@ -5,9 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-x: hidden !important;
+}
+
 /* common css */
 p,
 button,
+a,
+li,
+ul,
 input {
   font-family: "Poppins", sans-serif !important;
 }
@@ -16,7 +23,7 @@ h1 {
   font-family: "Roboto", sans-serif;
 }
 
-/*  */
+/* Md Yousuf sheikh */
 
 /* reviews swiper pagination bullet  (Yousuf) */
 .reviews .swiper-pagination-clickable .swiper-pagination-bullet-active {
@@ -25,5 +32,14 @@ h1 {
   border-radius: 10px 10px;
   transition: all ease-in-out 0.5s;
 }
+
+.Instructor .swiper-pagination-clickable .swiper-pagination-bullet-active {
+  width: 30px !important;
+  height: 8px;
+  border-radius: 10px 10px;
+  transition: all ease-in-out 0.5s;
+}
+
+
 /*  Footer list link css */
 /*  */

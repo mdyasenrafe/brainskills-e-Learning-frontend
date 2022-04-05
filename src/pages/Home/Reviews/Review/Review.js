@@ -1,38 +1,38 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 
-const Reviews = () => {
+const Reviews = ({ item }) => {
   return (
-    <div className="shadow-md border bg-gray-100 p-6 rounded-md group ">
+    <div className="shadow-md border bg-gray-100 p-6 rounded-md group my-20">
       <header className="flex justify-between">
         <span className="flex space-x-4">
           <img
-            className="rounded-full shadow-sm group-hover:border-red-700 border-2 border-transparent transition delay-150 ease-in-out"
-            src="https://themepure.net/html/eduman-prv/eduman/assets/img/testimonial/testimonial.png"
-            alt=""
+            className="rounded-full max-h-14 max-w-14 shadow-sm group-hover:border-red-700 border-2 border-transparent transition delay-150 ease-in-out"
+            src={`${item.userImage}`}
+            alt={`$ {item.userName}`}
           />
           <span className="text-left">
             <h2 className="text-lg font-Poppins font-semibold">
-              Richard Joseph
+              {item.userName}
             </h2>
-            <h5 className="text-base font-Poppins text-gray-500">Student</h5>
+            <h5 className="text-base font-Poppins text-gray-500">
+              {item.userDesignation}
+            </h5>
           </span>
         </span>
         <img src="./quotes.png" alt="" />
       </header>
       <h1 className="text-blue-700 font-semibold text-xl font-Poppins py-5">
-        Helpful Instructors <span>!</span>
+        {item.userCategory} <span>!</span>
       </h1>
       <summary className="text-gray-800 font-Poppins">
-        In every software-as-a-service solution, user billing and payments are
-        key aspects in the sale of services rendered. Let’s learn about Stripe
-        the metal mates.
+        {item.userDescription}
       </summary>
       <ReactStars
         count={5}
         size={24}
         edit={null}
-        value={4.5}
+        value={item.userRating}
         isHalf={true}
         emptyIcon={<i className="far fa-star"></i>}
         halfIcon={<i className="fa fa-star-half-alt"></i>}
