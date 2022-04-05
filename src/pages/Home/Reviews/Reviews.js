@@ -34,8 +34,14 @@ const Reviews = () => {
             What Students Think and Say About
             <span className="relative ml-2">
               Eduman
+              {/* animation */}
               <div className="absolute animate-bounce -bottom-4 left-0 w-20 h-4">
-                <div className="w-16 h-2 animate-pulse  rounded-tr-full bg-red-500"></div>
+                <div className="w-16 h-1.5 flex rounded-full  bg-blue-500">
+                  <div className="w-6 h-1.5  rounded-full  bg-red-500">
+                  </div>
+                  <div className="w-6 h-1.5  rounded-full  bg-yellow-500">
+                  </div>
+                </div>
               </div>
             </span>
           </h1>
