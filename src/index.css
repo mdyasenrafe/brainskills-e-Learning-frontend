@@ -44,6 +44,13 @@ h6 {
   border-radius: 10px 10px;
   transition: all ease-in-out 0.5s;
 }
+.avatar {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 /*  Footer list link css */
 /*  */

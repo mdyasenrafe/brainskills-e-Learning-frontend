@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getUserApi } from "../API";
 
 const GetUser = () => {
   const [user, setUser] = useState();
@@ -9,7 +10,7 @@ const GetUser = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await getInstructor();
+    const res = await getUserApi();
     if (res?.error.true === "") {
     } else {
       setUser(res.data);

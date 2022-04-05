@@ -12,7 +12,6 @@ const Events = () => {
     if (res.error.true === "") {
     } else {
       setEvents(res.data);
-      console.log(res.data);
     }
   };
   return (

@@ -6,6 +6,7 @@ import Register from "./pages/Login/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
 import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
+import Footer from "./pages/Shared/Footer/Footer";
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
 
         <Route path="/8" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

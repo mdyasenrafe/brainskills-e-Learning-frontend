@@ -22,7 +22,6 @@ const Instructor = () => {
     const res = await getInstructor();
     if (res?.error.true === "") {
     } else {
-      console.log(res);
       setInstructors(res.data);
     }
   };

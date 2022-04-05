@@ -28,7 +28,6 @@ const Home = () => {
       <Reviews />
       <JoinCommunity />
       <ScrollTop></ScrollTop>
-      <Footer />
     </div>
   );
 };

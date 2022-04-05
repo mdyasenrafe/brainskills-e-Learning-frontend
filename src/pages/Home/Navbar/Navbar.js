@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import { HiOutlineSearch, HiOutlineShoppingCart } from "react-icons/hi";
+import GetUser from "../../../hooks/GetUser";
 // links
 const links = [
   {
@@ -36,9 +37,12 @@ const Navbar = () => {
   window.addEventListener("scroll", headerChange);
 
   const token = localStorage.getItem("access_token");
+  const { user } = GetUser();
+
+  console.log(user);
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       {!headerFixed && <TopNavbar />}
       <div
         className={`${
@@ -54,7 +58,7 @@ const Navbar = () => {
               {/* logo */}
               <img className="h-16 py-1" src="./logo.png" alt="" />
               {/* links */}
-              <div className="hidden lg:flex space-x-4">
+              <div className="hidden lg:flex space-x-4 items-center">
                 {links.map((link) => (
                   <Link
                     to={link.url}
@@ -73,6 +77,9 @@ const Navbar = () => {
                     </small>
                   </div>
                 </div>
+                {user?.photoUrl && (
+                  <img className="avatar" src={user?.photoUrl} />
+                )}
               </div>
               {/* menu button  */}
               <div className="flex lg:hidden items-center space-x-3">

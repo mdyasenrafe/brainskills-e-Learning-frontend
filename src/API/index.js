@@ -1,4 +1,5 @@
 import axios from "axios";
+import { headers } from "./Headers";
 
 const url = "https://brainskillapi.herokuapp.com/";
 
@@ -17,12 +18,9 @@ const token = localStorage.getItem("access_token");
 
 export const getUserApi = async () => {
   try {
-    const res = await axios.post(url + apiUrl.getUser, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+    const res = await axios.get(url + apiUrl.getUser, {
+      headers: headers,
     });
-
     return res.data;
   } catch (err) {
     console.error({ err });
