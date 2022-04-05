@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../Home/Navbar/Navbar';
-import Footer from '../Shared/Footer/Footer';
+
 
 const NotFound = () => {
     return (
         <div>
-            <Navbar />
             <div className='container mx-auto px-4 py-24 '>
                 <div className='grid items-center'>
                     <div className='mx-auto text-center'>
@@ -16,7 +14,6 @@ const NotFound = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

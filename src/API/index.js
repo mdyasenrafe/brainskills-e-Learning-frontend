@@ -1,4 +1,5 @@
 import axios from "axios";
+import { headers } from "./Headers";
 
 const url = "https://brainskillapi.herokuapp.com/";
 
@@ -7,6 +8,48 @@ const apiUrl = {
   getBlogApi: "blog/getBlog",
   getEventApi: "event/getEvent",
   getReview: "review/getReview",
+  signupUrl: "signin/signup",
+  verifyUrl: "signin/verifyAceount",
+  signUrl: "signin/signin",
+  getUser: "signin/getUser",
+};
+
+const token = localStorage.getItem("access_token");
+
+export const getUserApi = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getUser, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+export const signinAPI = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.signUrl, body);
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+export const VerifyAPi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.verifyUrl, body);
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const signUpApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.signupUrl, body);
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
 };
 
 export const getInstructor = async (body) => {
@@ -41,4 +84,4 @@ export const getReview = async (body) => {
   } catch (err) {
     console.log({ err });
   }
-}
+};
