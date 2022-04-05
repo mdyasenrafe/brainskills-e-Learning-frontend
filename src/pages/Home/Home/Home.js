@@ -13,25 +13,23 @@ import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
 
-
 const Home = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <TopHeader />
-            <Feature />
-            <TopCategory />
-            <Courses />
-            <OurAchivement />
-            <Instructor />
-            <Events />
-            <Blogs />
-            <Reviews />
-            <JoinCommunity />
-            <ScrollTop></ScrollTop>
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      {/* <Navbar /> */}
+      <TopHeader />
+      <Feature />
+      <TopCategory />
+      <Courses />
+      <OurAchivement />
+      <Instructor />
+      <Events />
+      <Blogs />
+      <Reviews />
+      <JoinCommunity />
+      <ScrollTop></ScrollTop>
+    </div>
+  );
 };
 
 export default Home;
