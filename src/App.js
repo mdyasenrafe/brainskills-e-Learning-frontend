@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
+import CartDetails from "./pages/Cart/CartDetails";
 
 function App() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/courseDetails" element={<CourseDetails />} />
+        <Route path="/cart" element={<CartDetails />} />
 
         <Route path="/*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
