@@ -13,10 +13,24 @@ const apiUrl = {
   verifyUrl: "signin/verifyAceount",
   signUrl: "signin/signin",
   getUser: "signin/getUser",
+<<<<<<< HEAD
+  getCart: "cart/getCart",
+=======
   getDashboard: "dashboard/getDashboard",
+>>>>>>> fa5d8447bfb6b446c9fa4bbb64b5ae4b7b9ef985
 };
 
-const token = localStorage.getItem("access_token");
+
+export const getCartApi = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getCart, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
 
 export const getDashboardApi = async () => {
   try {
@@ -106,3 +120,5 @@ export const getReview = async (body) => {
     console.log({ err });
   }
 };
+
+
