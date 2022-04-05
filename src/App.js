@@ -14,6 +14,10 @@ import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
 import Instructor from "./pages/CourseDetails/Instructor/Instructor";
 import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
+import Process from "./pages/Recipet/Process";
+import Sucess from "./pages/Recipet/Sucess";
+import Failed from "./pages/Recipet/Failed";
+
 
 function App() {
   const location = useLocation();
@@ -31,14 +35,17 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <Routes>
+      <Routes> 
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/payment/failure/:id" element={<Process />} />
+        <Route path="/payment/success/:id" element={<Sucess />} />
+        <Route path="/payment/processing/:id" element={<Failed />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/courseDetails" element={<CourseDetails />} />
         <Route path="/cart" element={<CartDetails />} />
-
-        <Route path="/*" element={<NotFound />} />
         <Route path="/course" element={<Courses />}>
         </Route>
         {/* course details*/}
