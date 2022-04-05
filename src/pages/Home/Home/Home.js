@@ -12,7 +12,6 @@ import Footer from "../../Shared/Footer/Footer";
 import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
-import Sucess from "../../Sucess/Sucess";
 
 
 const Home = () => {
@@ -20,7 +19,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <TopHeader />
-            <Sucess></Sucess>
+            
             <Feature />
             <TopCategory />
             <Courses />
