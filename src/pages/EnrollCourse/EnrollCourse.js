@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getDashboardApi } from '../../API';
 
 const EnrollCourse = () => {
+
+    const [enrollCourse, setEnrollCourse] = useState();
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        const res = await getDashboardApi();
+        if (res?.error.true === "") {
+        } else {
+            setEnrollCourse(res.data);
+        }
+    };
+
+    console.log(enrollCourse)
+
+
+
     return (
         <div className='bg-slate-50'>
             <section className='container'>
                 <div className="container mx-auto p-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto ">
-
-
                         <div className="shadow-md rounded-md border-b-4 hover:border-b-blue-400 border-b-blue-300 bg-slate-100 rounded-t-lg overflow-hidden">
 
                             <div className="grid grid-cols-1 md:grid-cols-2 mx-auto ">
