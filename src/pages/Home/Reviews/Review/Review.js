@@ -2,21 +2,22 @@ import React from "react";
 import ReactStars from "react-rating-stars-component";
 
 const Reviews = ({ item }) => {
-
   return (
-    <div className="shadow-md border bg-gray-100 p-6 rounded-md group ">
+    <div className="shadow-md border bg-gray-100 p-6 rounded-md group my-20">
       <header className="flex justify-between">
         <span className="flex space-x-4">
           <img
-            className="rounded-full shadow-sm group-hover:border-red-700 border-2 border-transparent transition delay-150 ease-in-out"
+            className="rounded-full max-h-14 max-w-14 shadow-sm group-hover:border-red-700 border-2 border-transparent transition delay-150 ease-in-out"
             src={`${item.userImage}`}
-            alt=""
+            alt={`$ {item.userName}`}
           />
           <span className="text-left">
             <h2 className="text-lg font-Poppins font-semibold">
               {item.userName}
             </h2>
-            <h5 className="text-base font-Poppins text-gray-500">{item.userDesignation}</h5>
+            <h5 className="text-base font-Poppins text-gray-500">
+              {item.userDesignation}
+            </h5>
           </span>
         </span>
         <img src="./quotes.png" alt="" />
