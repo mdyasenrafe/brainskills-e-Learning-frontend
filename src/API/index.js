@@ -13,11 +13,8 @@ const apiUrl = {
   verifyUrl: "signin/verifyAceount",
   signUrl: "signin/signin",
   getUser: "signin/getUser",
-<<<<<<< HEAD
   getCart: "cart/getCart",
-=======
   getDashboard: "dashboard/getDashboard",
->>>>>>> fa5d8447bfb6b446c9fa4bbb64b5ae4b7b9ef985
 };
 
 
