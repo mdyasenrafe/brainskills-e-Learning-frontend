@@ -1,6 +1,23 @@
 import React from "react";
 import Course from "../Course/Course";
-
+const course = [
+  {
+    _id: 1,
+    name: "yousuf sheikh"
+  },
+  {
+    _id: 2,
+    name: "yousuf sheikh"
+  },
+  {
+    _id: 3,
+    name: "yousuf sheikh"
+  },
+  {
+    _id: 4,
+    name: "yousuf sheikh"
+  },
+]
 const Courses = () => {
   return (
     <section className=" container mx-auto px-4 py-10">
@@ -35,11 +52,9 @@ const Courses = () => {
       {/*  */}
       <div className="container mx-auto p-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto ">
-          <Course />
-          <Course />
-          <Course />
-          <Course />
-          <Course />
+          {
+            course.map(item => <Course key={item._id} item={item} />)
+          }
         </div>
       </div>
     </section >
