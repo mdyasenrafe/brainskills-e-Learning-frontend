@@ -7,7 +7,7 @@ const links = [
   {
     id: 1,
     name: 'Home',
-    url: "/home"
+    url: "/"
   },
   {
     id: 2,
@@ -117,7 +117,7 @@ const Navbar = () => {
             </div>
           </div>
           {/*Screen  small*/}
-          <div className={`${showMenu ? "flex ease-in-out duration-300 " : "translate-x-full"} absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}>
+          <div className={`${showMenu ? "flex ease-in-out duration-300 " : "hidden"} absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}>
             <div className="py-3 px-5 container mx-auto">
               <div data-aos="fade-down" className='grid justify-center justify-items-center pt-16 '>
 
