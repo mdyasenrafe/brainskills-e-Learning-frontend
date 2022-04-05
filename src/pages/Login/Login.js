@@ -1,43 +1,94 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { signinAPI } from "../../API";
+import { Toast } from "../../Componets/Toast";
 
 const Login = () => {
-    return (
-        <div className=' container my-10 grid grid-cols-2 gap-4'>
-            <div className='m-5'>
-                <img className='img-flued w-9/12' src="https://www.phitron.io/static/media/register.e58071de.png" alt="" />
-            </div>
-            <div class="w-full max-w-xl	py-15">
-                <form class="bg-white shadow-md rounded px-8 py-16 mb-4 ">
-                    <h2 className='text-3xl	font-semibold py-7' style={{ color: "#343c97" }}>Welcome Back</h2>
-                    <div class="mb-4 my-4">
-                        <input class="py-4 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="Email" />
-                    </div>
-                    <div class="mb-6">
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-4 px-4 mb-3 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="password" />
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div className='flex items-center justify-between'>
-                            <input type="checkbox" class="rounded text-pink-500 mr-3" />
-                            <h1>Remember Me</h1>
-                        </div>
-                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                            Forgot Password?
-                        </a>
-                    </div>
-                    <div className='flex justify-center items-center'>
-                        <button class=" my-3 py-5 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold px- rounded focus:outline-none focus:shadow-outline" type="button" style={{ background: "linear-gradient(86.89deg,#343c97 -111.91%,#31c4f3 79.41% )" }}>
-                            Log in
-                        </button>
-                    </div>
-                    <h6>Don't have any account? <Link to="/register"> Register now</Link></h6>
-                </form>
-                <p class="text-center text-gray-500 text-xs">
-                    &copy;2020 Acme Corp. All rights reserved.
-                </p>
-            </div>
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const navigate = useNavigate();
+  const onSubmit = async (data) => {
+    const res = await signinAPI(data);
+
+    if (res?.error === false) {
+      localStorage.setItem("access_token", res?.token);
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      }).then(() => navigate("/home"));
+    } else {
+      Toast.fire({
+        icon: "error",
+        title: "something went wrong",
+      });
+    }
+  };
+
+  return (
+    <div className="container mx-auto py-20">
+      <div className=" grid sm:grid-cols-2 md:grid-cols-2 gap-7 spac-y-4 items-center">
+        <div className="m-5">
+          <img
+            className="img-flued w-9/12"
+            src="https://i.ibb.co/jk7gd0r/Computer-login-bro.png"
+            alt=""
+          />
         </div>
-    );
+        <div className="w-full max-w-xl	py-15">
+          <form
+            className="bg-white shadow-md rounded px-8 py-16 mb-4 "
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <h2
+              className="text-3xl	font-semibold py-7"
+              style={{ color: "#343c97" }}
+            >
+              Welcome Back
+            </h2>
+            <div className="mb-4 my-4">
+              <input
+                className="py-4 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password2"
+                type="text"
+                placeholder="Email"
+                required
+                {...register("userPhoneNumber", { required: true })}
+              />
+            </div>
+            <div className="mb-6">
+              <input
+                className=" appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-4 px-4 mb-3 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password"
+                type="password"
+                placeholder="password"
+                required
+                {...register("userPassword", { required: true })}
+              />
+            </div>
+            <div className="flex justify-center items-center">
+              <button
+                className=" my-3 py-5 w-full bg-indigo-500 hover:bg-indigo-800 font-bold px- rounded focus:outline-none focus:shadow-outline text-white"
+                type="submit"
+              >
+                Log in
+              </button>
+            </div>
+            <h6>
+              Don't have any account?
+              <Link to="/register">
+                <span className="text-sky-500">Register now</span>
+              </Link>
+            </h6>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Login;
