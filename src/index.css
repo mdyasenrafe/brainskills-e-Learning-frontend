@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .course-overview-link-style {
+    @apply w-full text-center border-b-4 border-b-blue-500 hover:border-b-gray-300 ease-in-out duration-500 px-2 border-r py-5 border-r-white bg-gray-200 hover:bg-blue-400 hover:text-white
+  }
+
+}
+
 body {
   overflow-x: hidden !important;
 }
@@ -19,7 +26,12 @@ input {
   font-family: "Poppins", sans-serif !important;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Roboto", sans-serif;
 }
 
@@ -40,6 +52,13 @@ h1 {
   transition: all ease-in-out 0.5s;
 }
 
+.avatar {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 /*  Footer list link css */
 /*  */

@@ -22,7 +22,6 @@ const Instructor = () => {
     const res = await getInstructor();
     if (res?.error.true === "") {
     } else {
-      console.log(res);
       setInstructors(res.data);
     }
   };
@@ -40,10 +39,8 @@ const Instructor = () => {
                 {/* animation */}
                 <div className="absolute animate-bounce -bottom-4 left-0 w-20 h-4">
                   <div className="w-16 h-1.5 flex rounded-full  bg-blue-500">
-                    <div className="w-6 h-1.5  rounded-full  bg-red-500">
-                    </div>
-                    <div className="w-6 h-1.5  rounded-full  bg-yellow-500">
-                    </div>
+                    <div className="w-6 h-1.5  rounded-full  bg-red-500"></div>
+                    <div className="w-6 h-1.5  rounded-full  bg-yellow-500"></div>
                   </div>
                 </div>
               </span>
@@ -52,13 +49,14 @@ const Instructor = () => {
             <p>
               <p className="text-stone-600">
                 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                Curabitur non nulla sit amet nisl tempus convallis quis ac
+                lectus.
               </p>
               <p className="text-stone-600 mt-4">
                 Proin eget tortor risus. Sed porttitor lectus nibh. Praesent
                 sapien massa, convallis a pellentesque nec, egestas non nisi.
-                Mauris blandit aliquet elit, egettincidunt nibh pulvinar ultricies
-                ligula sed magna dictum porta.
+                Mauris blandit aliquet elit, egettincidunt nibh pulvinar
+                ultricies ligula sed magna dictum porta.
               </p>
             </p>
           </div>
@@ -95,7 +93,11 @@ const Instructor = () => {
                 <SwiperSlide key={index} className="py-10">
                   <div className="text-center group overflow-hidden">
                     <div className="relative">
-                      <img className="w-full rounded-sm" src={data.instructorPhoto} alt="" />
+                      <img
+                        className="w-full rounded-sm"
+                        src={data.instructorPhoto}
+                        alt=""
+                      />
                       <div className="absolute top-1/4 -translate-x-9  group-hover:translate-x-0 ease-in-out duration-300  left-2 space-y-3">
                         <ImFacebook2 className=" text-gray-600 hover:text-gray-900 text-xl hover:scale-105 ease-in duration-200" />
                         <ImTwitter className=" text-gray-600 hover:text-gray-900 text-xl hover:scale-105 ease-in duration-200" />
@@ -103,9 +105,7 @@ const Instructor = () => {
                         <ImRss2 className=" text-gray-600 hover:text-gray-900 text-xl hover:scale-105 ease-in duration-200" />
                       </div>
                     </div>
-                    <h1>
-                      {data.instructorName}
-                    </h1>
+                    <h1>{data.instructorName}</h1>
                     <h1>{data.instructorDesignation}</h1>
                   </div>
                 </SwiperSlide>
