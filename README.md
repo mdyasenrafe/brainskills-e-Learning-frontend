@@ -1,4 +1,12 @@
 ### Tame Project
+<<<<<<< HEAD
+## BrainSkills E-Learning
+
+### Overview: This is e learning management.There are 3 roles like Users,Instructor And Admin. We Have All Kinds Of Courses Collection.
+## Features
+## user :
+- In the home page users are able to see the best courses, The Course category and the Instructors. 
+=======
 
 ## BrainSkills E-Learning
 
@@ -9,6 +17,7 @@
 ## user :
 
 - In the home page users are able to see the best courses, The Course category and the Instructors.
+>>>>>>> aad4236ac55d200cfeb0742f0ac7474f3f6ac784
 - Users can also see how many students successfully complete the course.
 - Homepage also shows how many courses are offered by us.
 - If a user can go to the course section and select a course then they can see the course rating, course duration,course overview, total curriculum, course price and the course instructor.
@@ -25,7 +34,10 @@
 - User dashboard user can update the information about him.
 
 ## For Instructor:
+<<<<<<< HEAD
+=======
 
+>>>>>>> aad4236ac55d200cfeb0742f0ac7474f3f6ac784
 - Instructor can request for an account . After approval, the user can update her information.
 - Instructors can upload new courses.
 - Instructor can update her course.
@@ -33,15 +45,26 @@
 - Instructors can share any file to their students.
 - Instructor is able to make a quiz on the site and review the quiz and give marks.
 
+<<<<<<< HEAD
+
+## For Admin:
+- An admin  can approve/remove instructors.
+=======
 ## For Admin:
 
 - An admin can approve/remove instructors.
+>>>>>>> aad4236ac55d200cfeb0742f0ac7474f3f6ac784
 - Admin can see all the reviews by the instructor name.
 - Admin also makes a sub-admin for managing the site.
 - Review course and make approval for showing on the home page.
 - Admin can take action for anyone from the site.
 - Admin can manage the user/instructor and also the course uploaded by the instructor.
 
+<<<<<<< HEAD
+
+## Goal
+=======
 ## Goal
 
+>>>>>>> aad4236ac55d200cfeb0742f0ac7474f3f6ac784
 Our goal is to do site make and development in 6-7 weeks

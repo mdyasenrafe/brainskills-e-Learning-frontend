@@ -73,7 +73,7 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <div className="relative">
-                  <HiOutlineShoppingCart className="text-2xl text-blue-500" />
+                  <Link to="/cart"><HiOutlineShoppingCart className="text-2xl text-blue-500" /></Link>
                   <div className="absolute -top-2 -right-1 bg-red-500 text-xs rounded-full w-4 h-4  text-white">
                     <small className="flex items-center justify-center">
                       0
@@ -86,8 +86,9 @@ const Navbar = () => {
               </div>
               {/* menu button  */}
               <div className="flex lg:hidden items-center space-x-3">
-                <div className="relative">
+                <div className="relative"><Link to="/cartDetails">
                   <HiOutlineShoppingCart className="text-2xl text-blue-500" />
+                </Link>
                   <div className="absolute -top-2 -right-1 bg-red-500 text-xs rounded-full w-4 h-4  text-white">
                     <small className="flex items-center justify-center">
                       0
