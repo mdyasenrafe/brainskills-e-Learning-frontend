@@ -3,10 +3,10 @@ import React from 'react';
 const CartDetails = () => {
     return (
         <div className="container">
-            <h1 className='text-4xl	font-bold text-center my-16'>Cart</h1>
-            <div className="mx-10 grid grid-cols-1 lg:grid-cols-2 gap-7 mb-28">
-                <div>
-                    <table className="border-collapse border border-slate-400">
+            <h1 className='text-4xl	font-bold text-center py-10'>Cart</h1>
+            <div className="mx-10 lg:flex space-y-5 md:space-y-0 justify-between mb-28">
+                <div className='lg:w-8/12 '>
+                    <table className="border-collapse border border-slate-400 w-full">
                         <thead>
                             <tr>
                                 <th className="border border-slate-300 font-medium py-3	px-6 text-left text-base">Courses</th>
