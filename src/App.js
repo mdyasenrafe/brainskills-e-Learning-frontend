@@ -4,6 +4,7 @@ import AboutUs from "./pages/Home/AboutUs/AboutUs";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
+import EnrollCourse from "./pages/EnrollCourse/EnrollCourse";
 
 function App() {
   // const location = useLocation();
@@ -23,8 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/enrollcourse" element={<EnrollCourse />} />
         <Route path="/register" element={<Register />} />
         <Route path="/aboutus" element={<AboutUs />} />
 
