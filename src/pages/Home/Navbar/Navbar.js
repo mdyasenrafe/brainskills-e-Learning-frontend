@@ -73,7 +73,7 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <div className="relative">
-                  <link to="/cartDetails"><HiOutlineShoppingCart className="text-2xl text-blue-500" /></link>
+                  <Link to="/cart"><HiOutlineShoppingCart className="text-2xl text-blue-500" /></Link>
                   <div className="absolute -top-2 -right-1 bg-red-500 text-xs rounded-full w-4 h-4  text-white">
                     <small className="flex items-center justify-center">
                       0
