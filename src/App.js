@@ -70,6 +70,7 @@ function App() {
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
+          <Route path="" element={<UserProfile />} />
         </Route>
         {/*  */}
         <Route path="/login" element={<Login />} />
