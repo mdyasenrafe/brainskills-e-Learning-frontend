@@ -18,6 +18,7 @@ import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
 import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
 import Failed from "./pages/Recipet/Failed";
+import Classes from './pages/Classes/Classes';
 
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
         </Route>
+        {/* classes  */}
+        <Route path="/classes" element={<Classes />} />
         {/* */}
         <Route path="/login" element={<Login />} />
         <Route path="/enrollcourse" element={<EnrollCourse />} />
