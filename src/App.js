@@ -18,6 +18,12 @@ import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
 import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
 import Failed from "./pages/Recipet/Failed";
+import UserDashboard from "./pages/UserDashboard/UserDashboard/UserDashboard";
+import UserProfile from "./pages/UserDashboard/UserProfile/UserProfile";
+import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
+import UserOrderHistory from "./pages/UserDashboard/UserOrderHistory/UserOrderHistory";
+import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertificate";
+import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
 
 
 function App() {
@@ -57,7 +63,16 @@ function App() {
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
         </Route>
-        {/* */}
+        {/* user dashboard  */}
+        <Route path="/userDashboard" element={<UserDashboard />} >
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="address" element={<UserAddress />} />
+          <Route path="education" element={<UserEducation />} />
+          <Route path="orderHistory" element={<UserOrderHistory />} />
+          <Route path="certificate" element={<UserCertificate />} />
+          <Route path="" element={<UserProfile />} />
+        </Route>
+        {/*  */}
         <Route path="/login" element={<Login />} />
         <Route path="/enrollcourse" element={<EnrollCourse />} />
         <Route path="/register" element={<Register />} />
