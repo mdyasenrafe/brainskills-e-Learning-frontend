@@ -185,7 +185,7 @@ const Navbar = () => {
               </div>
               <hr />
               <div onClick={() => setShowUserSetting(false)} className="pb-2">
-                <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineViewGrid className="mr-2" />Dashboard</Link>
+                <Link to={"/userDashboard"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineViewGrid className="mr-2" />Dashboard</Link>
                 <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineBookmark className="mr-2" />Bookmark</Link>
                 <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineAdjustments className="mr-2" />Setting</Link>
                 <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineLogout className="mr-2" />LogOut</Link>
@@ -213,7 +213,6 @@ const Navbar = () => {
                     </a>
                   ))}
                 </ul>
-                <div></div>
               </div>
             </div>
           </div>
