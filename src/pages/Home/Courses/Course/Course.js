@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
-const Course = () => {
+const Course = ({ item }) => {
+    const { name, _id } = item
     return (
-
         <div className="shadow-md rounded-md border-b-4 hover:border-b-blue-400 border-b-blue-300 bg-slate-100 rounded-t-lg overflow-hidden">
             <div className='overflow-hidden'>
                 <img className='hover:scale-105 ease-in duration-300' src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
@@ -29,8 +30,8 @@ const Course = () => {
                     <h3 className='text-gray-500 font-semibold' >8.5 h/r</h3>
                 </div>
                 <div className="flex justify-between items-center mb-2">
-                    <h3 className='font-semibold text-gray-500' > By: Sullivan</h3>
-                    <button className="bg-indigo-500 rounded-sm border-indigo-500 p-2 hover:bg-indigo-600 text-white hover:rounded-md ease-in duration-300">Add to Cart</button>
+                    <h3 className='font-semibold text-gray-500' > By: {name}</h3>
+                    <Link to={`/${_id}`} className="bg-indigo-500 rounded-sm border-indigo-500 p-2 hover:bg-indigo-600 text-white hover:rounded-md ease-in duration-300">Add to Cart</Link>
                 </div>
             </div>
         </div>

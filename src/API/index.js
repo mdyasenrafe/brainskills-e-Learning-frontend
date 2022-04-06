@@ -5,6 +5,7 @@ const url = "https://brainskillapi.herokuapp.com/";
 
 const apiUrl = {
   getInstructor: "instructor/getInstructor",
+  getCourses: "course/getCourse",
   getBlogApi: "blog/getBlog",
   getEventApi: "event/getEvent",
   getReview: "review/getReview",
@@ -12,14 +13,13 @@ const apiUrl = {
   verifyUrl: "signin/verifyAceount",
   signUrl: "signin/signin",
   getUser: "signin/getUser",
-  getDashBoard: "dashboard/getDashbaord",
+  getCart: "cart/getCart",
+  getDashboard: "dashboard/getDashboard",
 };
 
-const token = localStorage.getItem("access_token");
-
-export const getDashBoard = async () => {
+export const getCartApi = async () => {
   try {
-    const res = await axios.get(url + apiUrl.getDashBoard, {
+    const res = await axios.get(url + apiUrl.getCart, {
       headers: headers,
     });
     return res.data;
@@ -72,6 +72,15 @@ export const getInstructor = async (body) => {
     console.error({ err });
   }
 };
+export const getCourses = async (body) => {
+  try {
+    const res = await axios.get(url + apiUrl.getCourses);
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
 export const getBlogs = async (body) => {
   try {
     const res = await axios.get(url + apiUrl.getBlogApi);
