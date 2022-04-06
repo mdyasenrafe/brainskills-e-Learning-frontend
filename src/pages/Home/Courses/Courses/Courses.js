@@ -20,12 +20,9 @@ const Courses = () => {
 
   console.log(courses);
 
-
   return (
-
-
     <section className=" container mx-auto px-4 py-10">
-      < div className="container grid grid-cols-1 md:grid-cols-2 " >
+      <div className="container grid grid-cols-1 md:grid-cols-2 ">
         <div>
           <h1 className=" text-start font-Roboto font-bold text-3xl lg:text-4xl ">
             <span className="text-indigo-500 "> Explore </span>
@@ -39,60 +36,65 @@ const Courses = () => {
           </h1>
         </div>
         <div>
-
           <ul className="pt-4 text-base text-gray-700 md:flex md:justify-around md:pt-0">
             <li>View All</li>
             <li>Web</li>
             <li>Photography</li>
             <li>Life Style</li>
           </ul>
-
-        </div>
-      </div >
-      <div className="container mx-auto p-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto ">
-
-          {
-            courses?.map((course, index) =>
-
-              <div className="shadow-md rounded-md border-b-4 hover:border-b-blue-400 border-b-blue-300 bg-slate-100 rounded-t-lg overflow-hidden">
-                <div className='overflow-hidden'>
-                  <img className='hover:scale-105 ease-in duration-300' src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg" alt="" srcSet="" />
-                </div>
-                <div className="mx-3">
-                  <div className="flex justify-between items-center my-2">
-                    <ReactStars
-                      count={5}
-                      size={24}
-                      edit={null}
-                      value={4}
-                      isHalf={true}
-                      emptyIcon={<i className="far fa-star"></i>}
-                      halfIcon={<i className="fa fa-star-half-alt"></i>}
-                      fullIcon={<i className="fa fa-star"></i>}
-                      activeColor="#ffd700"
-                    />
-                    <h3 className="font-semibold text-gray-500  ">12 Students</h3>
-                  </div>
-                  <h1 className="text-1xl font-semibold mt-2">Lua Programming and Game Development with LOVE in 2021</h1>
-                  <div className="flex justify-between my-3">
-                    <h3 className="font-semibold text-gray-500"><span >Price: $</span>199 /-</h3>
-                    <h3 className='text-gray-500 font-semibold' >8.5 h/r</h3>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className='font-semibold text-gray-500' > By: Sullivan</h3>
-                    <button className="bg-indigo-500 rounded-sm border-indigo-500 p-2 hover:bg-indigo-600 text-white hover:rounded-md ease-in duration-300">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-
-            )
-          }
         </div>
       </div>
-
-    </section >
+      <div className="container mx-auto p-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto ">
+          {courses?.map((course, index) => (
+            <div className="shadow-md rounded-md border-b-4 hover:border-b-blue-400 border-b-blue-300 bg-slate-100 rounded-t-lg overflow-hidden">
+              <div className="overflow-hidden">
+                <img
+                  className="hover:scale-105 ease-in duration-300"
+                  src="https://i.ibb.co/PxFbNX3/course-11-b10ef53de8.jpg"
+                  alt=""
+                  srcSet=""
+                />
+              </div>
+              <div className="mx-3">
+                <div className="flex justify-between items-center my-2">
+                  {/* <ReactStars
+                    count={5}
+                    size={24}
+                    edit={null}
+                    value={4}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star"></i>}
+                    halfIcon={<i className="fa fa-star-half-alt"></i>}
+                    fullIcon={<i className="fa fa-star"></i>}
+                    activeColor="#ffd700"
+                  /> */}
+                  {/* <h3 className="font-semibold text-gray-500  ">13 Students</h3> */}
+                </div>
+                <h1 className="text-1xl font-semibold mt-2 py-2">
+                  {course?.courseName}
+                </h1>
+                <div className="flex justify-between my-3">
+                  <h3 className="font-semibold text-gray-500">
+                    <span>Price: </span>
+                    {course?.coursePrice}
+                  </h3>
+                </div>
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="font-semibold text-gray-500">
+                    {" "}
+                    By: {course?.instructorDetail[0]?.instructorName}
+                  </h3>
+                  <button className="bg-indigo-500 rounded-sm border-indigo-500 p-2 hover:bg-indigo-600 text-white hover:rounded-md ease-in duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

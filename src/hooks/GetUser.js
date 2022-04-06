@@ -3,7 +3,7 @@ import { getUserApi } from "../API";
 
 const GetUser = () => {
   const [user, setUser] = useState();
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -12,8 +12,10 @@ const GetUser = () => {
   const fetchData = async () => {
     const res = await getUserApi();
     if (res?.error.true === "") {
+      setLoading(false);
     } else {
       setUser(res.data);
+      setLoading(false);
     }
   };
 

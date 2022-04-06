@@ -17,6 +17,17 @@ const apiUrl = {
   getDashboard: "dashboard/getDashboard",
 };
 
+export const getDashboardApi = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getDashboard, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
 export const getCartApi = async () => {
   try {
     const res = await axios.get(url + apiUrl.getCart, {
