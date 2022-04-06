@@ -12,9 +12,21 @@ const apiUrl = {
   verifyUrl: "signin/verifyAceount",
   signUrl: "signin/signin",
   getUser: "signin/getUser",
+  getDashBoard: "dashboard/getDashbaord",
 };
 
 const token = localStorage.getItem("access_token");
+
+export const getDashBoard = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getDashBoard, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
 
 export const getUserApi = async () => {
   try {
