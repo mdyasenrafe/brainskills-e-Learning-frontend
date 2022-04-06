@@ -10,7 +10,6 @@ import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
 import CartDetails from "./pages/Cart/CartDetails";
-import Courses from "./pages/Home/Courses/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
 import Instructor from "./pages/CourseDetails/Instructor/Instructor";
@@ -26,6 +25,8 @@ import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertifica
 import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
 import GetUser from "./hooks/GetUser";
 import LoadingSpiners from "./Componets/LoadingSpiners";
+import Courses from "./pages/Home/Courses/Courses";
+import PrivateRoute from "./Componets/PrivateRoute";
 
 function App() {
   const { loading } = GetUser();
@@ -57,11 +58,17 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/courseDetails" element={<CourseDetails />} />
             <Route path="/cart" element={<CartDetails />} />
             <Route path="/course" element={<Courses />}></Route>
             {/* course details*/}
-            <Route path="/courseId" element={<CourseDetails />}>
+            <Route
+              path="/courseDetails/:id"
+              element={
+                <PrivateRoute>
+                  <CourseDetails />
+                </PrivateRoute>
+              }
+            >
               <Route path="overview" element={<Overview />} />
               <Route path="curriculum" element={<Curriculum />} />
               <Route path="instructor" element={<Instructor />} />

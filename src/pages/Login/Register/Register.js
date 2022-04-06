@@ -58,7 +58,7 @@ const Login = () => {
           icon: "success",
           title: `Your Aceount Succesfully Login`,
         });
-        navigate("/home");
+        window.location.href = "/home";
       } else {
         setError(res.message);
       }

@@ -51,7 +51,10 @@ const Navbar = () => {
 
   const { user } = GetUser();
 
-  console.log(user);
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = "/home";
+  };
 
   return (
     <div className="px-4">
@@ -251,13 +254,15 @@ const Navbar = () => {
                   <HiOutlineAdjustments className="mr-2" />
                   Setting
                 </Link>
-                <Link
-                  to={"/"}
-                  className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"
+
+                <p
+                  onClick={logout}
+                  className="flex items-center px-4 py-2 hover:bg-gray-200
+                  text-gray-600 hover:text-gray-900"
                 >
                   <HiOutlineLogout className="mr-2" />
                   LogOut
-                </Link>
+                </p>
               </div>
             </div>
           </div>
