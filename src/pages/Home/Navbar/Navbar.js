@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import { HiOutlineShoppingCart, HiOutlineLogout, HiOutlineBookmark, HiOutlineViewGrid, HiOutlineAdjustments, HiOutlineX } from "react-icons/hi";
+
 import GetUser from "../../../hooks/GetUser";
 // links
 const links = [
@@ -30,7 +31,7 @@ const links = [
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
-
+  const [showUserSetting, setShowUserSetting] = useState(false)
   // handel scroll change header
   const headerChange = () => {
     if (window.scrollY > 10) {
@@ -52,8 +53,7 @@ const Navbar = () => {
         className={`${headerFixed
           ? "fixed bg-gray-100 py-1 z-30  shadow-lg"
           : "z-30 bg-color py-1 "
-          } w-full  transition-all delay-75 ease-in-out  `}
-      >
+          } w-full  transition-all delay-75 ease-in-out  `}>
         <div className="relative">
           {/* For large screens */}
           <div className="px-2">
@@ -61,7 +61,7 @@ const Navbar = () => {
               {/* logo */}
               <img className="h-16 py-1" src="./logo.png" alt="" />
               {/* links */}
-              <div className="hidden lg:flex space-x-4 items-center">
+              <div className="hidden md:flex space-x-4 items-center">
                 {links.map((link) => (
                   <Link
                     to={link.url}
@@ -80,12 +80,16 @@ const Navbar = () => {
                     </small> </Link>
                   </div>
                 </div>
+                {/* avatar  nav */}
                 {user?.photoUrl && (
-                  <img className="avatar" alt="" src={user?.photoUrl} />
+                  <button onClick={showUserSetting ? () => setShowUserSetting(false) : () => setShowUserSetting(true)}>
+                    <img className="avatar p-1" alt="" src={user?.photoUrl} />
+                  </button>
                 )}
               </div>
               {/* menu button  */}
-              <div className="flex lg:hidden items-center space-x-3">
+              <div className="flex md:hidden items-center space-x-3">
+
                 <div className="relative"><Link to="/cartDetails">
                   <HiOutlineShoppingCart className="text-2xl text-blue-500" />
                 </Link>
@@ -95,6 +99,11 @@ const Navbar = () => {
                     </small>
                   </div>
                 </div>
+                {user?.photoUrl && (
+                  <button onClick={showUserSetting ? () => setShowUserSetting(false) : () => setShowUserSetting(true)}>
+                    <img className="avatar p-1" alt="" src={user?.photoUrl} />
+                  </button>
+                )}
                 {showMenu && (
                   <button
                     onClick={() => setShowMenu(false)}
@@ -165,11 +174,29 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div
-            className={`${showMenu ? "flex ease-in-out duration-300 " : "translate-x-full"
-              } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
-          >
+          {/* user setting  */}
+          <div className={`${showUserSetting ? "absolute" : "hidden"} top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}>
+            <div className="">
+              <div className="px-4">
+                <HiOutlineX onClick={() => setShowUserSetting(false)} className="border text-2xl  shadow-sm text-gray-400 rounded-md" />
+                <img className="h-16 w-16 rounded-full border-2 border-blue-500 mx-auto" src={user?.photoUrl} alt="" />
+                <h1 className="text-lg font-semibold text-center">{user?.userName}</h1>
+                <h6 className="text-sm text-center pb-2" >Student Id :5256336</h6>
+              </div>
+              <hr />
+              <div onClick={() => setShowUserSetting(false)} className="pb-2">
+                <Link to={"/userDashboard"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineViewGrid className="mr-2" />Dashboard</Link>
+                <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineBookmark className="mr-2" />Bookmark</Link>
+                <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineAdjustments className="mr-2" />Setting</Link>
+                <Link to={"/"} className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"><HiOutlineLogout className="mr-2" />LogOut</Link>
+              </div>
+            </div>
+          </div>
+
+          {/*Screen  small*/}
+          <div className={`${showMenu ? "flex ease-in-out duration-300 " : "hidden"} absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}>
             <div className="py-3 px-5 container mx-auto">
+
               <div
                 data-aos="fade-down"
                 className="grid justify-center justify-items-center pt-16 "
@@ -186,12 +213,14 @@ const Navbar = () => {
                     </a>
                   ))}
                 </ul>
-                <div></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
+
     </div>
   );
 };
