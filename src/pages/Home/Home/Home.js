@@ -10,12 +10,14 @@ import { ScrollTop } from "../../Scroll/Scroll";
 import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
+import Bookmark from "../../Bookmark/Bookmark";
 
 const Home = () => {
   return (
     <div>
       <TopHeader />
       <Feature />
+      <Bookmark/>
       <TopCategory />
       <Courses />
       <OurAchivement />
