@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
