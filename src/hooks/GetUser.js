@@ -3,17 +3,25 @@ import { getUserApi } from "../API";
 
 const GetUser = () => {
   const [user, setUser] = useState();
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(true);
+
+  const token = localStorage.getItem("access_token");
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const res = await getUserApi();
-    if (res?.error.true === "") {
+    if (token) {
+      const res = await getUserApi();
+      if (res?.error === true) {
+        setLoading(false);
+      } else {
+        setUser(res.data);
+        setLoading(false);
+      }
     } else {
-      setUser(res.data);
+      setLoading(false);
     }
   };
 

@@ -10,7 +10,6 @@ import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
 import CartDetails from "./pages/Cart/CartDetails";
-import Courses from "./pages/Home/Courses/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
 import Instructor from "./pages/CourseDetails/Instructor/Instructor";
@@ -19,6 +18,15 @@ import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
 import Failed from "./pages/Recipet/Failed";
 import Classes from './pages/Classes/Classes';
+import UserDashboard from "./pages/UserDashboard/UserDashboard/UserDashboard";
+import UserProfile from "./pages/UserDashboard/UserProfile/UserProfile";
+import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
+import UserOrderHistory from "./pages/UserDashboard/UserOrderHistory/UserOrderHistory";
+import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertificate";
+import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
+import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
+import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
+import Courses from './pages/Home/Courses/Courses';
 
 
 function App() {
@@ -61,6 +69,18 @@ function App() {
         {/* classes  */}
         <Route path="/classes" element={<Classes />} />
         {/* */}
+        {/* user dashboard  */}
+        <Route path="/userDashboard" element={<UserDashboard />} >
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="address" element={<UserAddress />} />
+          <Route path="education" element={<UserEducation />} />
+          <Route path="orderHistory" element={<UserOrderHistory />} />
+          <Route path="certificate" element={<UserCertificate />} />
+          <Route path="createAdmin" element={<CreateAdmin />} />
+          <Route path="addNe" element={<AddNewCourse />} />
+          <Route path="" element={<UserProfile />} />
+        </Route>
+        {/*  */}
         <Route path="/login" element={<Login />} />
         <Route path="/enrollcourse" element={<EnrollCourse />} />
         <Route path="/register" element={<Register />} />

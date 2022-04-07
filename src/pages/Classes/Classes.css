@@ -1,0 +1,4 @@
+.course-content-list {
+    overflow-y: scroll !important;
+    max-height: 500px !important;
+}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { useForm } from "react-hook-form";
 import { Toast } from "../../../Componets/Toast";
 import { signUpApi, VerifyAPi } from "../../../API";
@@ -19,8 +18,8 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     const res = await signUpApi(data);
-    console.log(res);
     if (res?.error === false) {
+      setError("");
       setUser(res.data);
       setVerificationShow(true);
       Toast.fire({
@@ -35,7 +34,7 @@ const Login = () => {
     } else {
       Toast.fire({
         icon: "error",
-        title: "something went wrong",
+        title: res.message,
       });
     }
   };
@@ -59,7 +58,7 @@ const Login = () => {
           icon: "success",
           title: `Your Aceount Succesfully Login`,
         });
-        navigate("/home");
+        window.location.href = "/home";
       } else {
         setError(res.message);
       }
