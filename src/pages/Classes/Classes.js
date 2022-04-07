@@ -8,7 +8,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const url = "https://youtu.be/NAouYzIJAjU";
+const url = "https://youtu.be/Ke90Tje7VS0";
 // dropdown list 
 
 
@@ -17,13 +17,10 @@ const Classes = () => {
     return (
         <div className='container mx-auto py-10'>
             <h1 className='text-3xl'>Course Name: React Js</h1>
-            <div class="grid
-            sm:grid-cols-2
-            md:grid-cols-2
-            lg:grid-cols-3
+            <div class="grid grid-col-1 lg:grid-col-3
  ...">
                 {/* recorder  */}
-                <div class="col-span-2 p-5 py-12 rounded-lg drop-shadow-xl border-2 m-5">
+                <div class="lg:col-span-2 p-5 py-12 rounded-lg drop-shadow-xl border-2 m-5">
                     <div>
                         <ReactPlayer
                             className="react-player col-span-2"
@@ -46,7 +43,7 @@ const Classes = () => {
                         />
                     </div>
                     <div className='mt-5 flex justify-between	items-center'>
-                        <h2 className='text-2xl '>Lorem ipsum dolor sit amet.</h2>
+                        <h2 className='text-2xl '>What is react js?</h2>
                         <div className=''>
                             <Button variant="outlined" className='' style={{ border: "2px solid rgb(129 140 248)", color: "rgb(129 140 248)", margin: "5px" }}>Previous</Button>
                             <Button variant="contained" style={{ backgroundColor: "rgb(129 140 248)", margin: "5px" }}>Next</Button>
@@ -54,14 +51,14 @@ const Classes = () => {
                     </div>
                 </div>
                 {/* dropdown list  */}
-                <div class="col-span-1 course-content-list flex-column items-center justify-center mx-auto" >
+                <div class="lg:col-span-1 overflow-y-scroll bg-red-300 p-5" >
                     <div className=''>
-                        <Accordion >
+                        <Accordion>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
-                                className='rounded-md flex  '
+                                className='rounded-md flex justify-between '
                             >
                                 <Typography>Welcome to React</Typography>
                             </AccordionSummary>
@@ -72,7 +69,7 @@ const Classes = () => {
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion>
+                        <Accordion className='w-full'>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2a-content"
