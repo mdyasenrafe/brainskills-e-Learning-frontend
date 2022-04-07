@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import {
@@ -11,6 +11,7 @@ import {
 } from "react-icons/hi";
 
 import GetUser from "../../../hooks/GetUser";
+import { getCartApi } from "../../../API";
 // links
 const links = [
   {
@@ -56,6 +57,19 @@ const Navbar = () => {
     window.location.href = "/home";
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const [carts, setCarts] = useState([]);
+
+  const fetchData = async () => {
+    const res = await getCartApi();
+    if (res?.error?.true === true) {
+    } else {
+      setCarts(res.data);
+    }
+  };
+
   return (
     <div className="px-4">
       {!headerFixed && <TopNavbar />}
@@ -74,7 +88,7 @@ const Navbar = () => {
               <Link to="/">
                 <img
                   className="h-16 py-1 cursor-pointer"
-                  src="./logo.png"
+                  src="https://i.ibb.co/0YX9h1H/download-2.png"
                   alt=""
                 />
               </Link>
@@ -98,7 +112,7 @@ const Navbar = () => {
                     {" "}
                     <Link to="/cart">
                       <small className="flex items-center justify-center">
-                        0
+                        {carts?.length}
                       </small>{" "}
                     </Link>
                   </div>
@@ -124,7 +138,7 @@ const Navbar = () => {
                   </Link>
                   <div className="absolute -top-2 -right-1 bg-red-500 text-xs rounded-full w-4 h-4  text-white">
                     <small className="flex items-center justify-center">
-                      0
+                      {carts?.length}
                     </small>
                   </div>
                 </div>

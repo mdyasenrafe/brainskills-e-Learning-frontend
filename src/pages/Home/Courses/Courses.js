@@ -19,8 +19,6 @@ const Courses = () => {
     }
   };
 
-  console.log(courses);
-
   return (
     <section className=" container mx-auto px-4 py-10">
       <div className="container grid grid-cols-1 md:grid-cols-2 ">
@@ -48,7 +46,7 @@ const Courses = () => {
       <div className="container mx-auto p-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto ">
           {courses?.map((course, index) => (
-            <Link to={`courseDetails/${course?._id}`}>
+            <Link to={`/courseDetails/${course?._id}`}>
               <div className="shadow-md rounded-md border-b-4 hover:border-b-blue-400 border-b-blue-300 bg-slate-100 rounded-t-lg overflow-hidden">
                 <div className="overflow-hidden">
                   <img

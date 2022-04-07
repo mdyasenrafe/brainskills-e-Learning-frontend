@@ -17,6 +17,18 @@ const apiUrl = {
   getDashboard: "dashboard/getDashboard",
   addCart: "cart/addCart",
   getCart: "cart/getCart",
+  postPayment: "payment/init",
+};
+
+export const postPaymentApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.postPayment, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
 };
 
 export const addCartApi = async (body) => {
