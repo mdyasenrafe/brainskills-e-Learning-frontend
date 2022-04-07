@@ -10,6 +10,7 @@ import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
 import CartDetails from "./pages/Cart/CartDetails";
+import Courses from "./pages/Home/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
 import Instructor from "./pages/CourseDetails/Instructor/Instructor";
@@ -26,7 +27,6 @@ import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertifica
 import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
 import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
-import Courses from './pages/Home/Courses/Courses';
 
 
 function App() {
@@ -77,7 +77,7 @@ function App() {
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
-          <Route path="addNe" element={<AddNewCourse />} />
+          <Route path="addNewCourse" element={<AddNewCourse />} />
           <Route path="" element={<UserProfile />} />
         </Route>
         {/*  */}
