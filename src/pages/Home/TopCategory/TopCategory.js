@@ -50,7 +50,6 @@ const courses = [
     imgs: "https://www.pinclipart.com/picdir/big/545-5450447_web-development-responsive-website-design-benefits-clipart.png",
     courseName: "Web Design ",
   },
-
 ];
 
 const TopCategory = () => {
@@ -65,10 +64,8 @@ const TopCategory = () => {
             {/* animation */}
             <div className="absolute animate-bounce -bottom-4 left-0 w-20 h-4">
               <div className="w-16 h-1.5 flex rounded-full  bg-blue-500">
-                <div className="w-6 h-1.5  rounded-full  bg-red-500">
-                </div>
-                <div className="w-6 h-1.5  rounded-full  bg-yellow-500">
-                </div>
+                <div className="w-6 h-1.5  rounded-full  bg-red-500"></div>
+                <div className="w-6 h-1.5  rounded-full  bg-yellow-500"></div>
               </div>
             </div>
           </span>
@@ -84,25 +81,20 @@ const TopCategory = () => {
           }}
           navigation={true}
           breakpoints={{
-
             "@0.50": {
               slidesPerView: 1,
             },
             "@1.00": {
               slidesPerView: 2,
-            }
-            ,
+            },
             "@1.25": {
               slidesPerView: 3,
-              spaceBetween: 0
-            }
-            ,
+              spaceBetween: 0,
+            },
             "@1.50": {
               slidesPerView: 4,
-              spaceBetween: 0
-            }
-            ,
-
+              spaceBetween: 0,
+            },
             "@1.75": {
               slidesPerView: 5,
             },

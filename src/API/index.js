@@ -6,6 +6,7 @@ const url = "https://brainskillapi.herokuapp.com/";
 const apiUrl = {
   getInstructor: "instructor/getInstructor",
   getCourses: "course/getCourse",
+  getCourseDetails: "course/courseDetails",
   getBlogApi: "blog/getBlog",
   getEventApi: "event/getEvent",
   getReview: "review/getReview",
@@ -13,16 +14,37 @@ const apiUrl = {
   verifyUrl: "signin/verifyAceount",
   signUrl: "signin/signin",
   getUser: "signin/getUser",
-  getCart: "cart/getCart",
   getDashboard: "dashboard/getDashboard",
+  addCart: "cart/addCart",
+  getCart: "cart/getCart",
+  postPayment: "payment/init",
 };
 
-
-export const getCartApi = async () => {
+export const postPaymentApi = async (body) => {
   try {
-    const res = await axios.get(url + apiUrl.getCart, {
+    const res = await axios.post(url + apiUrl.postPayment, body, {
       headers: headers,
     });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const addCartApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addCart, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const getCourseDetailsApi = async (id) => {
+  try {
+    const res = await axios.post(url + apiUrl.getCourseDetails, id);
     return res.data;
   } catch (err) {
     console.error({ err });
@@ -39,6 +61,18 @@ export const getDashboardApi = async () => {
     console.error({ err });
   }
 };
+
+export const getCartApi = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getCart, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
 export const getUserApi = async () => {
   try {
     const res = await axios.get(url + apiUrl.getUser, {
@@ -117,5 +151,3 @@ export const getReview = async (body) => {
     console.log({ err });
   }
 };
-
-

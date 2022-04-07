@@ -73,7 +73,7 @@ function App() {
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
-          <Route path="addNewCourse" element={<AddNewCourse />} />
+          <Route path="addNe" element={<AddNewCourse />} />
           <Route path="" element={<UserProfile />} />
         </Route>
         {/*  */}

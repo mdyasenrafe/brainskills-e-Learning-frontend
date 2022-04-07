@@ -5,8 +5,11 @@ import { AiOutlineMail } from "react-icons/ai";
 import { AiOutlineLogin } from "react-icons/ai";
 import { AiOutlineLock } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import GetUser from "../../../hooks/GetUser";
 
 const TopNavbar = () => {
+  const { user } = GetUser();
+
   return (
     <div className=" border-b-2 pt-4 py-3">
       <div className="container mx-auto flex justify-between px-4">
@@ -20,20 +23,26 @@ const TopNavbar = () => {
             brainskills@gmail.com
           </h1>
         </div>
-        <div className="flex-none flex">
-          <Link to="/login">
-            <h1 className="mr-2 flex items-center">
-              <AiOutlineLogin className="mr-2 text-blue-500" />
-              Login
-            </h1>
-          </Link>
-          <Link to="/register">
-            <h1 className="mr-2 flex items-center">
-              <AiOutlineLock className="mr-2 text-blue-500" />
-              Registration
-            </h1>
-          </Link>
-        </div>
+        {user?.userPhoneNumber ? (
+          <h1 className="mr-2 flex items-center">{user?.userName}</h1>
+        ) : (
+          <>
+            <div className="flex-none flex">
+              <Link to="/login">
+                <h1 className="mr-2 flex items-center">
+                  <AiOutlineLogin className="mr-2 text-blue-500" />
+                  Login
+                </h1>
+              </Link>
+              <Link to="/register">
+                <h1 className="mr-2 flex items-center">
+                  <AiOutlineLock className="mr-2 text-blue-500" />
+                  Registration
+                </h1>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
