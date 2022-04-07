@@ -14,7 +14,7 @@ const CartDetails = () => {
 
   const fetchData = async () => {
     const res = await getCartApi();
-    if (res?.error?.true === true) {
+    if (res?.error === true) {
       setLoading(false);
     } else {
       setLoading(false);

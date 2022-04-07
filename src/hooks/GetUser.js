@@ -14,7 +14,7 @@ const GetUser = () => {
   const fetchData = async () => {
     if (token) {
       const res = await getUserApi();
-      if (res?.error.true === "") {
+      if (res?.error === true) {
         setLoading(false);
       } else {
         setUser(res.data);

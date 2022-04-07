@@ -64,7 +64,7 @@ const Navbar = () => {
 
   const fetchData = async () => {
     const res = await getCartApi();
-    if (res?.error?.true === true) {
+    if (res?.error === true) {
     } else {
       setCarts(res.data);
     }
