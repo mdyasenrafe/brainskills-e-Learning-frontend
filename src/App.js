@@ -24,6 +24,8 @@ import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
 import UserOrderHistory from "./pages/UserDashboard/UserOrderHistory/UserOrderHistory";
 import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertificate";
 import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
+import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
+import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
+          <Route path="createAdmin" element={<CreateAdmin />} />
+          <Route path="addNewCourse" element={<AddNewCourse />} />
           <Route path="" element={<UserProfile />} />
         </Route>
         {/*  */}

@@ -3,14 +3,14 @@ import { NavLink, Outlet } from 'react-router-dom';
 import GetUser from "../../../hooks/GetUser";
 import { AiOutlineUser, } from "react-icons/ai";
 import { GrCertificate } from "react-icons/gr";
-import { MdOutlineSell, MdOutlinePlace } from "react-icons/md";
+import { MdOutlineSell, MdOutlinePlace, MdOutlineLibraryAdd, MdAddModerator } from "react-icons/md";
 import { BsBook } from "react-icons/bs";
 const UserDashboard = () => {
     const { user } = GetUser();
     console.log(GetUser);
     return (
         <div>
-            <div className='container mx-auto py-20'>
+            <div className='container mx-auto py-20 px-4'>
                 <div className='lg:flex gap-6 space-y-10 lg:space-y-0'>
                     {/* side slider */}
                     <div className='shadow-lg h-full border lg:w-3/12 rounded-lg  py-8'>
@@ -30,18 +30,25 @@ const UserDashboard = () => {
                             <NavLink to="orderHistory" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                                 <MdOutlineSell className='mr-3' />   Order History
                             </NavLink>
-                            <NavLink to="certificate" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link ')}>
+                            <NavLink to="certificate" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                                 <GrCertificate className='mr-3' />   Certificate
                             </NavLink>
+                            {
+                                user?.role === "admin" && <div>
+                                    <NavLink to="createAdmin" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
+                                        <MdAddModerator className='mr-3' />   Create Admin
+                                    </NavLink>
+                                    <NavLink to="addNewCourse" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link ')}>
+                                        <MdOutlineLibraryAdd className='mr-3' />   Add New Course
+                                    </NavLink>
+                                </div>
+                            }
                         </div>
                     </div>
-
-
                     {/* document */}
                     <div className='lg:w-8/12 p-3 border shadow-lg rounded-lg'>
                         <Outlet />
                     </div>
-
                 </div>
             </div>
         </div>
