@@ -66,9 +66,12 @@ function App() {
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
         </Route>
+<<<<<<< HEAD
         {/* classes  */}
         <Route path="/classes" element={<Classes />} />
         {/* */}
+=======
+>>>>>>> 57a2c491a38a8422fb4920fb756a3b205766e40a
         {/* user dashboard  */}
         <Route path="/userDashboard" element={<UserDashboard />} >
           <Route path="profile" element={<UserProfile />} />
