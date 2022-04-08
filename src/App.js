@@ -26,6 +26,8 @@ import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertifica
 import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
 import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
+import Bookmark from "./pages/Bookmark/Bookmark";
+
 
 
 function App() {
@@ -57,6 +59,9 @@ function App() {
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}>
         </Route>
+        <Route>
+        <Route path="/bookmark" element={<Bookmark />} />
+        </Route>
         {/* course details*/}
         <Route path="/courseId" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
@@ -64,6 +69,7 @@ function App() {
           <Route path="instructor" element={<Instructor />} />
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
+          
         </Route>
         {/* user dashboard  */}
         <Route path="/userDashboard" element={<UserDashboard />} >
