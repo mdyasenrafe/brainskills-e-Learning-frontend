@@ -34,7 +34,7 @@ const Bookmark = () => {
         <div>
             <div className='h-56 bg-blue-700 p-16'>
                 <h1 className='text-3xl text-center font-boled text-white'>Bookmark History</h1>
-                <p className='text-center pb-5 text-white'>Hello You can organize your things here. You can use Tag, search to find any specific bookmarked video.
+                <p className='text-center pb-5 text-white'>Hello You can organize your things here You can use Tag, search to find any specific bookmarked video.
                     <br /> Hopefully you like it. Stay with us. We won let you go..huh</p>
             </div>
             <div className="flex justify-center " style={{ marginTop: -35, zIndex: 9999999 }}>
