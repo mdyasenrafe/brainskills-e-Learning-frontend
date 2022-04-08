@@ -3,21 +3,21 @@ import Reviews from "../Reviews/Reviews";
 import JoinCommunity from "../JoinCommunity/JoinCommunity";
 import TopCategory from "../TopCategory/TopCategory";
 import Instructor from "../Instructor/Instructor";
-import Courses from "../Courses/Courses/Courses";
+
 import Blogs from "../Blogs/Blogs";
 import Events from "../Events/Events";
 import { ScrollTop } from "../../Scroll/Scroll";
 import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
-import Bookmark from "../../Bookmark/Bookmark";
+import Courses from "../Courses/Courses";
+
 
 const Home = () => {
   return (
     <div>
       <TopHeader />
       <Feature />
-      <Bookmark/>
       <TopCategory />
       <Courses />
       <OurAchivement />

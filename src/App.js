@@ -5,11 +5,12 @@ import CourseDetails from "./pages/CourseDetails/CourseDetails";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
+import EnrollCourse from "./pages/EnrollCourse/EnrollCourse";
 import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
 import CartDetails from "./pages/Cart/CartDetails";
-import Courses from "./pages/Home/Courses/Courses/Courses";
+import Courses from "./pages/Home/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
 import Instructor from "./pages/CourseDetails/Instructor/Instructor";
@@ -17,6 +18,16 @@ import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
 import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
 import Failed from "./pages/Recipet/Failed";
+import UserDashboard from "./pages/UserDashboard/UserDashboard/UserDashboard";
+import UserProfile from "./pages/UserDashboard/UserProfile/UserProfile";
+import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
+import UserOrderHistory from "./pages/UserDashboard/UserOrderHistory/UserOrderHistory";
+import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertificate";
+import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
+import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
+import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
+import Bookmark from "./pages/Bookmark/Bookmark";
+
 
 
 function App() {
@@ -35,7 +46,7 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <Routes> 
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
@@ -48,6 +59,9 @@ function App() {
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}>
         </Route>
+        <Route>
+        <Route path="/bookmark" element={<Bookmark />} />
+        </Route>
         {/* course details*/}
         <Route path="/courseId" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
@@ -55,9 +69,22 @@ function App() {
           <Route path="instructor" element={<Instructor />} />
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
+          
         </Route>
-        {/* */}
+        {/* user dashboard  */}
+        <Route path="/userDashboard" element={<UserDashboard />} >
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="address" element={<UserAddress />} />
+          <Route path="education" element={<UserEducation />} />
+          <Route path="orderHistory" element={<UserOrderHistory />} />
+          <Route path="certificate" element={<UserCertificate />} />
+          <Route path="createAdmin" element={<CreateAdmin />} />
+          <Route path="addNewCourse" element={<AddNewCourse />} />
+          <Route path="" element={<UserProfile />} />
+        </Route>
+        {/*  */}
         <Route path="/login" element={<Login />} />
+        <Route path="/enrollcourse" element={<EnrollCourse />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

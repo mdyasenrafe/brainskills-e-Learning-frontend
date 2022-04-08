@@ -5,6 +5,8 @@ const url = "https://brainskillapi.herokuapp.com/";
 
 const apiUrl = {
   getInstructor: "instructor/getInstructor",
+  getCourses: "course/getCourse",
+  getCourseDetails: "course/courseDetails",
   getBlogApi: "blog/getBlog",
   getEventApi: "event/getEvent",
   getReview: "review/getReview",
@@ -12,9 +14,64 @@ const apiUrl = {
   verifyUrl: "signin/verifyAceount",
   signUrl: "signin/signin",
   getUser: "signin/getUser",
+  getDashboard: "dashboard/getDashboard",
+  addCart: "cart/addCart",
+  getCart: "cart/getCart",
+  postPayment: "payment/init",
 };
 
-const token = localStorage.getItem("access_token");
+export const postPaymentApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.postPayment, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const addCartApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addCart, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const getCourseDetailsApi = async (id) => {
+  try {
+    const res = await axios.post(url + apiUrl.getCourseDetails, id);
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const getDashboardApi = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getDashboard, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const getCartApi = async () => {
+  try {
+    const res = await axios.get(url + apiUrl.getCart, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
 
 export const getUserApi = async () => {
   try {
@@ -60,6 +117,15 @@ export const getInstructor = async (body) => {
     console.error({ err });
   }
 };
+export const getCourses = async (body) => {
+  try {
+    const res = await axios.get(url + apiUrl.getCourses);
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
 export const getBlogs = async (body) => {
   try {
     const res = await axios.get(url + apiUrl.getBlogApi);

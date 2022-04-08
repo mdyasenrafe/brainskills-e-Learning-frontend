@@ -1,4 +1,4 @@
-export var headers = localStorage.getItem("access_token")
+export const headers = localStorage.getItem("access_token")
   ? {
       Authorization: "Bearer " + localStorage.getItem("access_token"),
       // "Content-Type": "application/json",

@@ -20,11 +20,12 @@ const Login = () => {
       Toast.fire({
         icon: "success",
         title: "Signed in successfully",
-      }).then(() => navigate("/home"));
+      });
+      window.location.href = "/home";
     } else {
       Toast.fire({
         icon: "error",
-        title: "something went wrong",
+        title: res.message,
       });
     }
   };
