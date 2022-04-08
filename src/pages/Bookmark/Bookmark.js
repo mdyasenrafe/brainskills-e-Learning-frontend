@@ -32,7 +32,7 @@ const Bookmark = () => {
     };
     return (
         <div>
-            <div className='h-56 bg-blue-700 p-16'>
+            <div className=' gradi h-56 bg-blue-700 p-16'>
                 <h1 className='text-3xl text-center font-boled text-white'>Bookmark History</h1>
                 <p className='text-center pb-5 text-white'>Hello You can organize your things here You can use Tag, search to find any specific bookmarked video.
                     <br /> Hopefully you like it. Stay with us. We won let you go..huh</p>
@@ -42,7 +42,8 @@ const Bookmark = () => {
 
                     <form className=" flex">
                         <input 
-                            className="shadow border rounded-l-md w-96 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow border rounded-l-md w-96 py-3 px-3 text-gray-700 
+                            icon"
                             type="text"
                             placeholder="Search by bookmark tag"                          
                         /> 
