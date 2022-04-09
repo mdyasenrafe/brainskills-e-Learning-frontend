@@ -10,7 +10,7 @@ import Navbar from "./pages/Home/Navbar/Navbar";
 import { useEffect } from "react";
 import Footer from "./pages/Shared/Footer/Footer";
 import CartDetails from "./pages/Cart/CartDetails";
-import Courses from "./pages/Home/Courses/Courses/Courses";
+import Courses from "./pages/Home/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
 import Instructor from "./pages/CourseDetails/Instructor/Instructor";
@@ -24,6 +24,10 @@ import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
 import UserOrderHistory from "./pages/UserDashboard/UserOrderHistory/UserOrderHistory";
 import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertificate";
 import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
+import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
+import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
+import Bookmark from "./pages/Bookmark/Bookmark";
+
 
 
 function App() {
@@ -55,6 +59,9 @@ function App() {
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}>
         </Route>
+        <Route>
+        <Route path="/bookmark" element={<Bookmark />} />
+        </Route>
         {/* course details*/}
         <Route path="/courseId" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
@@ -62,6 +69,7 @@ function App() {
           <Route path="instructor" element={<Instructor />} />
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
+          
         </Route>
         {/* user dashboard  */}
         <Route path="/userDashboard" element={<UserDashboard />} >
@@ -70,6 +78,8 @@ function App() {
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
+          <Route path="createAdmin" element={<CreateAdmin />} />
+          <Route path="addNewCourse" element={<AddNewCourse />} />
           <Route path="" element={<UserProfile />} />
         </Route>
         {/*  */}
