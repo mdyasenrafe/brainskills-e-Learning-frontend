@@ -10,12 +10,8 @@ import { ScrollTop } from "../../Scroll/Scroll";
 import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
-<<<<<<< HEAD
-import CourseQuiz from "../CourseQuiz/CourseQuiz";
-=======
 import Courses from "../Courses/Courses";
 
->>>>>>> d20706583e8c788018ecaa867e6537759756516e
 
 const Home = () => {
   return (
@@ -27,7 +23,6 @@ const Home = () => {
       <OurAchivement />
       <Instructor />
       <Events />
-      <CourseQuiz/>
       <Blogs />
       <Reviews />
       <JoinCommunity />
