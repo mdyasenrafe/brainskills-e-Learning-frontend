@@ -33,7 +33,7 @@ const links = [
     id: 4,
     name: "Event",
     url: "/event",
-  },
+  }
 ];
 
 const Navbar = () => {
@@ -248,7 +248,7 @@ const Navbar = () => {
                   Dashboard
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/bookmark"}
                   className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"
                 >
                   <HiOutlineBookmark className="mr-2" />
