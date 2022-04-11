@@ -27,8 +27,7 @@ import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
 import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
-
-
+import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 
 function App() {
   const location = useLocation();
@@ -55,12 +54,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/courseDetails" element={<CourseDetails />} />
+        <Route path="/courseDetails/:id" element={<CourseDetails />} />
         <Route path="/cart" element={<CartDetails />} />
-        <Route path="/course" element={<Courses />}>
-        </Route>
+        <Route path="/course" element={<Courses />}></Route>
+        <Route path="/quiz" element={<CourseQuiz />}></Route>
         <Route>
-        <Route path="/bookmark" element={<Bookmark />} />
+          <Route path="/bookmark" element={<Bookmark />} />
         </Route>
         {/* course details*/}
         <Route path="/courseId" element={<CourseDetails />}>
@@ -69,10 +68,9 @@ function App() {
           <Route path="instructor" element={<Instructor />} />
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
-          
         </Route>
         {/* user dashboard  */}
-        <Route path="/userDashboard" element={<UserDashboard />} >
+        <Route path="/userDashboard" element={<UserDashboard />}>
           <Route path="profile" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
           <Route path="education" element={<UserEducation />} />
