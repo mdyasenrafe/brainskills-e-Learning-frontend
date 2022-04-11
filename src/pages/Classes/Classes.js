@@ -8,22 +8,129 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import { MdPlayCircleOutline } from "react-icons/md";
+
+
 const url = "https://youtu.be/Ke90Tje7VS0";
 // dropdown list 
-
+const qna = [
+    {
+        id: 1,
+        name: "Welcome to React",
+        video: [
+            {
+                id: 1,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 2,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 3,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 4,
+                title: "React fast videos",
+                link: "/"
+            }
+        ]
+    },
+    {
+        id: 2,
+        name: "Welcome to React",
+        video: [
+            {
+                id: 1,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 2,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 3,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 4,
+                title: "React fast videos",
+                link: "/"
+            }
+        ]
+    },
+    {
+        id: 3,
+        name: "Welcome to React",
+        video: [
+            {
+                id: 1,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 2,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 3,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 4,
+                title: "React fast videos",
+                link: "/"
+            }
+        ]
+    },
+    {
+        id: 4,
+        name: "Welcome to React",
+        video: [
+            {
+                id: 1,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 2,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 3,
+                title: "React fast videos",
+                link: "/"
+            },
+            {
+                id: 4,
+                title: "React fast videos",
+                link: "/"
+            }
+        ]
+    }
+]
 
 const Classes = () => {
 
     return (
         <div className='container mx-auto py-10'>
             <h1 className='text-3xl'>Course Name: React Js</h1>
-            <div class="grid grid-col-1 lg:grid-col-3
- ...">
+            <div className="lg:flex space-y-10 lg:space-x-8 ">
                 {/* recorder  */}
-                <div class="lg:col-span-2 p-5 py-12 rounded-lg drop-shadow-xl border-2 m-5">
-                    <div>
+                <div className="w-full lg:w-8/12   rounded-lg drop-shadow-xl border-2">
+                    <div className='overflow-hidden rounded-md'>
                         <ReactPlayer
-                            className="react-player col-span-2"
+                            className="react-player"
                             url={url}
                             config={{
                                 youtube: {
@@ -42,7 +149,7 @@ const Classes = () => {
                             onBuffer
                         />
                     </div>
-                    <div className='mt-5 flex justify-between	items-center'>
+                    <div className='py-4 px-2 flex justify-between	items-center'>
                         <h2 className='text-2xl '>What is react js?</h2>
                         <div className=''>
                             <Button variant="outlined" className='' style={{ border: "2px solid rgb(129 140 248)", color: "rgb(129 140 248)", margin: "5px" }}>Previous</Button>
@@ -51,407 +158,30 @@ const Classes = () => {
                     </div>
                 </div>
                 {/* dropdown list  */}
-                <div class="lg:col-span-1 overflow-y-scroll bg-red-300 p-5" >
+                <div className="w-full lg:w-4/12 overflow-y-scroll " >
                     <div className=''>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                className='rounded-md flex justify-between '
-                            >
-                                <Typography>Welcome to React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails >
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion className='w-full'>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam omnis unde veritatis! Error facilis aliquid modi dolore architecto soluta neque, repellat magni accusamus. Fugit, quia. Doloremque nihil ex consectetur iure commodi cum deleniti cupiditate itaque quia voluptate ut labore in dolorem nesciunt obcaecati animi fugiat repellat maxime harum, officiis nisi!
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                                className='rounded-md'
-                            >
-                                <Typography>Basic React</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
+                        {
+                            qna.map(item => (
+                                <Accordion key={item?.id}>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                    >
+                                        <Typography>{item?.name}</Typography>
+                                    </AccordionSummary>
+
+                                    <AccordionDetails >
+                                        <Typography>
+                                            {
+                                                item.video.map(list => <div className='grid space-y-2 justify-start '>
+                                                    <button className='flex w-full px-2 items-center text-blue-800 text-lg'><MdPlayCircleOutline className='mr-1 text-green-700 text-xl' />{list.title}</button>                                         </div>)
+                                            }
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
