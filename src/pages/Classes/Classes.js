@@ -1,7 +1,7 @@
 import React from 'react';
 import './Classes.css'
 import ReactPlayer from 'react-player/lazy';
-import { FiBookmark } from "react-icons/fi";
+import { FiBookmark, FiAlertTriangle } from "react-icons/fi";
 
 const url = "https://youtu.be/Ke90Tje7VS0";
 // dropdown list 
@@ -107,11 +107,11 @@ const Classes = () => {
 
     return (
         <div className='bg-white'>
-            <div className='container mx-auto py-10 px-4 '>
+            <div className='container mx-auto pt-5 px-4  '>
                 <h1 className='text-3xl py-2'>Course Name: React Js</h1>
-                <div className="lg:flex space-y-10 lg:space-y-0 lg:space-x-8">
+                <div className="lg:flex space-y-10 lg:space-y-0 lg:space-x-8  mb-0">
                     {/* recorder  */}
-                    <div className="w-full lg:w-8/12 overflow-hidden rounded-md ">
+                    <div className="w-full h-fit lg:w-8/12 overflow-hidden rounded-md ">
                         <div className='relative'>
                             <ReactPlayer
                                 className="react-player"
@@ -143,23 +143,25 @@ const Classes = () => {
                                 <button className='py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full bg-blue-600 text-white'>Next</button>
                             </div>
                         </div>
-                        <div>
-                            <h4 className='text-red-500'>Copyright warning</h4>
+                        <div className='px-4 pb-5'>
+                            <h4 className='text-red-500 flex items-center'><FiAlertTriangle className='text-xl mr-3' />Copyright warning</h4>
                         </div>
                     </div>
                     {/* dropdown list  */}
-                    <div className="lg:w-4/12 " >
-                        <div className='py-3 mb-4 px-4 bg-blue-400 border rounded-t-md '>
-                            <input className='py-2 w-full outline-none rounded-sm bg-gray-50 px-3' type="text " placeholder='Search lesson' />
-                        </div>
-                        <div className='w-full overflow-y-scroll h-3/6 rounded-lg overflow-hidden  '>
-                            {
-                                qna.map(item => (
-                                    <div key={item?.id}>
-                                        <button className='w-full text-left p-2 py-3 mb-2 shadow-sm rounded-lg font-semibold bg-white border border-blue-100 text-gray-800 hover:shadow-md hover:border-emerald-400 ease-in-out duration-300 '>{item.name}</button>
-                                    </div>
-                                ))
-                            }
+                    <div className="lg:w-4/12" >
+                        <div>
+                            <div className='py-3 mb-4 px-4 bg-blue-400 border rounded-t-md '>
+                                <input className='py-2 w-full outline-none rounded-sm bg-gray-50 px-3' type="text " placeholder='Search lesson' />
+                            </div>
+                            <div className='course-content-list rounded-lg '>
+                                {
+                                    qna.map(item => (
+                                        <div key={item?.id}>
+                                            <button className='w-full text-left p-2 py-3 mb-2 shadow-sm rounded-lg font-semibold bg-white border border-blue-100 text-gray-800 hover:shadow-md hover:border-emerald-400 ease-in-out duration-300 '>{item.name}</button>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
