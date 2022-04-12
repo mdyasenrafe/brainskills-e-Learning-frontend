@@ -62,7 +62,7 @@ function App() {
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>
         {/* course details*/}
-        <Route path="/courseId" element={<CourseDetails />}>
+        <Route path="/courseDetails/:id" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
           <Route path="instructor" element={<Instructor />} />
@@ -73,6 +73,7 @@ function App() {
         <Route path="/userDashboard" element={<UserDashboard />}>
           <Route path="profile" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
+          <Route path="enrollcourse" element={<EnrollCourse />} />
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
