@@ -28,6 +28,7 @@ import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
+import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 
 function App() {
   const location = useLocation();
@@ -73,6 +74,7 @@ function App() {
         <Route path="/userDashboard" element={<UserDashboard />}>
           <Route path="profile" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
+          <Route path="overView" element={<UserOverView />} />
           <Route path="enrollcourse" element={<EnrollCourse />} />
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />

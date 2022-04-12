@@ -27,6 +27,9 @@ const UserDashboard = () => {
               <NavLink to="education" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <BsBook className='mr-3' />   Education
               </NavLink>
+              <NavLink to="overView" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
+                <BsBook className='mr-3' />  Over View
+              </NavLink>
               <NavLink to="enrollcourse" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <BsBook className='mr-3' />   Enroll Course
               </NavLink>
