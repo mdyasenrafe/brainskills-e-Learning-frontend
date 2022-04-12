@@ -28,6 +28,7 @@ import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
+import SocketIo from "./pages/SocketIo/SocketIo";
 
 function App() {
   const location = useLocation();
@@ -58,6 +59,7 @@ function App() {
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}></Route>
         <Route path="/quiz" element={<CourseQuiz />}></Route>
+        <Route path="/socket" element={<SocketIo/>}></Route>
         <Route>
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>
