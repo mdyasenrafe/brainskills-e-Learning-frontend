@@ -10,7 +10,7 @@ import { ScrollTop } from "../../Scroll/Scroll";
 import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
-import Courses from "../Courses/Courses";
+import Courses from "../../Home/Courses/Courses";
 
 
 const Home = () => {

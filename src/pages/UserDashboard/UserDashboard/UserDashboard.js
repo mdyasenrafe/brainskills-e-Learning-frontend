@@ -3,6 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import GetUser from "../../../hooks/GetUser";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrCertificate } from "react-icons/gr";
+import { FaChartBar } from "react-icons/fa";
 import { MdOutlineSell, MdOutlinePlace, MdOutlineLibraryAdd, MdAddModerator } from "react-icons/md";
 import { BsBook } from "react-icons/bs";
 const UserDashboard = () => {
@@ -24,8 +25,14 @@ const UserDashboard = () => {
               <NavLink to="address" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <MdOutlinePlace className='mr-3' />   Address
               </NavLink>
+              <NavLink to="overview" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
+                <FaChartBar className='mr-3' />   Over view
+              </NavLink>
               <NavLink to="education" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <BsBook className='mr-3' />   Education
+              </NavLink>
+              <NavLink to="overView" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
+                <BsBook className='mr-3' />  Over View
               </NavLink>
               <NavLink to="enrollcourse" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <BsBook className='mr-3' />   Enroll Course

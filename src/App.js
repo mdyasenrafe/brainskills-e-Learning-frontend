@@ -29,6 +29,8 @@ import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
+import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
+import Classes from "./pages/Classes/Classes";
 
 function App() {
   const location = useLocation();
@@ -45,7 +47,7 @@ function App() {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
@@ -62,7 +64,7 @@ function App() {
         <Route>
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>
-        {/* course details*/}
+        {/* course details // //*/}
         <Route path="/courseDetails/:id" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
@@ -77,6 +79,7 @@ function App() {
         <Route path="/userDashboard" element={<UserDashboard />}>
           <Route path="profile" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
+          <Route path="overView" element={<UserOverView />} />
           <Route path="enrollcourse" element={<EnrollCourse />} />
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
@@ -88,6 +91,7 @@ function App() {
         {/*  */}
         <Route path="/login" element={<Login />} />
         <Route path="/enrollcourse" element={<EnrollCourse />} />
+        <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
