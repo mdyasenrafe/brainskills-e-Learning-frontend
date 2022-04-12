@@ -27,7 +27,8 @@ import UserCertificate from "./pages/UserDashboard/UserCertificate/UserCertifica
 import UserEducation from "./pages/UserDashboard/UserEducation/UserEducation";
 import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
-
+import Bookmark from "./pages/Bookmark/Bookmark";
+import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 
 function App() {
   const location = useLocation();
@@ -54,12 +55,15 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/courseDetails" element={<CourseDetails />} />
+        <Route path="/courseDetails/:id" element={<CourseDetails />} />
         <Route path="/cart" element={<CartDetails />} />
-        <Route path="/course" element={<Courses />}>
+        <Route path="/course" element={<Courses />}></Route>
+        <Route path="/quiz" element={<CourseQuiz />}></Route>
+        <Route>
+          <Route path="/bookmark" element={<Bookmark />} />
         </Route>
         {/* course details*/}
-        <Route path="/courseId" element={<CourseDetails />}>
+        <Route path="/courseDetails/:id" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
           <Route path="instructor" element={<Instructor />} />
@@ -70,9 +74,10 @@ function App() {
         <Route path="/classes" element={<Classes />} />
         {/* */}
         {/* user dashboard  */}
-        <Route path="/userDashboard" element={<UserDashboard />} >
+        <Route path="/userDashboard" element={<UserDashboard />}>
           <Route path="profile" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
+          <Route path="enrollcourse" element={<EnrollCourse />} />
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
