@@ -129,14 +129,16 @@ const Classes = () => {
                                 }}
                                 width={"100%"}
                                 height={"60vh"}
-                                onStart
-                                onBuffer
+                                onStart={true}
+                                onBuffer={true}
+                                controls={true}
+                                light={true}
                             />
-                            <div className='absolute right-0 -bottom-7  py-2 px-5 bg-indigo-900 w-full text-white'>
+                            <div className='absolute right-0 -bottom-9  py-2 px-5 bg-indigo-900 w-full text-white'>
                                 <button className='flex items-center float-right'>Bookmark <FiBookmark className='ml-2' /> </button>
                             </div>
                         </div>
-                        <div className='pb-4 pt-10 px-2 flex justify-between	items-center'>
+                        <div className='pb-4 pt-14 px-2 flex justify-between items-center'>
                             <h2 className='text-2xl '>What is react js?</h2>
                             <div className='space-x-4'>
                                 <button className='py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full hover:bg-blue-600 hover:text-white ease-out duration-300'>Previous</button>
