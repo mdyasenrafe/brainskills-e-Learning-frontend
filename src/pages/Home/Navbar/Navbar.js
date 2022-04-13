@@ -30,6 +30,10 @@ const links = [
     name: "My Courses",
     url: "/myCourses",
   },
+  {
+    name: "CourseQuiz",
+    url: "/quiz",
+  },
 ];
 
 const Navbar = () => {

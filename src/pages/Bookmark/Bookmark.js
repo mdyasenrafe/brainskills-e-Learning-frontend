@@ -32,21 +32,22 @@ const Bookmark = () => {
     };
     return (
         <div>
-            <div className='h-56 gradi p-16'>
-                <h1 className='text-5xl text-center font-extrabold text-white'>Bookmark History</h1>
-                <p className='text-center pb-5 text-white font-bold'>Hello You can your things here. You can use Tag, search to find any specific bookmarked video.
-                    <br /> Hopefully you like it. Stay with us. We won let you go..huh We won let you go..huh You can use Tag,</p>
+            <div className=' gradi h-56 bg-blue-700 p-16'>
+                <h1 className='text-3xl text-center font-boled text-white'>Bookmark History</h1>
+                <p className='text-center pb-5 text-white'>Hello You can organize your things here You can use Tag, search to find any specific bookmarked video.
+                    <br /> Hopefully you like it. Stay with us. We won let you go..huh</p>
             </div>
             <div className="flex justify-center " style={{ marginTop: -35, zIndex: 9999999 }}>
                 <div>
 
                     <form className=" flex">
                         <input 
-                            className="icon shadow border rounded-l-md w-96 py-3 px-3 pl-3 text-gray-700 "
+                            className="shadow border rounded-l-md w-96 py-3 px-3 text-gray-700 
+                            icon"
                             type="text"
-                            placeholder="Search by tag"                          
+                            placeholder="Search by bookmark tag"                          
                         /> 
-                        <Box className='bg-white rounded' sx={{ width: "100px" }}>
+                        <Box className='bg-white' sx={{ width: "70px" }}>
                             <FormControl fullWidth>
                                 <InputLabel id="demo-simple-select-label" className='text-black'>Tag</InputLabel>
                                 <Select
@@ -89,9 +90,9 @@ const Bookmark = () => {
                 </div>
             </div>
             <div className='flex justify-center'>
-                <div className='mt-14'>
+                <div>
                     {
-                        tags.map(tag => <div className='bg-gray-50 mb-8 mt-5 p-5 shadow-lg'>
+                        tags.map(tag => <div className='bg-gray-50 mb-5 mt-5 p-5 shadow-lg'>
                             <Grid container spacing={2}>
                                 <Grid item xs={8}>
                                     <div>
@@ -112,10 +113,9 @@ const Bookmark = () => {
                     }
                 </div>
             </div>
-            <Stack className='items-center mt-5 mb-5' spacing={2}>
+            <Stack className='items-center mt-5' spacing={2}>
                 <Pagination count={tags.length} />               
             </Stack>
-            
         </div>
     );
 };
