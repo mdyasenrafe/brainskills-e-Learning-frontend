@@ -30,6 +30,11 @@ const links = [
     url: "/course",
   },
   {
+    id: 3,
+    name: "CourseQuiz",
+    url: "/quiz",
+  },
+  {
     id: 4,
     name: "Event",
     url: "/event",
