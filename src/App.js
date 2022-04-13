@@ -77,7 +77,7 @@ function App() {
           <Route path="" element={<Overview />} />
         </Route>
         {/* classes  */}
-        <Route path="/classes" element={<Classes />} />
+        <Route path="/classes/:id" element={<Classes />} />
         <Route path="/quiz" element={<CourseQuiz />} />
         {/* */}
         {/* user dashboard  */}
@@ -85,7 +85,7 @@ function App() {
           <Route path="profile" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
           <Route path="overView" element={<UserOverView />} />
-          <Route path="enrollcourse" element={<EnrollCourse />} />
+
           <Route path="education" element={<UserEducation />} />
           <Route path="orderHistory" element={<UserOrderHistory />} />
           <Route path="certificate" element={<UserCertificate />} />
@@ -95,7 +95,7 @@ function App() {
         </Route>
         {/*  */}
         <Route path="/login" element={<Login />} />
-        <Route path="/enrollcourse" element={<EnrollCourse />} />
+        <Route path="/dashboard" element={<EnrollCourse />} />
         <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />

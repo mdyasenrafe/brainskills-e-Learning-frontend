@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Classes.css";
 import ReactPlayer from "react-player/lazy";
 import { FiBookmark, FiAlertTriangle } from "react-icons/fi";
@@ -89,6 +89,7 @@ const qna = [
 ];
 
 const Classes = () => {
+  const handleBookmark = () => {};
   return (
     <div className="bg-white">
       <div className="container mx-auto pt-5 px-4  ">
@@ -119,8 +120,11 @@ const Classes = () => {
                 light={true}
               />
               <div className="absolute right-0 -bottom-9  py-2 px-5 bg-indigo-900 w-full text-white">
-                <button className="flex items-center float-right">
-                  Bookmark <FiBookmark className="ml-2" />{" "}
+                <button
+                  className="flex items-center float-right"
+                  onClick={handleBookmark}
+                >
+                  bookmark <FiBookmark className="ml-2" />
                 </button>
               </div>
             </div>

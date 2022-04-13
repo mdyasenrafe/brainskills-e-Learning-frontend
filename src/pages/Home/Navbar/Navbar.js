@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import {
   HiOutlineShoppingCart,
   HiOutlineLogout,
@@ -10,8 +9,10 @@ import {
   HiOutlineX,
 } from "react-icons/hi";
 
+import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import GetUser from "../../../hooks/GetUser";
 import { getCartApi } from "../../../API";
+
 // links
 const links = [
   {
@@ -21,19 +22,14 @@ const links = [
   },
   {
     id: 2,
-    name: "About",
-    url: "/about",
-  },
-  {
-    id: 3,
     name: "Course",
     url: "/course",
   },
   {
-    id: 4,
-    name: "Event",
-    url: "/event",
-  }
+    id: 3,
+    name: "Dashboard",
+    url: "/dashboard",
+  },
 ];
 
 const Navbar = () => {
@@ -74,7 +70,12 @@ const Navbar = () => {
     <div>
       {!headerFixed && <TopNavbar />}
       <div
-        className={`${headerFixed ? "fixed bg-gray-100 py-1 z-30  shadow-lg" : "z-30 bg-color"} min-w-full  transition-all delay-75 ease-in-out`}>
+        className={`${
+          headerFixed
+            ? "fixed bg-gray-100 py-1 z-30  shadow-lg"
+            : "z-30 bg-color"
+        } min-w-full  transition-all delay-75 ease-in-out`}
+      >
         <div className="relative">
           {/* For large screens */}
           <div className="px-2">
@@ -180,8 +181,9 @@ const Navbar = () => {
                   <button
                     aria-label="open menu"
                     onClick={() => setShowMenu(true)}
-                    className={`${!headerFixed && "text-black"
-                      }  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}
+                    className={`${
+                      !headerFixed && "text-black"
+                    }  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}
                   >
                     <svg
                       className="fill-stroke"
@@ -220,8 +222,9 @@ const Navbar = () => {
 
           {/* user setting  */}
           <div
-            className={`${showUserSetting ? "absolute" : "hidden"
-              } top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}
+            className={`${
+              showUserSetting ? "absolute" : "hidden"
+            } top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}
           >
             <div className="">
               <div className="px-4">
@@ -276,8 +279,9 @@ const Navbar = () => {
 
           {/*Screen  small*/}
           <div
-            className={`${showMenu ? "flex ease-in-out duration-300 " : "hidden"
-              } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
+            className={`${
+              showMenu ? "flex ease-in-out duration-300 " : "hidden"
+            } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
           >
             <div className="py-3 px-5 container mx-auto">
               <div
