@@ -5,6 +5,7 @@ const Quiz = ({ quiz }) => {
 
   return (
     <div>
+    
       <p className="text-lg font-medium">{question}</p>
       <div className="lg:w-6/12">
         <div class="form-check bg-zinc-300 font-medium text-base p-3 m-4">
