@@ -7,16 +7,16 @@ const CourseQuiz = () => {
     {
       question: "What is html",
       AnswersText: [
-        { Answers: "is it a English language", isCorrect: false },
+        { Answers: "Is it a English language", isCorrect: false },
         { Answers: "H Markup Language,", isCorrect: true },
-        { Answers: "is it a Bangla language", isCorrect: false },
-        { Answers: "is it a Hindi language", isCorrect: false },
+        { Answers: "Is it a Bangla language", isCorrect: false },
+        { Answers: "Is it a Hindi language", isCorrect: false },
       ]
     },
     {
       question: "What is CSS",
       AnswersText: [
-        { Answers: "Is it Coding Style", isCorrect: false },
+        { Answers: "Is it Coding Style and ab", isCorrect: false },
         { Answers: "Cascading Style Sheets", isCorrect: true },
         { Answers: "Coding system", isCorrect: false },
         { Answers: "Coding securty system", isCorrect: false },
