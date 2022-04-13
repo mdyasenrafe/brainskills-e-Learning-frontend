@@ -31,6 +31,7 @@ const links = [
     url: "/myCourses",
   },
   {
+    id: "4",
     name: "CourseQuiz",
     url: "/quiz",
   },

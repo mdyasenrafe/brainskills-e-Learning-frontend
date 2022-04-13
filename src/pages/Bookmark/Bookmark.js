@@ -102,32 +102,28 @@ const Bookmark = () => {
           </form>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="bookmark-area">
         <div className="my-10">
           {tags?.length === 0 ? (
             <h1 className="font-bold text-2xl">Nothing Found</h1>
           ) : (
             <>
               {tags.map((tag) => (
-                <div className="bg-gray-50 mb-5 mt-5 p-5 shadow-lg">
-                  <Grid container spacing={2}>
-                    <Grid item xs={8}>
-                      <div>
-                        <p>{tag.videoTitle}</p>
-                      </div>
-                    </Grid>
-                    <Grid item xs={4}>
-                      <div className=" ml-8">
-                        <div className="flex ml-5">
-                          <AiOutlineDelete className="mb-7 mr-4" />
-                          <BsChatSquareDots className="mb-7" />
-                        </div>
-                        <button className="px-1 rounded bg-indigo-400  text-white  border-indigo-500  hover:bg-indigo-800">
-                          Go Home
-                        </button>
-                      </div>
-                    </Grid>
-                  </Grid>
+                <div className="bg-gray-50 mb-5 mt-5 p-5 shadow-lg bookmark px-12">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <p>Lesson : {tag?.lesson}</p>
+                      <h1 className="font-bold mx-4 text-lg cursor-pointor">
+                        {tag.videoTitle}
+                      </h1>
+                    </div>
+                    <div
+                      style={{ fontSize: "25px" }}
+                      className="cursor-pointor"
+                    >
+                      <AiOutlineDelete />
+                    </div>
+                  </div>
                 </div>
               ))}
             </>

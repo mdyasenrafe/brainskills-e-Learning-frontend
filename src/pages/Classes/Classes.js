@@ -101,7 +101,7 @@ const Classes = () => {
       userPhoneNumber: user?.userPhoneNumber,
       courseId: id,
       courseName: "Digital Marketing",
-      lesson: 1.5,
+      lesson: 2.5,
       videoTitle: "What is React",
       videoUrl: url,
     };
