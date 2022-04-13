@@ -27,8 +27,8 @@ const links = [
   },
   {
     id: 3,
-    name: "Dashboard",
-    url: "/dashboard",
+    name: "My Courses",
+    url: "/myCourses",
   },
 ];
 

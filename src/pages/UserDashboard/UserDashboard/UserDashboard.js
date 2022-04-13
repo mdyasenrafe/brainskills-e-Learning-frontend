@@ -13,7 +13,7 @@ import {
 import { BsBook } from "react-icons/bs";
 const UserDashboard = () => {
   const { user } = GetUser();
-  console.log(user);
+
   return (
     <div>
       <div className="container mx-auto py-20 px-4">
@@ -31,6 +31,16 @@ const UserDashboard = () => {
               {user?.role === "admin" ? (
                 <div>
                   <NavLink
+                    to="overview"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "user-dashboard-sidebar-link-active"
+                        : "user-dashboard-sidebar-link border-b"
+                    }
+                  >
+                    <FaChartBar className="mr-3" /> Overview
+                  </NavLink>
+                  <NavLink
                     to="createAdmin"
                     className={({ isActive }) =>
                       isActive
@@ -40,6 +50,7 @@ const UserDashboard = () => {
                   >
                     <MdAddModerator className="mr-3" /> Create Admin
                   </NavLink>
+
                   <NavLink
                     to="addNewCourse"
                     className={({ isActive }) =>
@@ -72,16 +83,6 @@ const UserDashboard = () => {
                     }
                   >
                     <MdOutlinePlace className="mr-3" /> Address
-                  </NavLink>
-                  <NavLink
-                    to="overview"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "user-dashboard-sidebar-link-active"
-                        : "user-dashboard-sidebar-link border-b"
-                    }
-                  >
-                    <FaChartBar className="mr-3" /> Over view
                   </NavLink>
                   <NavLink
                     to="education"
