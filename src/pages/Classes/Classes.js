@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Classes.css";
 import ReactPlayer from "react-player/lazy";
 import { FiBookmark, FiAlertTriangle } from "react-icons/fi";
+import GetUser from "../../hooks/GetUser";
+import { useParams } from "react-router-dom";
+import { addBookmarkApi } from "../../API";
+import { Toast } from "../../Componets/Toast";
 
 const url = "https://youtu.be/Ke90Tje7VS0";
 // dropdown list
@@ -89,7 +93,31 @@ const qna = [
 ];
 
 const Classes = () => {
-  const handleBookmark = () => {};
+  const { id } = useParams();
+  const { user } = GetUser();
+  const handleBookmark = async () => {
+    let postBody = {
+      userId: user?._id,
+      userPhoneNumber: user?.userPhoneNumber,
+      courseId: id,
+      courseName: "Digital Marketing",
+      lesson: 1.5,
+      videoTitle: "What is React",
+      videoUrl: url,
+    };
+    const res = await addBookmarkApi(postBody);
+    if (res?.error === false) {
+      Toast.fire({
+        icon: "success",
+        title: "Bookmark added succesfully",
+      });
+    } else {
+      Toast.fire({
+        icon: "error",
+        title: res.message,
+      });
+    }
+  };
   return (
     <div className="bg-white">
       <div className="container mx-auto pt-5 px-4  ">
@@ -124,13 +152,13 @@ const Classes = () => {
                   className="flex items-center float-right"
                   onClick={handleBookmark}
                 >
-                  bookmark <FiBookmark className="ml-2" />
+                  Bookmark <FiBookmark className="ml-2" />{" "}
                 </button>
               </div>
             </div>
             <div className="pb-4 pt-14 px-2 flex justify-between items-center">
               <h2 className="text-2xl ">What is react js?</h2>
-              <div className="space-x-4">
+              <div className="space-x-4 flex items-center">
                 <button className="py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full hover:bg-blue-600 hover:text-white ease-out duration-300">
                   Previous
                 </button>

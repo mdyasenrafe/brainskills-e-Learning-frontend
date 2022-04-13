@@ -19,7 +19,30 @@ const apiUrl = {
   getCart: "cart/getCart",
   postPayment: "payment/init",
   getQuizUrl: "quiz/getQuiz",
+  getBookmark: "bookmark/getBookmark",
+  addBookmark: "bookmark/addBookmark",
 };
+export const getBookmarkApi = async (body) => {
+  try {
+    const res = await axios.get(url + apiUrl.getBookmark, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+export const addBookmarkApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addBookmark, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
 export const getQuiz = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.getQuizUrl, body, {
