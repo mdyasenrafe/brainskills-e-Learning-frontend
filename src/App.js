@@ -59,11 +59,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/courseDetails" element={<CourseDetails />} />
+        <Route path="/courseDetails/:id" element={<CourseDetails />} />
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}></Route>
         {/* course details*/}
-        <Route path="/courseId" element={<CourseDetails />}>
+        <Route path="/courseDetails/:id" element={<CourseDetails />}>
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
           <Route path="instructor" element={<Instructor />} />
