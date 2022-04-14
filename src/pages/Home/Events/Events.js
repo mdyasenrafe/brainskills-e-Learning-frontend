@@ -9,7 +9,7 @@ const Events = () => {
   }, []);
   const fetchData = async () => {
     const res = await getEvents();
-    if (res.error.true === "") {
+    if (res.error === true) {
     } else {
       setEvents(res.data);
     }
@@ -22,8 +22,8 @@ const Events = () => {
         </h1>
         {/* box  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {events.map((event) => (
-            <div className="border border-b-8 round p-10">
+          {events.map((event, index) => (
+            <div className="border border-b-8 round p-10" key={index}>
               <div style={{ borderBottom: "1px dashed gray" }}>
                 <h1 className="text-2xl font-bold text-center mb-10">
                   {event.eventName}

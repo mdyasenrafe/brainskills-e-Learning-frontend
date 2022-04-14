@@ -32,6 +32,9 @@ import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 import GetUser from "./hooks/GetUser";
 import LoadingSpiners from "./Componets/LoadingSpiners";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
+import DashboardCourses from "./pages/UserDashboard/DashboardCourses/DashboardCourses";
+import PrivateRoute from "./Componets/PrivateRoute";
+import AddTeacher from "./pages/UserDashboard/AddTecher/AddTeacher";
 
 function App() {
   const { loading } = GetUser();
@@ -82,14 +85,51 @@ function App() {
         {/* */}
         {/* user dashboard  */}
         <Route path="/userDashboard" element={<UserDashboard />}>
-          <Route path="profile" element={<UserProfile />} />
-          <Route path="address" element={<UserAddress />} />
-          <Route path="overView" element={<UserOverView />} />
-          <Route path="education" element={<UserEducation />} />
-          <Route path="orderHistory" element={<UserOrderHistory />} />
+          <Route
+            path="profile"
+            element={
+              <PrivateRoute>
+                <UserProfile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="address"
+            element={
+              <PrivateRoute>
+                <UserAddress />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="overView"
+            element={
+              <PrivateRoute>
+                <UserOverView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="education"
+            element={
+              <PrivateRoute>
+                <UserEducation />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="orderHistory"
+            element={
+              <PrivateRoute>
+                <UserOrderHistory />
+              </PrivateRoute>
+            }
+          />
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
           <Route path="addNewCourse" element={<AddNewCourse />} />
+          <Route path="courses" element={<DashboardCourses />} />
+          <Route path="addInstructor" element={<AddTeacher />} />
           <Route path="" element={<UserProfile />} />
         </Route>
         {/*  */}

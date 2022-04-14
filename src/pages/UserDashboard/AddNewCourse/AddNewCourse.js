@@ -8,11 +8,11 @@ import { useForm } from "react-hook-form";
 import * as XLSX from "xlsx";
 import ReactFileReader from "react-file-reader";
 
-// const instructorObj = {
-//   instructorName: "",
-//   instructorPhoto: "",
-//   instructorDesignation: "",
-// };
+const instructorObj = {
+  instructorName: "",
+  instructorPhoto: "",
+  instructorDesignation: "",
+};
 
 const AddNewCourse = () => {
   const {
@@ -21,9 +21,9 @@ const AddNewCourse = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const [firstStep, setFirstStep] = useState(false);
+  const [firstStep, setFirstStep] = useState(true);
   const [secondStep, setSecondStep] = useState(false);
-  const [thirdStep, setThirdStep] = useState(true);
+  const [thirdStep, setThirdStep] = useState(false);
   const [firstStepData, setFirstStepData] = useState({});
   const [text, setText] = useState(() =>
     EditorState.createWithContent(ContentState.createFromText(""))
@@ -31,7 +31,7 @@ const AddNewCourse = () => {
   const [courseContent, setCourseContent] = useState([]);
   const [image, setImage] = useState(null);
   const [content, setContent] = useState(null);
-  const [instructors, setInstructors] = React.useState([]);
+  const [instructors, setInstructors] = React.useState([{ ...instructorObj }]);
 
   const handleEditorChange = (state) => {
     setText(state);
@@ -59,6 +59,26 @@ const AddNewCourse = () => {
     setSecondStep(false);
     setThirdStep(true);
   };
+
+  const handleAddInstructors = () => {
+    setInstructors((prev) => [...prev, { ...instructorObj }]);
+  };
+
+  const handleUpdateInstructors = (value, name, index) => {
+    setInstructors((prev) => [
+      ...prev.map((el, indx) =>
+        index?.toString() === indx?.toString() ? { ...el, [name]: value } : el
+      ),
+    ]);
+  };
+  console.log(instructors);
+
+  const handleInstructorDelete = (index) => {
+    setInstructors((prev) => [
+      ...prev.filter((_, indx) => indx.toString() !== index.toString()),
+    ]);
+  };
+
   const Upload = () => {
     const fileUpload = document.getElementById("fileUpload");
 
@@ -115,8 +135,8 @@ const AddNewCourse = () => {
               <input
                 className="border  p-3 outline-none rounded-md shadow-sm"
                 type="text"
-                {...register("courseName", { required: true })}
-                required
+                // {...register("courseName", { required: true })}
+                // required
               />
             </div>
             <div className="grid">
@@ -127,7 +147,7 @@ const AddNewCourse = () => {
                 className="border  p-3 outline-none rounded-md shadow-sm"
                 type="file"
                 onChange={(e) => handleImageSubmit(e)}
-                required
+                // required
               />
             </div>
             <div className="grid">
@@ -137,7 +157,7 @@ const AddNewCourse = () => {
               <input
                 className="border p-2 outline-none rounded-md shadow-sm"
                 type="text"
-                {...register("demoVideo", { required: true })}
+                // {...register("demoVideo", { required: true })}
               />
             </div>
             <div className="grid">
@@ -147,7 +167,7 @@ const AddNewCourse = () => {
               <input
                 className="border p-2 outline-none rounded-md shadow-sm"
                 type="text"
-                {...register("coursePrice", { required: true })}
+                // {...register("coursePrice", { required: true })}
               />
             </div>
             <div className="grid">
@@ -157,7 +177,7 @@ const AddNewCourse = () => {
               <input
                 className="border p-2 outline-none rounded-md shadow-sm"
                 type="text"
-                {...register("courseCategroy", { required: true })}
+                // {...register("courseCategroy", { required: true })}
               />
             </div>
             <div className="grid">
@@ -190,43 +210,72 @@ const AddNewCourse = () => {
             className="px-4  grid space-y-3"
             onSubmit={handleSubmit(handleSecondStep)}
           >
-            <>
-              <div className="grid">
-                <label className="font-semibold text-gray-600 py-2">
-                  instructor Name
-                </label>
-                <input
-                  className="border  p-3 outline-none rounded-md shadow-sm"
-                  type="text"
-                  required
-                />
-              </div>
-              <div className="grid">
-                <label className="font-semibold text-gray-600 py-2">
-                  instructor Photo
-                </label>
-                <input
-                  className="border  p-3 outline-none rounded-md shadow-sm"
-                  type="text"
-                  {...register("instructorPhoto", { required: true })}
-                  required
-                />
-              </div>
-              <div className="grid">
-                <label className="font-semibold text-gray-600 py-2">
-                  instructor Designation
-                </label>
-                <input
-                  className="border  p-3 outline-none rounded-md shadow-sm"
-                  type="text"
-                  {...register("instructorDesignation", { required: true })}
-                  required
-                />
-              </div>
-            </>
-            ;
+            {!!instructors?.length &&
+              instructors?.map((data, index) => (
+                <>
+                  <div className="grid" key={index}>
+                    <label className="font-semibold text-gray-600 py-2">
+                      instructor Name
+                    </label>
+                    <input
+                      className="border  p-3 outline-none rounded-md shadow-sm"
+                      type="text"
+                      value={data.instructorName}
+                      onChange={(e) =>
+                        handleUpdateInstructors(
+                          e.target.value,
+                          "instructorName",
+                          index
+                        )
+                      }
+                    />
+                  </div>
+                  <div className="grid">
+                    <label className="font-semibold text-gray-600 py-2">
+                      instructor Photo
+                    </label>
+                    <input
+                      className="border  p-3 outline-none rounded-md shadow-sm"
+                      type="text"
+                      onChange={(e) =>
+                        handleUpdateInstructors(
+                          e.target.value,
+                          "instructorDesignation",
+                          index
+                        )
+                      }
+                      // {...register("instructorPhoto", { required: true })}
+                      // required
+                    />
+                  </div>
+                  <div className="grid">
+                    <label className="font-semibold text-gray-600 py-2">
+                      instructor Designation
+                    </label>
+                    <input
+                      className="border  p-3 outline-none rounded-md shadow-sm"
+                      type="text"
+                      onChange={(e) =>
+                        handleUpdateInstructors(
+                          e.target.value,
+                          "instructorPhoto",
+                          index
+                        )
+                      }
+                      // {...register("instructorDesignation", { required: true })}
+                      // required
+                    />
+                  </div>
+                </>
+              ))}
+
             <div className="text-right ">
-              <p className="text-sky-500 cursor-pointor">Add Another</p>
+              <p
+                onClick={handleAddInstructors}
+                className="text-sky-500 cursor-pointor"
+              >
+                Add Another
+              </p>
             </div>
             <button
               className="bg-blue-500 p-3 text-gray-50 shadow-sm rounded-md "
@@ -246,12 +295,18 @@ const AddNewCourse = () => {
                 Course Content File
               </label>
               <input
-                className="upload-excel"
+                className="upload-excel border  p-3 outline-none rounded-md shadow-sm"
                 type="file"
                 id="fileUpload"
                 onChange={Upload}
                 accept=".xlse,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.xls,.xlt,.xls,.xlsb,.xml,.xla,.xlw,.xlr,.csv"
               />
+              <button
+                className="bg-blue-500 p-3 mt-5 text-gray-50 shadow-sm rounded-md "
+                type="submit"
+              >
+                Submit
+              </button>
             </div>
           </form>
         </>

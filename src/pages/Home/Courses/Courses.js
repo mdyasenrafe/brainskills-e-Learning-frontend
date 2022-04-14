@@ -4,6 +4,7 @@ import { getCourses } from "../../../API";
 
 const Courses = () => {
   const [courses, setCourses] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -12,8 +13,9 @@ const Courses = () => {
   const fetchData = async () => {
     const res = await getCourses();
     if (res?.error.true === "") {
+      setLoading(false);
     } else {
-      console.log(res);
+      setLoading(false);
       setCourses(res.data);
     }
   };

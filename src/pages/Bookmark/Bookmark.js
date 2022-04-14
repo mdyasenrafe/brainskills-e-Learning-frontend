@@ -11,9 +11,12 @@ import { BsChatSquareDots } from "react-icons/bs";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { addBookmarkApi, getBookmarkApi } from "../../API";
+import LoadingSpiners from "../../Componets/LoadingSpiners";
 
 const Bookmark = () => {
   const [tags, setTags] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [displayVideo, setDisplayVideo] = useState();
 
   useEffect(() => {
     fetchData();
@@ -22,15 +25,22 @@ const Bookmark = () => {
   const fetchData = async () => {
     const res = await getBookmarkApi();
     if (res?.error.true === "") {
+      setLoading(false);
     } else {
       setTags(res.data);
-      console.log(res);
+      setDisplayVideo(res.data);
+      setLoading(false);
     }
   };
-  const [data, setData] = React.useState("");
 
-  const handleChange = (event) => {
-    setData(event.target.value);
+  const handleSearch = (event) => {
+    const searchText = event.target.value;
+    console.log(searchText);
+    const matchedVideo = tags.filter((data) =>
+      data.videoTitle.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    setDisplayVideo(matchedVideo);
   };
   return (
     <div>
@@ -51,10 +61,10 @@ const Bookmark = () => {
         <div>
           <form className=" flex">
             <input
-              className="shadow border rounded-l-md w-96 py-3 px-3 text-gray-700 
-                            icon"
+              className="shadow border rounded-l-md w-96 py-3 px-3 text-gray-700  icon"
               type="text"
               placeholder="Search by bookmark tag"
+              onChange={handleSearch}
             />
             <Box className="bg-white" sx={{ width: "70px" }}>
               <FormControl fullWidth>
@@ -89,9 +99,7 @@ const Bookmark = () => {
                   }}
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={data}
                   label="Age"
-                  onChange={handleChange}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -103,32 +111,36 @@ const Bookmark = () => {
         </div>
       </div>
       <div className="bookmark-area">
-        <div className="my-10">
-          {tags?.length === 0 ? (
-            <h1 className="font-bold text-2xl">Nothing Found</h1>
-          ) : (
-            <>
-              {tags.map((tag) => (
-                <div className="bg-gray-50 mb-5 mt-5 p-5 shadow-lg bookmark px-12">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <p>Lesson : {tag?.lesson}</p>
-                      <h1 className="font-bold mx-4 text-lg cursor-pointor">
-                        {tag.videoTitle}
-                      </h1>
-                    </div>
-                    <div
-                      style={{ fontSize: "25px" }}
-                      className="cursor-pointor"
-                    >
-                      <AiOutlineDelete />
+        {loading ? (
+          <LoadingSpiners loading={loading} height={"50vh"} />
+        ) : (
+          <div className="my-10">
+            {displayVideo?.length === 0 ? (
+              <h1 className="font-bold text-2xl">Nothing Found</h1>
+            ) : (
+              <>
+                {displayVideo.map((tag) => (
+                  <div className="bg-gray-50 mb-5 mt-5 p-5 shadow-lg bookmark px-12">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <p>Lesson : {tag?.lesson}</p>
+                        <h1 className="font-bold mx-4 text-lg cursor-pointor">
+                          {tag.videoTitle}
+                        </h1>
+                      </div>
+                      <div
+                        style={{ fontSize: "25px" }}
+                        className="cursor-pointor"
+                      >
+                        <AiOutlineDelete />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </>
-          )}
-        </div>
+                ))}
+              </>
+            )}
+          </div>
+        )}
       </div>
       {/* <Stack className='items-center mt-5' spacing={2}>
                 <Pagination count={tags.length} />               
