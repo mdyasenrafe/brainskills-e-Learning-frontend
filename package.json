@@ -28,6 +28,7 @@
     "react-spinners": "^0.11.0",
     "react-tsparticles": "^1.43.0",
     "react-visibility-sensor": "^5.1.1",
+    "socket.io-client": "^4.4.1",
     "sweetalert2": "^11.4.8",
     "swiper": "^8.0.7",
     "video-react": "^0.15.0",
