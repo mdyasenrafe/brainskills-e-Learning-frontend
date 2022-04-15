@@ -31,6 +31,7 @@ import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 import Classes from "./pages/Classes/Classes";
 import Invoice from "./Invoice/Invoice";
+import SocketIo from "./pages/SocketIo/SocketIo";
 
 function App() {
   const location = useLocation();
@@ -63,6 +64,7 @@ function App() {
         <Route path="/quiz" element={<CourseQuiz />}></Route>
         <Route path="/invoice" element={<Invoice />} />
 
+        <Route path="/chat" element={<SocketIo />}></Route>
         <Route>
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>
