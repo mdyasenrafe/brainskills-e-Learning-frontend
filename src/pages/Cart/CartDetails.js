@@ -43,6 +43,7 @@ const CartDetails = () => {
     totalAmount: price,
     courses: courses,
   };
+  console.log(postBody)
 
   const handlePayment = async () => {
     if (postBody) {
