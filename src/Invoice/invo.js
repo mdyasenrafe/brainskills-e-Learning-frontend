@@ -87,7 +87,7 @@ const invo = () => {
                 </div>
                 <hr />
                 <div className='text-center my-4'>
-                    <p>917/4 Dhanmondi, Tejgaon, Dhaka-1208, Call: 09888 777 777, 08888 777 777</p>
+                    <p>917/4 Dhanmondi, Tejgaon, Dhaka-1208, Call: +8801777777</p>
                 </div>
             </div>
         </div>
