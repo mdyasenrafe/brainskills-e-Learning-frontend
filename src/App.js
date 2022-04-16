@@ -32,6 +32,8 @@ import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 import Classes from "./pages/Classes/Classes";
 import Invoice from "./Invoice/Invoice";
 import SocketIo from "./pages/SocketIo/SocketIo";
+// import { v4 as uuId } from "uuid"
+import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
 
 function App() {
   const location = useLocation();
@@ -65,6 +67,8 @@ function App() {
         <Route path="/invoice" element={<Invoice />} />
 
         <Route path="/chat" element={<SocketIo />}></Route>
+        <Route path="/chat" element={<ChatBody />}></Route>
+        {/* <Route path={`/chat/${uuId()}`} element={<Room />}></Route> */}
         <Route>
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>

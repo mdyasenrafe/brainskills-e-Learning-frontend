@@ -50,10 +50,12 @@ const CourseQuiz = () => {
       ]
     },
   ]
+
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const persent=100/ Questionbank.length
+  const persent = 100 / Questionbank.length
   const [velue, setVelue] = useState(persent)
 
 
@@ -85,24 +87,26 @@ const CourseQuiz = () => {
     <div className="background ">
 
       <div className="main">
-        
+
 
         {showScore ? (
-          <div className="score-section">
-            you have a score{score} out of {Questionbank.length}
-            
-            <>
-              <button className="ml-8 bg-gray-400" type="submit" onClick={restQuiz}>Try Againe</button>
-            </>
+          <div className="text-center grid">
+            <h1 className="text-xl">
+              You have a score {score} out of {Questionbank.length}
+            </h1>
+
+
+            <button className=" ml-8 text-white rounded-md items-center bg-blue-800" type="submit" onClick={restQuiz}>Try Againe</button>
+
           </div>
         ) : (
           <>
-          
+
             <div className="question-section ">
               <div className="question-count text-2xl ">
-              <div className="w-full mb-3 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-          <div class="bg-blue-600 h-2.5 rounded-full" style={{ width: `${velue}%` }}></div>
-        </div>
+                <div className="w-full mb-3 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                  <div class="bg-blue-600 h-2.5 rounded-full" style={{ width: `${velue}%` }}></div>
+                </div>
                 <span>{currentQuestion + 1}</span>/{Questionbank.length}
 
               </div>
@@ -113,7 +117,7 @@ const CourseQuiz = () => {
               <div className="answer-section text-0xl">
                 {Questionbank[currentQuestion].AnswersText?.map((answer) =>
                 (
-                  <button className="block m-5" onClick={() => handelOnclick(answer.isCorrect)}>{answer.Answers}</button>
+                  <button className=" course_quiz_button block m-5" onClick={() => handelOnclick(answer.isCorrect)}>{answer.Answers}</button>
                 ))}
               </div>
             </div>
