@@ -30,7 +30,7 @@ const Invoice = () => {
                 <Invo />
             </header>
             <footer>
-                <button onClick={handleDownload}>Download</button>
+                <button className="mx-auto" onClick={handleDownload}>Download</button>
             </footer>
         </div>
 
