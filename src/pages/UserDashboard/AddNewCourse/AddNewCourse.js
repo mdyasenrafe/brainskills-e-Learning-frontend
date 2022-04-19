@@ -6,7 +6,6 @@ import draftToHtml from "draftjs-to-html";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { useForm } from "react-hook-form";
 import * as XLSX from "xlsx";
-import ReactFileReader from "react-file-reader";
 
 const instructorObj = {
   instructorName: "",
@@ -21,6 +20,7 @@ const AddNewCourse = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const [firstStep, setFirstStep] = useState(true);
   const [secondStep, setSecondStep] = useState(false);
   const [thirdStep, setThirdStep] = useState(false);
@@ -71,7 +71,6 @@ const AddNewCourse = () => {
       ),
     ]);
   };
-  console.log(instructors);
 
   const handleInstructorDelete = (index) => {
     setInstructors((prev) => [
@@ -104,7 +103,6 @@ const AddNewCourse = () => {
     let ch = [];
     for (var ind = 0; ind < list.length; ind++) {
       let worksheet = workbook.Sheets[list[ind]];
-      console.log(worksheet);
       for (let key in worksheet) {
         let regEx = new RegExp("^(\\w)(1){1}$");
         if (regEx.test(key) == true) {
@@ -240,7 +238,7 @@ const AddNewCourse = () => {
                       onChange={(e) =>
                         handleUpdateInstructors(
                           e.target.value,
-                          "instructorDesignation",
+                          "instructorPhoto",
                           index
                         )
                       }
@@ -258,7 +256,7 @@ const AddNewCourse = () => {
                       onChange={(e) =>
                         handleUpdateInstructors(
                           e.target.value,
-                          "instructorPhoto",
+                          "instructorDesignation",
                           index
                         )
                       }

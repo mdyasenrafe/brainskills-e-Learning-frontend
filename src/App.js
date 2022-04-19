@@ -35,6 +35,8 @@ import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 import DashboardCourses from "./pages/UserDashboard/DashboardCourses/DashboardCourses";
 import PrivateRoute from "./Componets/PrivateRoute";
 import AddTeacher from "./pages/UserDashboard/AddTecher/AddTeacher";
+// import { v4 as uuId } from "uuid"
+import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
 
 function App() {
   const { loading } = GetUser();
@@ -68,6 +70,8 @@ function App() {
         <Route path="/course" element={<Courses />}></Route>
         {/* course details*/}
         <Route path="/quiz" element={<CourseQuiz />}></Route>
+        <Route path="/chat" element={<ChatBody />}></Route>
+        {/* <Route path={`/chat/${uuId()}`} element={<Room />}></Route> */}
         <Route>
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>
