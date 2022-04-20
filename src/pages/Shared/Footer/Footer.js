@@ -118,8 +118,8 @@ const Footer = () => {
                         <div className='space-y-2'>
                             <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdOutlinePlace className='mr-2 text-xl' />bc-25/2f,dhaka,Bangladesh</p>
                             <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdPhone className='mr-2 text-xl' />(+880) 17 123 47084</p>
-                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdEmail className='mr-2 text-xl' />help@berenskill.com</p>
-                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdEmail className='mr-2 text-xl' />support@berenskill.com</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdEmail className='mr-2 text-xl' />help@brainskill.com</p>
+                            <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdEmail className='mr-2 text-xl' />support@brainskill.com</p>
                             <p className='font-Roboto tracking-wider text-gray-300 hover:text-blue-500 flex items-center' ><MdOutlineWatchLater className='mr-2 text-xl' />(8 AM - 7 PM, Monday - Friday)</p>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ const Footer = () => {
                 {/* copyright section */}
                 <hr />
                 <section className='text-center'>
-                    <h6 className='text-gray-300 -tracking-tight text-sm font-Roboto  ' >Copyright @2022 BerenSkill.Designed By Tame Challenge </h6>
+                    <h6 className='text-gray-300 -tracking-tight text-sm font-Roboto  ' >Copyright @2022 BrainSkill.Designed By Tame Challenge </h6>
                 </section>
             </div>
         </section>
