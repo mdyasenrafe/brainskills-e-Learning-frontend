@@ -30,7 +30,7 @@ import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
-import Classes from "./pages/Classes/Classes";
+import Location from "./pages/Location/Location";
 
 function App() {
   const location = useLocation();
@@ -50,6 +50,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/location" element={<Location />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
         <Route path="/payment/success/:id" element={<Sucess />} />
