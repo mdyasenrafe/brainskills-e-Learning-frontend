@@ -1,12 +1,12 @@
-
-.background{
+.background {
     background-color: rgb(236, 237, 244);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vs;
 }
-.main{
+
+.main {
     background-color: white;
     width: 450px;
     min-height: 200px;
@@ -18,41 +18,37 @@
     margin-bottom: 50px;
 }
 
-.score-section{
-    display: flex;
-    font-size: 24px;
-    align-items: center;
-}
-.question-section{
+
+.question-section {
     width: 100%;
     position: relative;
 }
-.question-count{
+
+.question-count {
     margin-bottom: 20px;
 }
+
 /* .question-count span {
     font-size: 20px;
 } */
-.question-text{
+.question-text {
     margin-bottom: 12px;
 }
-.answer-section{
+
+.answer-section {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-right: 25px;
 }
-button{
+
+.course_quiz_button {
     width: 100%;
     font-size: 16px;
-    color: #3C4B64;
-    background-color: #EFEFEF;
-    /* border-radius: 15px; */
     display: flex;
     padding: 8px;
     justify-content: flex-start;
     align-items: center;
-    /* border: 2px solid rgb(88, 106, 107); */
     cursor: pointer;
 }

@@ -30,7 +30,13 @@ import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
+<<<<<<< HEAD
 import Location from "./pages/Location/Location";
+=======
+import Classes from "./pages/Classes/Classes";
+// import { v4 as uuId } from "uuid"
+import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
+>>>>>>> 028749fc41e8d135e2e54b390e7eed059f035168
 
 function App() {
   const location = useLocation();
@@ -47,6 +53,7 @@ function App() {
 
   return (
     <div>
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -62,6 +69,8 @@ function App() {
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}></Route>
         <Route path="/quiz" element={<CourseQuiz />}></Route>
+        <Route path="/chat" element={<ChatBody />}></Route>
+        {/* <Route path={`/chat/${uuId()}`} element={<Room />}></Route> */}
         <Route>
           <Route path="/bookmark" element={<Bookmark />} />
         </Route>
