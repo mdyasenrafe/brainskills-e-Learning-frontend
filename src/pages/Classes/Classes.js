@@ -41,6 +41,8 @@ const course = [
     }
 ]
 
+
+
 const Classes = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,7 +64,6 @@ const Classes = () => {
         }
     }
 
-    
     return (
         <div className='bg-white'>
             <div className='container mx-auto pt-5 px-4  '>
@@ -71,9 +72,6 @@ const Classes = () => {
                     {/* recorder  */}
                     <div className="w-full h-fit lg:w-8/12 overflow-hidden rounded-md ">
                         <div className='relative'>
-
-
-
                             <ReactPlayer
                                 className="react-player"
                                 url={course[currentIndex].video}
@@ -95,9 +93,6 @@ const Classes = () => {
                                 controls={true}
                                 light={true}
                             />
-
-
-
                             <div className='absolute right-0 -bottom-9  py-2 px-5 bg-indigo-900 w-full text-white'>
                                 <button className='flex items-center float-right'>Bookmark <FiBookmark className='ml-2' /> </button>
                             </div>
