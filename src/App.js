@@ -30,13 +30,9 @@ import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
-<<<<<<< HEAD
-import Location from "./pages/Location/Location";
-=======
-import Classes from "./pages/Classes/Classes";
+// import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
->>>>>>> 028749fc41e8d135e2e54b390e7eed059f035168
 
 function App() {
   const location = useLocation();
@@ -57,7 +53,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/location" element={<Location />} />
+        {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
         <Route path="/payment/success/:id" element={<Sucess />} />

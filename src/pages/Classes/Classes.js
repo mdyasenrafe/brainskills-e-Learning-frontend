@@ -3,16 +3,39 @@ import './Classes.css'
 import ReactPlayer from 'react-player/lazy';
 import { FiBookmark, FiAlertTriangle } from "react-icons/fi";
 
-const url = "https://youtu.be/Ke90Tje7VS0";
+const urls = [
+    {
+        id: 1,
+        video1: "https://youtu.be/Ke90Tje7VS0"
+    },
+    {
+        id: 2,
+        video: "https://youtu.be/FOjrXXdiCMs"
+    },
+    {
+        id: 3,
+        video: "https://youtu.be/Znqv84xi8Vs"
+    },
+    {
+        id: 4,
+        video: "https://youtu.be/kVWpBtRjkCk"
+    },
+    {
+        id: 5,
+        video: "https://youtu.be/ZX3qt0UWifc"
+    },
+];
 // dropdown list 
 const qna = [
     {
         id: 1,
         name: "Welcome to React",
+        video: "https://youtu.be/Ke90Tje7VS0"
     },
     {
         id: 2,
         name: "Welcome to React",
+        video: "https://youtu.be/FOjrXXdiCMs"
     },
     {
         id: 3,
@@ -99,38 +122,49 @@ const qna = [
         name: "Welcome to React",
     },
 ]
-
+const handlePrevious = () => {
+    console.log("heezol")
+}
+const handleNext = () => {
+    console.log("hello world")
+}
+// this.setState({
+//     video: this.state.video + 1,
+// })
 const Classes = () => {
 
     return (
         <div className='bg-white'>
+
             <div className='container mx-auto pt-5 px-4  '>
                 <h1 className='text-3xl py-2'>Course Name: React Js</h1>
                 <div className="lg:flex space-y-10 lg:space-y-0 lg:space-x-8  mb-0">
                     {/* recorder  */}
                     <div className="w-full h-fit lg:w-8/12 overflow-hidden rounded-md ">
                         <div className='relative'>
-                            <ReactPlayer
-                                className="react-player"
-                                url={url}
-                                config={{
-                                    youtube: {
-                                        playerVars: { showinfo: 1 }
-                                    },
-                                    facebook: {
-                                        appId: '12345'
-                                    },
-                                    file: {
-                                        forceVideo: 'hls.js'
-                                    }
-                                }}
-                                width={"100%"}
-                                height={"60vh"}
-                                onStart={true}
-                                onBuffer={true}
-                                controls={true}
-                                light={true}
-                            />
+                            {
+                                urls.map(item => <ReactPlayer
+                                    className="react-player"
+                                    url={item?.video1}
+                                    config={{
+                                        youtube: {
+                                            playerVars: { showinfo: 1 }
+                                        },
+                                        facebook: {
+                                            appId: '12345'
+                                        },
+                                        file: {
+                                            forceVideo: 'hls.js'
+                                        }
+                                    }}
+                                    width={"100%"}
+                                    height={"60vh"}
+                                    onStart={true}
+                                    onBuffer={true}
+                                    controls={true}
+                                    light={true}
+                                />)
+                            }
                             <div className='absolute right-0 -bottom-9  py-2 px-5 bg-indigo-900 w-full text-white'>
                                 <button className='flex items-center float-right'>Bookmark <FiBookmark className='ml-2' /> </button>
                             </div>
@@ -138,8 +172,8 @@ const Classes = () => {
                         <div className='pb-4 pt-14 px-2 flex justify-between items-center'>
                             <h2 className='text-2xl '>What is react js?</h2>
                             <div className='space-x-4'>
-                                <button className='py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full hover:bg-blue-600 hover:text-white ease-out duration-300'>Previous</button>
-                                <button className='py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full bg-blue-600 text-white'>Next</button>
+                                <button className='py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full hover:bg-blue-600 hover:text-white ease-out duration-300' onClick={handlePrevious}>Previous</button>
+                                <button onClick={handleNext} className='py-2 px-6 md:px-10 border-blue-600 border-2 rounded-full bg-blue-600 text-white'>Next</button>
                             </div>
                         </div>
                         <div className='px-4 pb-5'>
