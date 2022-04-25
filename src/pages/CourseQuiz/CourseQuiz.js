@@ -96,7 +96,6 @@ const CourseQuiz = () => {
           </div>
         ) : (
           <>
-
             <div className="question-section ">
               <div className="question-count text-2xl ">
                 <div className="w-full mb-3 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
