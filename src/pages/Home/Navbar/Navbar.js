@@ -21,21 +21,21 @@ const links = [
   },
   {
     id: 2,
-    name: "About",
-    url: "/about",
-  },
-  {
-    id: 3,
     name: "Course",
     url: "/course",
   },
   {
     id: 3,
+    name: "My Courses",
+    url: "/myCourses",
+  },
+  {
+    id: 4,
     name: "CourseQuiz",
     url: "/quiz",
   },
   {
-    id: 4,
+    id: 5,
     name: "Event",
     url: "/event",
   }

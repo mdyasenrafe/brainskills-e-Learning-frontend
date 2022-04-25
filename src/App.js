@@ -48,7 +48,6 @@ function App() {
 
   return (
     <div>
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -89,9 +88,9 @@ function App() {
           <Route path="addNewCourse" element={<AddNewCourse />} />
           <Route path="" element={<UserProfile />} />
         </Route>
-        {/* ========== */}
+        {/* */}
         <Route path="/login" element={<Login />} />
-        <Route path="/enrollcourse" element={<EnrollCourse />} />
+        <Route path="/myCourses" element={<EnrollCourse />} />
         <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />
