@@ -23,6 +23,7 @@ const GetUser = () => {
     } else {
       setLoading(false);
     }
+    console.log("token", token);
   };
 
   return {

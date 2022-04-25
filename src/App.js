@@ -35,6 +35,7 @@ import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 import DashboardCourses from "./pages/UserDashboard/DashboardCourses/DashboardCourses";
 import PrivateRoute from "./Componets/PrivateRoute";
 import AddTeacher from "./pages/UserDashboard/AddTecher/AddTeacher";
+import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
 
@@ -58,6 +59,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/location" element={<Location />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
         <Route path="/payment/success/:id" element={<Sucess />} />
@@ -73,10 +75,22 @@ function App() {
         <Route path="/chat" element={<ChatBody />}></Route>
         {/* <Route path={`/chat/${uuId()}`} element={<Room />}></Route> */}
         <Route>
-          <Route path="/bookmark" element={<Bookmark />} />
+          <Route
+            path="/bookmark"
+            element={
+              <PrivateRoute>https://brain-skill.netlify.app/</PrivateRoute>
+            }
+          />
         </Route>
         {/* course details*/}
-        <Route path="/courseDetails/:id" element={<CourseDetails />}>
+        <Route
+          path="/courseDetails/:id"
+          element={
+            <PrivateRoute>
+              <CourseDetails />
+            </PrivateRoute>
+          }
+        >
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
           <Route path="instructor" element={<Instructor />} />
