@@ -51,7 +51,7 @@ const CourseQuiz = () => {
     },
   ]
 
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -71,8 +71,6 @@ const CourseQuiz = () => {
     else {
       setShowScore(true)
     }
-
-
   }
 
   const restQuiz = () => {
@@ -94,10 +92,7 @@ const CourseQuiz = () => {
             <h1 className="text-xl">
               You have a score {score} out of {Questionbank.length}
             </h1>
-
-
             <button className=" ml-8 text-white rounded-md items-center bg-blue-800" type="submit" onClick={restQuiz}>Try Againe</button>
-
           </div>
         ) : (
           <>

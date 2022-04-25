@@ -18,6 +18,7 @@ import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
 import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
 import Failed from "./pages/Recipet/Failed";
+import Classes from './pages/Classes/Classes';
 import UserDashboard from "./pages/UserDashboard/UserDashboard/UserDashboard";
 import UserProfile from "./pages/UserDashboard/UserProfile/UserProfile";
 import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
@@ -28,8 +29,9 @@ import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
+
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
-import Classes from "./pages/Classes/Classes";
+//import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
 
@@ -51,6 +53,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
         <Route path="/payment/success/:id" element={<Sucess />} />
@@ -75,6 +78,9 @@ function App() {
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
         </Route>
+        {/* classes  */}
+        <Route path="/classes" element={<Classes />} />
+        {/* */}
         {/* user dashboard  */}
         <Route path="/userDashboard" element={<UserDashboard />}>
           <Route path="profile" element={<UserProfile />} />
@@ -93,6 +99,7 @@ function App() {
         <Route path="/myCourses" element={<EnrollCourse />} />
         <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
+        {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
