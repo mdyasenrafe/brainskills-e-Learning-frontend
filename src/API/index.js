@@ -129,6 +129,9 @@ export const getUserApi = async () => {
     console.error({ err });
   }
 };
+
+
+
 export const signinAPI = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.signUrl, body);
@@ -137,6 +140,8 @@ export const signinAPI = async (body) => {
     console.error({ err });
   }
 };
+
+
 export const VerifyAPi = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.verifyUrl, body);
