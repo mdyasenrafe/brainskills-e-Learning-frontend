@@ -33,6 +33,7 @@ import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 // import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
+import Resources from './pages/Resources/Resources';
 
 function App() {
   const location = useLocation();
@@ -53,6 +54,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/resources" element={<Resources />} />
         {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
