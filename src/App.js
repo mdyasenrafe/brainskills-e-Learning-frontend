@@ -38,6 +38,8 @@ import AddTeacher from "./pages/UserDashboard/AddTecher/AddTeacher";
 import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
+import AddQuiz from "./pages/AdminDashboard/AddQuiz";
+import QuizList from "./pages/AdminDashboard/QuizList";
 
 function App() {
   const { loading } = GetUser();
@@ -59,7 +61,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/location" element={<Location />} />
+        {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/about" element={<AboutUs />} />
         <Route path="/payment/failure/:id" element={<Process />} />
         <Route path="/payment/success/:id" element={<Sucess />} />
@@ -78,7 +80,9 @@ function App() {
           <Route
             path="/bookmark"
             element={
-              <PrivateRoute>https://brain-skill.netlify.app/</PrivateRoute>
+              <PrivateRoute>
+                <Bookmark />
+              </PrivateRoute>
             }
           />
         </Route>
@@ -102,7 +106,7 @@ function App() {
         <Route path="/quiz" element={<CourseQuiz />} />
         {/* */}
         {/* user dashboard  */}
-        <Route path="/userDashboard" element={<UserDashboard />}>
+        <Route path="/dashboard" element={<UserDashboard />}>
           <Route
             path="profile"
             element={
@@ -146,15 +150,28 @@ function App() {
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
           <Route path="addNewCourse" element={<AddNewCourse />} />
-          <Route path="courses" element={<DashboardCourses />} />
+          <Route
+            path="courses"
+            element={<DashboardCourses title={"Courses"} />}
+          />
           <Route path="addInstructor" element={<AddTeacher />} />
+          <Route path="addQuiz" element={<AddQuiz />} />
+          <Route path="addQuiz/:id" element={<QuizList />} />
           <Route path="" element={<UserProfile />} />
         </Route>
-        {/*  */}
+        {/* */}
         <Route path="/login" element={<Login />} />
-        <Route path="/myCourses" element={<EnrollCourse />} />
+        <Route
+          path="/myCourses"
+          element={
+            <PrivateRoute>
+              <EnrollCourse />
+            </PrivateRoute>
+          }
+        />
         <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
+        {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

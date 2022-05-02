@@ -131,7 +131,6 @@ export const getUserApi = async () => {
 };
 
 
-
 export const signinAPI = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.signUrl, body);
@@ -168,6 +167,8 @@ export const getInstructor = async (body) => {
     console.error({ err });
   }
 };
+
+
 export const getCourses = async (body) => {
   try {
     const res = await axios.get(url + apiUrl.getCourses);
@@ -185,6 +186,7 @@ export const getBlogs = async (body) => {
     console.error({ err });
   }
 };
+
 export const getEvents = async (body) => {
   try {
     const res = await axios.get(url + apiUrl.getEventApi);

@@ -25,16 +25,6 @@ const links = [
     name: "Course",
     url: "/course",
   },
-  {
-    id: 3,
-    name: "My Courses",
-    url: "/myCourses",
-  },
-  {
-    id: "4",
-    name: "CourseQuiz",
-    url: "/quiz",
-  },
 ];
 
 const Navbar = () => {
@@ -67,7 +57,7 @@ const Navbar = () => {
     const res = await getCartApi();
     if (res?.error === true) {
     } else {
-      setCarts(res.data);
+      setCarts(res?.data);
     }
   };
 
@@ -100,11 +90,12 @@ const Navbar = () => {
                     to={link.url}
                     key={link.id}
                     onClick={() => setShowMenu(false)}
-                    className="cursor-pointer  transform text-black uppercase hover:scale-105 ease-in-out duration-300"
+                    className="cursor-pointer"
                   >
                     {link.name}
                   </Link>
                 ))}
+                {user && <Link to="/myCourses">My course</Link>}
                 <div className="relative">
                   <Link to="/cart">
                     <HiOutlineShoppingCart className="text-2xl text-blue-500" />
@@ -249,7 +240,7 @@ const Navbar = () => {
               <hr />
               <div onClick={() => setShowUserSetting(false)} className="pb-2">
                 <Link
-                  to={"/userDashboard"}
+                  to={"/dashboard"}
                   className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"
                 >
                   <HiOutlineViewGrid className="mr-2" />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCourses } from "../../../API";
 import LoadingSpiners from "../../../Componets/LoadingSpiners";
 
-const DashboardCourses = () => {
+const DashboardCourses = ({ title }) => {
   const [courses, setCourses] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -22,7 +22,7 @@ const DashboardCourses = () => {
 
   return (
     <div>
-      <h1 className="py-3 text-xl px-4 font-semibold text-gray-600">Courses</h1>
+      <h1 className="py-3 text-xl px-4 font-semibold text-gray-600">{title}</h1>
       <hr />
       <div className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto ">
