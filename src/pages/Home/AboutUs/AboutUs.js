@@ -21,36 +21,36 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper";
 
 const AboutUs = () => {
-    const instructors =[
+    const instructors = [
         {
-            img:img1,
-            name:"Fateh Ahmod",
-            profetion:"Web Developer"
+            img: img1,
+            name: "Fateh Ahmod",
+            profetion: "Web Developer"
         },
         {
-            img:img2,
-            name:"Bappy Das",
-            profetion:"Web Developer"
+            img: img2,
+            name: "Bappy Das",
+            profetion: "Web Developer"
         },
         {
-            img:img3,
-            name:"Md Yousuf Sheikh",
-            profetion:"Web Developer"
+            img: img3,
+            name: "Md Yousuf Sheikh",
+            profetion: "Web Developer"
         },
         {
-            img:img4,
-            name:"Shahriar Rahman Heezol",
-            profetion:"Web Developer"
+            img: img4,
+            name: "Shahriar Rahman Heezol",
+            profetion: "Web Developer"
         },
         {
-            img:img5,
-            name:"Md Yeasen",
-            profetion:"Web Developer"
+            img: img5,
+            name: "Md Yeasen",
+            profetion: "Web Developer"
         },
         {
-            img:img6,
-            name:"Musa Sazib",
-            profetion:"Web Developer"
+            img: img6,
+            name: "Musa Sazib",
+            profetion: "Web Developer"
         }
     ]
 
@@ -61,7 +61,7 @@ const AboutUs = () => {
     const particlesLoaded = (container) => {
         console.log(container);
     };
-      const options = {
+    const options = {
         background: {
             color: {
                 value: "#fff"
@@ -159,7 +159,7 @@ const AboutUs = () => {
                     "square",
                     "polygon",
                     "rectangle",
-        
+
                 ],
                 options: {
                     polygon: [
@@ -170,20 +170,20 @@ const AboutUs = () => {
                             sides: 6
                         }
                     ],
-                  
+
                 }
             }
         }
     }
     return (
-        
+
         <div>
             <Particles
-                                id="tsparticles"
-                                init={particlesInit}
-                                loaded={particlesLoaded}
-                                options={options}
-                            />
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                options={options}
+            />
             <div className='flex items-center justify-center  h-60 mb-5 aboutImage' >
                 <div className=''>
                     <h1 className='text-3xl text-white font-extrabold'>About us</h1>
@@ -224,48 +224,48 @@ const AboutUs = () => {
             <div>
                 <h1 className='flex justify-center text-2xl font-bold'>Our team members</h1>
                 <div className="Instructor">
-            <Swiper
-              slidesPerView={3}
-              spaceBetween={30}
-              slidesPerGroup={3}
-              loop={true}
-              loopFillGroupWithBlank={true}
-              pagination={{
-                clickable: true,
-              }}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              breakpoints={{
-                "@0.00": {
-                  slidesPerView: 1,
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        slidesPerGroup={3}
+                        loop={true}
+                        loopFillGroupWithBlank={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        breakpoints={{
+                            "@0.00": {
+                                slidesPerView: 1,
 
-                },
-                "@1.50": {
-                  slidesPerView: 2,
+                            },
+                            "@1.50": {
+                                slidesPerView: 2,
 
-                },
-                "@1.75": {
-                  slidesPerView: 3,
+                            },
+                            "@1.75": {
+                                slidesPerView: 3,
 
-                }
-              }}
-              modules={[Pagination, Autoplay]}
-              className="mySwiper"
-            >
-              {
-                instructors?.map(data => <SwiperSlide className="py-10">
-                  <div className="text-center bg-gray-50 p-3 rounded-md shadow-md">
-                    <img className="h-48 w-48 rounded-lg mx-auto" src={data.img} alt="" srcset="" />
-                    <h1 className="text-lg  font-semibold">{data.name}</h1>
-                    <h1>{data.profetion}</h1>
-                  </div>
-                </SwiperSlide>)
-              }
+                            }
+                        }}
+                        modules={[Pagination, Autoplay]}
+                        className="mySwiper"
+                    >
+                        {
+                            instructors?.map(data => <SwiperSlide className="py-10">
+                                <div className="text-center bg-gray-50 p-3 rounded-md shadow-md">
+                                    <img className="h-48 w-48 rounded-lg mx-auto" src={data.img} alt="" srcset="" />
+                                    <h1 className="text-lg  font-semibold">{data.name}</h1>
+                                    <h1>{data.profetion}</h1>
+                                </div>
+                            </SwiperSlide>)
+                        }
 
-            </Swiper>
-          </div>
+                    </Swiper>
+                </div>
             </div>
         </div>
     );
