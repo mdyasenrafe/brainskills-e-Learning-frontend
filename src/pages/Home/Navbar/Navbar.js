@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import {
   HiOutlineShoppingCart,
   HiOutlineLogout,
@@ -10,8 +9,10 @@ import {
   HiOutlineX,
 } from "react-icons/hi";
 
+import TopNavbar from "../../Shared/TopNavbar/TopNavbar";
 import GetUser from "../../../hooks/GetUser";
 import { getCartApi } from "../../../API";
+
 // links
 const links = [
   {
@@ -21,24 +22,9 @@ const links = [
   },
   {
     id: 2,
-    name: "About",
-    url: "/about",
-  },
-  {
-    id: 3,
     name: "Course",
     url: "/course",
   },
-  {
-    id: 3,
-    name: "CourseQuiz",
-    url: "/quiz",
-  },
-  {
-    id: 4,
-    name: "Event",
-    url: "/event",
-  }
 ];
 
 const Navbar = () => {
@@ -71,7 +57,7 @@ const Navbar = () => {
     const res = await getCartApi();
     if (res?.error === true) {
     } else {
-      setCarts(res.data);
+      setCarts(res?.data);
     }
   };
 
@@ -79,7 +65,12 @@ const Navbar = () => {
     <div>
       {!headerFixed && <TopNavbar />}
       <div
-        className={`${headerFixed ? "fixed bg-gray-100 py-1 z-30  shadow-lg" : "z-30 bg-color"} min-w-full  transition-all delay-75 ease-in-out`}>
+        className={`${
+          headerFixed
+            ? "fixed bg-gray-100 py-1 z-30  shadow-lg"
+            : "z-30 bg-color"
+        } min-w-full  transition-all delay-75 ease-in-out`}
+      >
         <div className="relative">
           {/* For large screens */}
           <div className="px-2">
@@ -99,11 +90,12 @@ const Navbar = () => {
                     to={link.url}
                     key={link.id}
                     onClick={() => setShowMenu(false)}
-                    className="cursor-pointer  transform text-black uppercase hover:scale-105 ease-in-out duration-300"
+                    className="cursor-pointer"
                   >
                     {link.name}
                   </Link>
                 ))}
+                {user && <Link to="/myCourses">My course</Link>}
                 <div className="relative">
                   <Link to="/cart">
                     <HiOutlineShoppingCart className="text-2xl text-blue-500" />
@@ -185,8 +177,9 @@ const Navbar = () => {
                   <button
                     aria-label="open menu"
                     onClick={() => setShowMenu(true)}
-                    className={`${!headerFixed && "text-black"
-                      }  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}
+                    className={`${
+                      !headerFixed && "text-black"
+                    }  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}
                   >
                     <svg
                       className="fill-stroke"
@@ -225,8 +218,9 @@ const Navbar = () => {
 
           {/* user setting  */}
           <div
-            className={`${showUserSetting ? "absolute" : "hidden"
-              } top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}
+            className={`${
+              showUserSetting ? "absolute" : "hidden"
+            } top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}
           >
             <div className="">
               <div className="px-4">
@@ -246,7 +240,7 @@ const Navbar = () => {
               <hr />
               <div onClick={() => setShowUserSetting(false)} className="pb-2">
                 <Link
-                  to={"/userDashboard"}
+                  to={"/dashboard"}
                   className="flex items-center px-4 py-2 hover:bg-gray-200 text-gray-600 hover:text-gray-900"
                 >
                   <HiOutlineViewGrid className="mr-2" />
@@ -281,8 +275,9 @@ const Navbar = () => {
 
           {/*Screen  small*/}
           <div
-            className={`${showMenu ? "flex ease-in-out duration-300 " : "hidden"
-              } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
+            className={`${
+              showMenu ? "flex ease-in-out duration-300 " : "hidden"
+            } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
           >
             <div className="py-3 px-5 container mx-auto">
               <div

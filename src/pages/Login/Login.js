@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signinAPI } from "../../API";
 import { Toast } from "../../Componets/Toast";
 
@@ -10,8 +10,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const navigate = useNavigate();
+  
   const onSubmit = async (data) => {
     const res = await signinAPI(data);
 
