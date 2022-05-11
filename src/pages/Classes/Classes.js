@@ -143,7 +143,7 @@ const Classes = () => {
     }
 
     return (
-        <div className='bg-white'>
+        <div className='bg-white py-10'>
             <div className='container mx-auto pt-5 px-4 '>
                 <h1 className='text-3xl py-2'>Course Name: React Js</h1>
                 <div className="lg:flex space-y-10 lg:space-y-0 lg:space-x-8  mb-0">
@@ -184,7 +184,7 @@ const Classes = () => {
                             {/*  */}
                             {
                                 question &&
-                                <div className="mx-auto px-5 bg-gray-100 shadow-3xl border rounded-2xl">
+                                <div className="mx-auto px-5 py-10 bg-gray-100 shadow-3xl border rounded-2xl">
                                     <div>
                                         <div className="w-full mt-2 mb-3 bg-gray-300 rounded-full h-2">
                                             <div class="bg-green-500 h-2 rounded-full" style={{ width: `${velue}%` }}></div>

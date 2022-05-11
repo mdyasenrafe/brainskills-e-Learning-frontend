@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import GetUser from "../../../hooks/GetUser";
 import { AiOutlineUser } from "react-icons/ai";
+import { IoMdAlbums } from "react-icons/io";
 import { GrCertificate } from "react-icons/gr";
 import { FaChartBar } from "react-icons/fa";
 import { MdOutlineSell, MdOutlinePlace, MdOutlineLibraryAdd, MdAddModerator } from "react-icons/md";
@@ -31,11 +32,8 @@ const UserDashboard = () => {
               <NavLink to="education" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <BsBook className='mr-3' />   Education
               </NavLink>
-              <NavLink to="overView" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
-                <BsBook className='mr-3' />  Over View
-              </NavLink>
               <NavLink to="enrollcourse" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
-                <BsBook className='mr-3' />   Enroll Course
+                <IoMdAlbums className='mr-3' />   Enroll Course
               </NavLink>
               <NavLink to="orderHistory" className={({ isActive }) => (isActive ? 'user-dashboard-sidebar-link-active' : 'user-dashboard-sidebar-link border-b')}>
                 <MdOutlineSell className='mr-3' />   Order History
