@@ -44,7 +44,7 @@ import Instructor from "./pages/Home/Instructor/Instructor";
 // DetailsInstructor import
 import DetailsInstructor from "./pages/CourseDetails/Instructor/Instructor";
 import Events from "./pages/Home/Events/Events";
-import Course2 from "./pages/Course2/Course2";
+
 function App() {
   const { loading } = GetUser();
   const location = useLocation();
@@ -72,7 +72,6 @@ function App() {
         <Route path="/payment/processing/:id" element={<Failed />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
-        <Route path="/Course2" element={<Course2/>}/>
         {/* {events Route  */}
         <Route path="/events" element={<Events />}/>
         <Route path="/instructor" element={<Instructor />}/>
