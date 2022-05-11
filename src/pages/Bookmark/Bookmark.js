@@ -131,9 +131,7 @@ const Bookmark = () => {
                       <div
                         style={{ fontSize: "25px" }}
                         className="cursor-pointor"
-                      >
-                        <AiOutlineDelete />
-                      </div>
+                      ></div>
                     </div>
                   </div>
                 ))}

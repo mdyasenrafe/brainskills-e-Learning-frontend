@@ -13,7 +13,6 @@ import CartDetails from "./pages/Cart/CartDetails";
 import Courses from "./pages/Home/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
-import Instructor from "./pages/CourseDetails/Instructor/Instructor";
 import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
 import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
@@ -40,7 +39,11 @@ import Location from "./pages/Location/Location";
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
 import AddQuiz from "./pages/AdminDashboard/AddQuiz";
 import QuizList from "./pages/AdminDashboard/QuizList";
-
+import AddEvent from "./pages/AdminDashboard/AddEvent";
+import Instructor from "./pages/Home/Instructor/Instructor";
+// DetailsInstructor import
+import DetailsInstructor from "./pages/CourseDetails/Instructor/Instructor";
+import Events from "./pages/Home/Events/Events";
 function App() {
   const { loading } = GetUser();
   const location = useLocation();
@@ -68,6 +71,9 @@ function App() {
         <Route path="/payment/processing/:id" element={<Failed />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
+        {/* {events Route  */}
+        <Route path="/events" element={<Events />} />
+        <Route path="/instructor" element={<Instructor />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/courseDetails/:id" element={<CourseDetails />} />
         <Route path="/cart" element={<CartDetails />} />
@@ -97,7 +103,7 @@ function App() {
         >
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
-          <Route path="instructor" element={<Instructor />} />
+          <Route path="instructor" element={<DetailsInstructor />} />
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
         </Route>
@@ -150,6 +156,7 @@ function App() {
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
           <Route path="addNewCourse" element={<AddNewCourse />} />
+          <Route path="addEvent" element={<AddEvent />} />
           <Route
             path="courses"
             element={<DashboardCourses title={"Courses"} />}

@@ -97,6 +97,16 @@ const UserDashboard = () => {
                     >
                       <GiTeacher className="mr-3" /> Add Quiz
                     </NavLink>
+                    <NavLink
+                      to="addEvent"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "user-dashboard-sidebar-link-active flex items-center"
+                          : "user-dashboard-sidebar-link border-b flex items-center"
+                      }
+                    >
+                      <GiTeacher className="mr-3" /> Add Event
+                    </NavLink>
                   </div>
                 ) : (
                   <>

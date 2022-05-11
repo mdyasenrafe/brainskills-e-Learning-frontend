@@ -35,14 +35,14 @@ const Courses = () => {
             </span>
           </h1>
         </div>
-        <div>
+        {/* <div>
           <ul className="pt-4 text-base text-gray-700 md:flex md:justify-around md:pt-0 cursor-pointer">
             <li>View All</li>
             <li>Web</li>
             <li>Photography</li>
             <li>Life Style</li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className="container mx-auto p-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto ">

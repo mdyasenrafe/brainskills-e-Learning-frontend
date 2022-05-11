@@ -11,70 +11,30 @@ import {
   MdPhone,
   MdEmail,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
 // Popular
-const popularCourse = [
-  {
-    id: 1,
-    name: "Computer Science",
-    link: "/",
-  },
-  {
-    id: 2,
-    name: "Web Development",
-    link: "/",
-  },
-  {
-    id: 3,
-    name: "Data Science",
-    link: "/",
-  },
-  {
-    id: 4,
-    name: "Marketing",
-    link: "/",
-  },
-  {
-    id: 5,
-    name: "Photography",
-    link: "/",
-  },
-  {
-    id: 6,
-    name: "Business",
-    link: "/",
-  },
-];
+
 // company
 const company = [
   {
     id: 1,
     name: "About Us",
-    link: "/",
+    link: "/about",
   },
   {
     id: 2,
     name: "Courses",
-    link: "/",
+    link: "/course",
   },
   {
     id: 3,
     name: "Instructor",
-    link: "/",
+    link: "/instructor",
   },
   {
     id: 4,
     name: "Events",
-    link: "/",
-  },
-  {
-    id: 5,
-    name: "Terms & Conditions",
-    link: "/",
-  },
-  {
-    id: 6,
-    name: "Privacy Policy",
-    link: "/",
+    link: "/events",
   },
 ];
 
@@ -106,23 +66,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          {/* Popular Courses */}
-          <div className="">
-            <h1 className="text-white text-xl font-bold font-Roboto tracking-wider pb-5">
-              Popular Courses
-            </h1>
-            <ul className="space-y-2">
-              {popularCourse.map((item, index) => (
-                <li
-                  key={index}
-                  className="font-Roboto ease-in duration-30 cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group"
-                >
-                  <div className="w-2 h-2 mr-2  group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50" />{" "}
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-          </div>
+
           {/* Company */}
           <div>
             <h1 className="text-white text-xl font-bold font-Roboto tracking-wider pb-5">
@@ -130,13 +74,12 @@ const Footer = () => {
             </h1>
             <ul className="space-y-2">
               {company.map((item, index) => (
-                <li
-                  key={index}
-                  className="font-Roboto ease-in duration-30 cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group"
-                >
-                  <div className="w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50" />{" "}
-                  {item.name}
-                </li>
+                <Link key={index} to={item?.link}>
+                  <li className="font-Roboto ease-in duration-30 cursor-pointer tracking-wider text-gray-300 hover:text-gray-500 flex items-center group">
+                    <div className="w-2 h-2 mr-2 group-hover:rounded-none group-hover:animate-spin group-hover:bg-blue-400 rounded-full bg-gray-50" />{" "}
+                    {item.name}
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>
