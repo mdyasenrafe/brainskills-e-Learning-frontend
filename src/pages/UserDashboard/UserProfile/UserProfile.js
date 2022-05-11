@@ -8,7 +8,7 @@ const UserProfile = () => {
     <LoadingSpiners loading={loading} height={"50vh"} />
   ) : user?.role === "admin" ? (
     <>
-      <h1>Welcome To admin Dashboard</h1>
+      <h1 className="text-center font-semibold text-2xl text-gary-500">Welcome To admin Dashboard</h1>
     </>
   ) : (
     <>

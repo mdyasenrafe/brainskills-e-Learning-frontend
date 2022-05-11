@@ -33,14 +33,14 @@ const EnrollCourse = () => {
 
   console.log(loading, newCourse);
   return (
-    <div className="bg-slate-50">
+    <div>
       {loading ? (
         <LoadingSpiners loading={loading} height={"50vh"} />
       ) : (
         <>
           {" "}
-          <section className="container">
-            <div className="container mx-auto p-16">
+          <section className="container mx-auto">
+            <div className="p-16">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto ">
                 {newCourse?.map((coursedata) => (
                   <>

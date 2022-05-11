@@ -29,12 +29,12 @@ import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
 import GetUser from "./hooks/GetUser";
-import LoadingSpiners from "./Componets/LoadingSpiners";
+//import LoadingSpiners from "./Componets/LoadingSpiners";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
 import DashboardCourses from "./pages/UserDashboard/DashboardCourses/DashboardCourses";
 import PrivateRoute from "./Componets/PrivateRoute";
 import AddTeacher from "./pages/UserDashboard/AddTecher/AddTeacher";
-import Location from "./pages/Location/Location";
+//import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
 import AddQuiz from "./pages/AdminDashboard/AddQuiz";
