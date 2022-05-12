@@ -71,7 +71,7 @@ const TopCategory = () => {
           </span>
         </h1>
       </div>
-      <div className="container mx-auto ">
+      <div className="  ">
         <Swiper
           slidesPerView={4}
           spaceBetween={20}
@@ -122,7 +122,7 @@ const TopCategory = () => {
                     </div>
                   </div>
                   <div className="informations-container">
-                    <h2 className="title">{course.courseName}</h2>
+                    <h2 className="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex blanditiis.</h2>
                   </div>
                 </div>
               </div>

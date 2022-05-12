@@ -1,7 +1,9 @@
 import React from "react";
+
 import moment from "moment";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { AiFillTags } from "react-icons/ai";
+
 
 const Blog = (props) => {
   const { blogTitle, blogPhoto, categroy, createAt } = props.data;
@@ -27,7 +29,7 @@ const Blog = (props) => {
           </div>
           <h3 className=" font-bold hover:text-indigo-500">{blogTitle}</h3>
         </div>
-      </div>
+      </div>   
     </>
   );
 };
