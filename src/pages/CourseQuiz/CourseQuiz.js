@@ -8,7 +8,7 @@ const CourseQuiz = () => {
       question: "What is html",
       AnswersText: [
         { Answers: "Is it a English language", isCorrect: false },
-        { Answers: "H Markup Language,", isCorrect: true },
+        { Answers: "H Markup Language", isCorrect: true },
         { Answers: "Is it a Bangla language", isCorrect: false },
         { Answers: "Is it a Hindi language", isCorrect: false },
       ]
@@ -51,7 +51,7 @@ const CourseQuiz = () => {
     },
   ]
 
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -71,8 +71,6 @@ const CourseQuiz = () => {
     else {
       setShowScore(true)
     }
-
-
   }
 
   const restQuiz = () => {
@@ -94,14 +92,10 @@ const CourseQuiz = () => {
             <h1 className="text-xl">
               You have a score {score} out of {Questionbank.length}
             </h1>
-
-
             <button className=" ml-8 text-white rounded-md items-center bg-blue-800" type="submit" onClick={restQuiz}>Try Againe</button>
-
           </div>
         ) : (
           <>
-
             <div className="question-section ">
               <div className="question-count text-2xl ">
                 <div className="w-full mb-3 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
