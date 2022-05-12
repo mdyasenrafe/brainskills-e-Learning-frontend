@@ -11,7 +11,7 @@ import Feature from "../Feature/Feature";
 import OurAchivement from "../OurAchivement/OurAchivement";
 import TopHeader from "../../Shared/TopHeader/TopHeader";
 import Courses from "../../Home/Courses/Courses";
-import Course2 from "../../Course2/Course2";
+// import Course2 from "../../Course2/Course2";
 
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
       <TopHeader />
       <Feature />
       <TopCategory />
-      <Course2/>
+      {/* <Course2/> */}
       <Courses />
       <OurAchivement />
       <Instructor />

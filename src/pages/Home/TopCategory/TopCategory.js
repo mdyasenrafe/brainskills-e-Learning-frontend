@@ -114,11 +114,11 @@ const TopCategory = () => {
                   </h2>
                 </div>
               </div> */}
-              <div className="cardBox">
-                <div class="booking-card" style={{ backgroundImage: `url(${course.imgs})` }}>
+              <div className="cardBox ">
+                <div class="booking-card shadow-lg" style={{ backgroundImage: `url(${course.imgs})` }}>
                   <div className="book-container">
                     <div className="content">
-                      {/* <button class="btn">Add to card</button> */}
+                      <button class="btn">{course.courseName}</button>
                     </div>
                   </div>
                   <div className="informations-container">
