@@ -114,18 +114,18 @@ const TopCategory = () => {
                   </h2>
                 </div>
               </div> */}
-              <ul>
-                <li class="booking-card" style={{ backgroundImage: `url(${course.imgs})` }}>
-                  <div class="book-container">
-                    <div class="content">
+              <div className="cardBox">
+                <div class="booking-card" style={{ backgroundImage: `url(${course.imgs})` }}>
+                  <div className="book-container">
+                    <div className="content">
                       {/* <button class="btn">Add to card</button> */}
                     </div>
                   </div>
-                  <div class="informations-container">
-                    <h2 class="title">{course.courseName}</h2>
+                  <div className="informations-container">
+                    <h2 className="title">{course.courseName}</h2>
                   </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
