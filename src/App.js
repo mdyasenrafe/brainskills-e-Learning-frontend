@@ -13,12 +13,11 @@ import CartDetails from "./pages/Cart/CartDetails";
 import Courses from "./pages/Home/Courses/Courses";
 import Overview from "./pages/CourseDetails/Overview/Overview";
 import Curriculum from "./pages/CourseDetails/Curriculum/Curriculum";
-import Instructor from "./pages/CourseDetails/Instructor/Instructor";
 import ReviewsCourse from "./pages/CourseDetails/ReviewsCourse/ReviewsCourse";
 import Process from "./pages/Recipet/Process";
 import Sucess from "./pages/Recipet/Sucess";
 import Failed from "./pages/Recipet/Failed";
-import Classes from './pages/Classes/Classes';
+import Classes from "./pages/Classes/Classes";
 import UserDashboard from "./pages/UserDashboard/UserDashboard/UserDashboard";
 import UserProfile from "./pages/UserDashboard/UserProfile/UserProfile";
 import UserAddress from "./pages/UserDashboard/UserAddress/UserAddress";
@@ -29,16 +28,28 @@ import CreateAdmin from "./pages/UserDashboard/CreateAdmin/CreateAdmin";
 import AddNewCourse from "./pages/UserDashboard/AddNewCourse/AddNewCourse";
 import Bookmark from "./pages/Bookmark/Bookmark";
 import CourseQuiz from "./pages/CourseQuiz/CourseQuiz";
-
+import GetUser from "./hooks/GetUser";
+//import LoadingSpiners from "./Componets/LoadingSpiners";
 import UserOverView from "./pages/UserDashboard/UserOverView/UserOverView";
+import DashboardCourses from "./pages/UserDashboard/DashboardCourses/DashboardCourses";
+import PrivateRoute from "./Componets/PrivateRoute";
+import AddTeacher from "./pages/UserDashboard/AddTecher/AddTeacher";
 //import Location from "./pages/Location/Location";
 // import { v4 as uuId } from "uuid"
 import ChatBody from "./pages/SocketIo/ChatBody/ChatBody";
-
+import AddQuiz from "./pages/AdminDashboard/AddQuiz";
+import QuizList from "./pages/AdminDashboard/QuizList";
+import AddEvent from "./pages/AdminDashboard/AddEvent";
+import Instructor from "./pages/Home/Instructor/Instructor";
+// DetailsInstructor import
+import DetailsInstructor from "./pages/CourseDetails/Instructor/Instructor";
+import Events from "./pages/Home/Events/Events";
 function App() {
+  const { loading } = GetUser();
   const location = useLocation();
   const pn = location.pathname;
   let pathName = pn?.substring(1);
+
   // title
   useEffect(() => {
     if (pn === "/") {
@@ -60,43 +71,111 @@ function App() {
         <Route path="/payment/processing/:id" element={<Failed />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
+        {/* {events Route  */}
+        <Route path="/events" element={<Events />} />
+        <Route path="/instructor" element={<Instructor />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/courseDetails/:id" element={<CourseDetails />} />
         <Route path="/cart" element={<CartDetails />} />
         <Route path="/course" element={<Courses />}></Route>
+        {/* course details*/}
         <Route path="/quiz" element={<CourseQuiz />}></Route>
         <Route path="/chat" element={<ChatBody />}></Route>
         {/* <Route path={`/chat/${uuId()}`} element={<Room />}></Route> */}
         <Route>
-          <Route path="/bookmark" element={<Bookmark />} />
+          <Route
+            path="/bookmark"
+            element={
+              <PrivateRoute>
+                <Bookmark />
+              </PrivateRoute>
+            }
+          />
         </Route>
-        {/* course details // //*/}
-        <Route path="/courseDetails/:id" element={<CourseDetails />}>
+        {/* course details*/}
+        <Route
+          path="/courseDetails/:id"
+          element={
+            <PrivateRoute>
+              <CourseDetails />
+            </PrivateRoute>
+          }
+        >
           <Route path="overview" element={<Overview />} />
           <Route path="curriculum" element={<Curriculum />} />
-          <Route path="instructor" element={<Instructor />} />
+          <Route path="instructor" element={<DetailsInstructor />} />
           <Route path="reviews" element={<ReviewsCourse />} />
           <Route path="" element={<Overview />} />
         </Route>
         {/* classes  */}
-        <Route path="/classes" element={<Classes />} />
+        <Route path="/classes/:id" element={<Classes />} />
+        <Route path="/quiz" element={<CourseQuiz />} />
         {/* */}
         {/* user dashboard  */}
-        <Route path="/userDashboard" element={<UserDashboard />}>
-          <Route path="profile" element={<UserProfile />} />
-          <Route path="address" element={<UserAddress />} />
-          <Route path="overView" element={<UserOverView />} />
-          <Route path="enrollcourse" element={<EnrollCourse />} />
-          <Route path="education" element={<UserEducation />} />
-          <Route path="orderHistory" element={<UserOrderHistory />} />
+        <Route path="/dashboard" element={<UserDashboard />}>
+          <Route
+            path="profile"
+            element={
+              <PrivateRoute>
+                <UserProfile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="address"
+            element={
+              <PrivateRoute>
+                <UserAddress />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="overView"
+            element={
+              <PrivateRoute>
+                <UserOverView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="education"
+            element={
+              <PrivateRoute>
+                <UserEducation />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="orderHistory"
+            element={
+              <PrivateRoute>
+                <UserOrderHistory />
+              </PrivateRoute>
+            }
+          />
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
           <Route path="addNewCourse" element={<AddNewCourse />} />
+          <Route path="addEvent" element={<AddEvent />} />
+          <Route
+            path="courses"
+            element={<DashboardCourses title={"Courses"} />}
+          />
+          <Route path="addInstructor" element={<AddTeacher />} />
+          <Route path="addQuiz" element={<AddQuiz />} />
+          <Route path="addQuiz/:id" element={<QuizList />} />
           <Route path="" element={<UserProfile />} />
         </Route>
         {/* */}
         <Route path="/login" element={<Login />} />
-        <Route path="/myCourses" element={<EnrollCourse />} />
+        <Route
+          path="/myCourses"
+          element={
+            <PrivateRoute>
+              <EnrollCourse />
+            </PrivateRoute>
+          }
+        />
         <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/location" element={<Location />} /> */}

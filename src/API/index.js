@@ -1,10 +1,11 @@
 import axios from "axios";
 import { headers } from "./Headers";
 
-const url = "https://brainskillapi.herokuapp.com/";
+const url = "https://morning-headland-94658.herokuapp.com/";
 
 const apiUrl = {
   getInstructor: "instructor/getInstructor",
+  addInstructor: "instructor/addInstuctor",
   getCourses: "course/getCourse",
   getCourseDetails: "course/courseDetails",
   getBlogApi: "blog/getBlog",
@@ -19,7 +20,56 @@ const apiUrl = {
   getCart: "cart/getCart",
   postPayment: "payment/init",
   getQuizUrl: "quiz/getQuiz",
+  getBookmark: "bookmark/getBookmark",
+  addBookmark: "bookmark/addBookmark",
+  addEvent: "event/addEvent",
 };
+
+export const addEventApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addEvent, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const addInstructorApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addInstructor, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const getBookmarkApi = async (body) => {
+  try {
+    const res = await axios.get(url + apiUrl.getBookmark, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const addBookmarkApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addBookmark, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+
 export const getQuiz = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.getQuizUrl, body, {
@@ -94,7 +144,6 @@ export const getUserApi = async () => {
   }
 };
 
-
 export const signinAPI = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.signUrl, body);
@@ -103,7 +152,6 @@ export const signinAPI = async (body) => {
     console.error({ err });
   }
 };
-
 
 export const VerifyAPi = async (body) => {
   try {
@@ -131,7 +179,6 @@ export const getInstructor = async (body) => {
     console.error({ err });
   }
 };
-
 
 export const getCourses = async (body) => {
   try {

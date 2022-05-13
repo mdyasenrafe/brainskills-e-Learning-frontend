@@ -5,6 +5,7 @@ import DotLoader from "react-spinners/DotLoader";
 const override = css`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
   border-color: red;
 `;
