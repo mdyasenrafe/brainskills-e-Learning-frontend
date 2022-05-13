@@ -93,6 +93,7 @@ const AddNewCourse = () => {
       console.log("This browser does not support HTML5.");
     }
   };
+
   const processExcel = (data) => {
     const workbook = XLSX.read(data, { type: "binary" });
     const firstSheet = workbook.SheetNames[0];
@@ -111,8 +112,9 @@ const AddNewCourse = () => {
       }
     }
     setCourseContent(excelRows);
+    console.log(excelRows);
   };
-
+  console.log(courseContent);
   return (
     <div>
       <h1 className="py-3 text-xl px-4 font-semibold text-gray-600">

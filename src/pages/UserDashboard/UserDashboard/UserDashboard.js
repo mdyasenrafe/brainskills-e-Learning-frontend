@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import GetUser from "../../../hooks/GetUser";
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser, AiFillPlusSquare } from "react-icons/ai";
 import { GrCertificate } from "react-icons/gr";
 import { GiTeacher } from "react-icons/gi";
 import { FaChartBar, FaGraduationCap } from "react-icons/fa";
@@ -95,7 +95,7 @@ const UserDashboard = () => {
                           : "user-dashboard-sidebar-link border-b flex items-center"
                       }
                     >
-                      <GiTeacher className="mr-3" /> Add Quiz
+                      <AiFillPlusSquare className="mr-3" /> Add Quiz
                     </NavLink>
                     <NavLink
                       to="addEvent"
@@ -105,7 +105,17 @@ const UserDashboard = () => {
                           : "user-dashboard-sidebar-link border-b flex items-center"
                       }
                     >
-                      <GiTeacher className="mr-3" /> Add Event
+                      <AiFillPlusSquare className="mr-3" /> Add Event
+                    </NavLink>
+                    <NavLink
+                      to="addBlog"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "user-dashboard-sidebar-link-active flex items-center"
+                          : "user-dashboard-sidebar-link border-b flex items-center"
+                      }
+                    >
+                      <AiFillPlusSquare className="mr-3" /> Add Blog
                     </NavLink>
                   </div>
                 ) : (
@@ -183,7 +193,6 @@ const UserDashboard = () => {
         </div>
       )}
     </div>
-
   );
 };
 

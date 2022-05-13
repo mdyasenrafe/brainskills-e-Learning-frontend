@@ -27,6 +27,7 @@ const AddEvent = () => {
       reset();
     }
   };
+
   return (
     <div>
       <h1 className="py-3 text-xl px-4 font-semibold text-gray-600">
