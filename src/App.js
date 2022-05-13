@@ -46,6 +46,7 @@ import DetailsInstructor from "./pages/CourseDetails/Instructor/Instructor";
 import Events from "./pages/Home/Events/Events";
 import AddBlog from "./pages/AdminDashboard/AddBlog";
 import BlogDetail from "./pages/Home/Blog/BlogDetail";
+
 function App() {
   const { loading } = GetUser();
   const location = useLocation();

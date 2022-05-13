@@ -32,7 +32,7 @@ const Reviews = () => {
           <h1 className="md:text-center mx-auto font-Roboto font-bold text-3xl lg:text-4xl lg:w-2/4 xl:w-2/6">
             What Students Think and Say About
             <span className="relative ml-2">
-              Eduman
+              Brain Skill
               {/* animation */}
               <div className="absolute animate-bounce -bottom-4 left-0 w-20 h-4">
                 <div className="w-16 h-1.5 flex rounded-full  bg-blue-500">
