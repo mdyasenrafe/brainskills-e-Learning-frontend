@@ -58,7 +58,7 @@ const CartDetails = () => {
   };
 
   return (
-    <div className="container">
+    <div data-testId="cart" className="container">
       <h1 className="text-4xl	font-bold text-center py-10">Cart</h1>
       {loading == true ? (
         <LoadingSpiners loading={loading} height={"50vh"} />

@@ -43,7 +43,7 @@ const CourseDetails = () => {
     }
   };
   return (
-    <div>
+    <div data-testId="courseDetails">
       <div className="container mx-auto px-4 py-5 relative ">
         <div className="lg:flex lg:justify-between">
           {/* video */}
