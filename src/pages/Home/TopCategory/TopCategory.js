@@ -71,8 +71,9 @@ const TopCategory = () => {
           </span>
         </h1>
       </div>
-      <div className="  ">
+      <div className="container mx-auto">
         <Swiper
+
           slidesPerView={4}
           spaceBetween={20}
           autoplay={{
@@ -82,7 +83,7 @@ const TopCategory = () => {
           navigation={true}
           breakpoints={{
             "@0.50": {
-              slidesPerView: 1,
+              slidesPerView: 2,
             },
             "@1.00": {
               slidesPerView: 2,
@@ -103,7 +104,7 @@ const TopCategory = () => {
           className="mySwiper"
         >
           {courses.map((course, index) => (
-            <SwiperSlide key={index} className="py-12 ">
+            <SwiperSlide key={index} className="py-12">
               {/* <div className=" mx-auto w-72 h-auto md:w-56 shadow-md border hover:shadow-none ease-in-out duration-300 border-gray-100 rounded-lg">
                 <div className="mx-auto py-6 w-40 h-35">
                   <img src={course.imgs} alt="" srcSet="" />

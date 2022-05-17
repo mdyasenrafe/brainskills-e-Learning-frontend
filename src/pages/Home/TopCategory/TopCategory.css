@@ -1,205 +1,229 @@
 .swiper-button-next::after {
-    content: "\1F81A" !important;
-    background: rgb(255, 255, 255);
-    color: rgba(1, 1, 1, 0.69);
-    border: 2px solid rgb(255, 255, 255);
-    font-size: 30px;
-    justify-items: center;
-    margin-right: 30px;
-    border-radius: 80px;
-    padding: 6px;
-    box-shadow: 1px 0px 10px rgb(239, 239, 239);
+  content: "\1F81A" !important;
+  background: rgb(255, 255, 255);
+  color: rgba(1, 1, 1, 0.69);
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 30px;
+  justify-items: center;
+  margin-right: 30px;
+  border-radius: 80px;
+  padding: 6px;
+  box-shadow: 1px 0px 10px rgb(239, 239, 239);
 }
 
 .swiper-button-prev::after {
-    content: "\1F818" !important;
-    background: rgb(255, 255, 255);
-    color: rgba(1, 1, 1, 0.69);
-    border: 2px solid rgb(255, 255, 255);
-    font-size: 30px;
-    justify-items: center;
-    margin-left: 30px;
-    border-radius: 80px;
-    padding: 6px;
-    box-shadow: 1px 0px 10px rgb(239, 239, 239);
+  content: "\1F818" !important;
+  background: rgb(255, 255, 255);
+  color: rgba(1, 1, 1, 0.69);
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 30px;
+  justify-items: center;
+  margin-left: 30px;
+  border-radius: 80px;
+  padding: 6px;
+  box-shadow: 1px 0px 10px rgb(239, 239, 239);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Sofia", sans-serif;
-  }
-  
-  .title {
-    color: #0a4870;
-    font-weight: 500;
-  }
-  
-  .cardBox .booking-card {
-    position: relative;
-    width: 250px;
-    display: flex;
-    flex: 0 0 300px;
-    flex-direction: column;
-    margin: 20px;
-    margin-bottom: 30px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    background-position: center center;
-    background-size: cover;
-    text-align: center;
-    color: #0a4870;
-    transition: 0.3s;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: "Sofia", sans-serif;
+}
+
+.title {
+  color: #0a4870;
+  font-weight: 500;
+}
+
+
+.cardBox .booking-card {
+  position: relative;
+  width: 250px;
+  display: flex;
+  flex: 0 0 300px;
+  flex-direction: column;
+  margin: 20px;
+  margin-bottom: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  color: #0a4870;
+  transition: 0.3s;
+}
+
+.cardBox .booking-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 72, 112, 0);
+  transition: 0.3s;
+}
+
+.cardBox .booking-card .book-container {
+  height: 160px;
+}
+
+.cardBox .booking-card .book-container .content {
+  position: relative;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-200px);
+  transition: 0.3s;
+}
+
+.cardBox .booking-card .book-container .content .btn {
+  border: 3px solid white;
+  padding: 10px 15px;
+  background: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cardBox .booking-card .book-container .content .btn:hover {
+  background: white;
+  border: 0px solid white;
+  color: #0a4870;
+}
+
+.cardBox .booking-card .informations-container {
+  flex: 1 0 auto;
+  padding: 20px;
+  background: #f0f0f0;
+  transform: translateY(206px);
+  transition: 0.3s;
+}
+
+.cardBox .booking-card .informations-container .title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.cardBox .booking-card .informations-container .title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 50px;
+  margin: auto;
+  background: #0a4870;
+}
+
+.cardBox .booking-card .informations-container .price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cardBox .booking-card .informations-container .price .icon {
+  margin-right: 10px;
+}
+
+.cardBox .booking-card .informations-container .more-information {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.cardBox .booking-card .informations-container .more-information .info-and-date-container {
+  display: flex;
+}
+
+.cardBox .booking-card .informations-container .more-information .info-and-date-container .box {
+  flex: 1 0;
+  padding: 15px;
+  margin-top: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: white;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.cardBox .booking-card .informations-container .more-information .info-and-date-container .box .icon {
+  margin-bottom: 5px;
+}
+
+.cardBox .booking-card .informations-container .more-information .info-and-date-container .box.info {
+  color: #ec992c;
+  margin-right: 10px;
+}
+
+.cardBox .booking-card .informations-container .more-information .disclaimer {
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #7d7d7d;
+}
+
+.cardBox .booking-card:hover::before {
+  background: rgba(10, 72, 112, 0.6);
+}
+
+.cardBox .booking-card:hover .book-container .content {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.cardBox .booking-card:hover .informations-container {
+  transform: translateY(0px);
+}
+
+.cardBox .booking-card:hover .informations-container .more-information {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
   .cardBox .booking-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 72, 112, 0);
-    transition: 0.3s;
-  }
-  .cardBox .booking-card .book-container {
-    height: 160px;
-  }
-  .cardBox .booking-card .book-container .content {
-    position: relative;
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    transform: translateY(-200px);
-    transition: 0.3s;
-  }
-  .cardBox .booking-card .book-container .content .btn {
-    border: 3px solid white;
-    padding: 10px 15px;
-    background: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.3em;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .cardBox .booking-card .book-container .content .btn:hover {
-    background: white;
-    border: 0px solid white;
-    color: #0a4870;
-  }
-  .cardBox .booking-card .informations-container {
-    flex: 1 0 auto;
-    padding: 20px;
-    background: #f0f0f0;
-    transform: translateY(206px);
-    transition: 0.3s;
-  }
-  .cardBox .booking-card .informations-container .title {
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.2em;
-  }
-  .cardBox .booking-card .informations-container .title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    width: 50px;
-    margin: auto;
-    background: #0a4870;
-  }
-  .cardBox .booking-card .informations-container .price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  .cardBox .booking-card .informations-container .price .icon {
-    margin-right: 10px;
-  }
-  .cardBox .booking-card .informations-container .more-information {
-    opacity: 0;
-    transition: 0.3s;
-  }
-  .cardBox .booking-card .informations-container .more-information .info-and-date-container {
-    display: flex;
-  }
-  .cardBox .booking-card .informations-container .more-information .info-and-date-container .box {
-    flex: 1 0;
-    padding: 15px;
-    margin-top: 20px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    background: white;
-    font-weight: bold;
-    font-size: 0.9em;
-  }
-  .cardBox .booking-card .informations-container .more-information .info-and-date-container .box .icon {
-    margin-bottom: 5px;
-  }
-  .cardBox .booking-card .informations-container .more-information .info-and-date-container .box.info {
-    color: #ec992c;
-    margin-right: 10px;
-  }
-  .cardBox .booking-card .informations-container .more-information .disclaimer {
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #7d7d7d;
-  }
-  .cardBox .booking-card:hover::before {
     background: rgba(10, 72, 112, 0.6);
   }
-  .cardBox .booking-card:hover .book-container .content {
+
+  .cardBox .booking-card .book-container .content {
     opacity: 1;
     transform: translateY(0px);
   }
-  .cardBox .booking-card:hover .informations-container {
+
+  .cardBox .booking-card .informations-container {
     transform: translateY(0px);
   }
-  .cardBox .booking-card:hover .informations-container .more-information {
+
+  .cardBox .booking-card .informations-container .more-information {
     opacity: 1;
   }
-  
-  @media (max-width: 768px) {
-    .cardBox .booking-card::before {
-      background: rgba(10, 72, 112, 0.6);
-    }
-    .cardBox .booking-card .book-container .content {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    .cardBox .booking-card .informations-container {
-      transform: translateY(0px);
-    }
-    .cardBox .booking-card .informations-container .more-information {
-      opacity: 1;
-    }
-  }
-  .credits {
-    display: table;
-    background: #0a4870;
-    color: white;
-    line-height: 25px;
-    margin: 10px auto;
-    padding: 20px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  .credits a {
-    color: #e3ebf1;
-  }
-  
-  
+}
+
+.credits {
+  display: table;
+  background: #0a4870;
+  color: white;
+  line-height: 25px;
+  margin: 10px auto;
+  padding: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.credits a {
+  color: #e3ebf1;
+}
