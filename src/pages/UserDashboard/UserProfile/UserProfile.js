@@ -1,6 +1,7 @@
 import React from "react";
 import LoadingSpiners from "../../../Componets/LoadingSpiners";
 import GetUser from "../../../hooks/GetUser";
+import OverView from "../OverView/OverView";
 const UserProfile = () => {
   const { user, loading } = GetUser();
 
@@ -8,7 +9,7 @@ const UserProfile = () => {
     <LoadingSpiners loading={loading} height={"50vh"} />
   ) : user?.role === "admin" ? (
     <>
-      <h1 className="text-center font-semibold text-2xl text-gary-500">Welcome To admin Dashboard</h1>
+      <OverView />
     </>
   ) : (
     <>

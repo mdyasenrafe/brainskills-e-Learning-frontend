@@ -23,6 +23,30 @@ const apiUrl = {
   getBookmark: "bookmark/getBookmark",
   addBookmark: "bookmark/addBookmark",
   addEvent: "event/addEvent",
+  addBlog: "blog/addBlog",
+  singleBlog: "blog/getSingleBlog",
+};
+
+export const getSingleBlogApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.singleBlog, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
+};
+
+export const addBlogApi = async (body) => {
+  try {
+    const res = await axios.post(url + apiUrl.addBlog, body, {
+      headers: headers,
+    });
+    return res.data;
+  } catch (err) {
+    console.error({ err });
+  }
 };
 
 export const addEventApi = async (body) => {

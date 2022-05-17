@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getInstructor } from "../../../API";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ImFacebook2, ImWhatsapp, ImTwitter, ImRss2 } from "react-icons/im";
+import "./Instructor.css"
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,6 +11,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper";
+import { Link } from "react-router-dom";
 
 const Instructor = () => {
   const [instructors, setInstructors] = useState();
@@ -63,37 +65,38 @@ const Instructor = () => {
           {/* slider section */}
           <div className="Instructor">
             <Swiper
-              slidesPerView={3}
+              slidesPerView={1}
               spaceBetween={30}
-              slidesPerGroup={3}
+              slidesPerGroup={1}
               loop={true}
               loopFillGroupWithBlank={true}
               pagination={{
                 clickable: true,
               }}
               autoplay={{
-                delay: 2500,
+                // delay: 2500,
                 disableOnInteraction: false,
               }}
               breakpoints={{
                 "@0.00": {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                 },
                 "@1.50": {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                 },
                 "@1.75": {
-                  slidesPerView: 3,
+                  slidesPerView: 1,
                 },
               }}
               modules={[Pagination, Autoplay]}
               className="mySwiper"
             >
               {instructors?.map((data, index) => (
-                <SwiperSlide key={index} className="py-10">
-                  <div className="text-center group overflow-hidden">
+                <SwiperSlide key={index} className="py-8">
+                  {/* <div className="text-center group overflow-hidden">
                     <div className="relative">
                       <img
+
                         className="w-full rounded-sm"
                         src={data.instructorPhoto}
                         alt=""
@@ -107,6 +110,26 @@ const Instructor = () => {
                     </div>
                     <h1>{data.instructorName}</h1>
                     <h1>{data.instructorDesignation}</h1>
+                  </div> */}
+                  <div class="infocardContainer">
+                    <div id="main">
+                      <img src={data.instructorPhoto} alt=""/>
+                    </div>
+                    <div id="textbois">
+                      <h2 className="name">{data.instructorName}</h2>
+                      <h4>Professional {data.instructorDesignation}</h4>
+                      <div id="hotlinks">
+                      <a className="ancorTag" href="https://codepen.io/LIMESTA">
+                          <img id="codepenio" src="https://i.ibb.co/c6PmngJ/whatsapp-icon-logo-8-CA4-FB831-E-seeklogo-com.png" target="_blank" alt=""></img>
+                        </a>
+                        <a className="ancorTag" href="https://codepen.io/LIMESTA">
+                          <img id="codepenio" src="https://i.ibb.co/61bGjqM/download-6.jpg" target="_blank" alt=""></img>
+                        </a>
+                        <a className="ancorTag" href="https://codepen.io/LIMESTA">
+                          <img id="codepenio" src="https://i.ibb.co/9rJD66C/Facebook-Logo.png" target="_blank" alt=""></img>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}

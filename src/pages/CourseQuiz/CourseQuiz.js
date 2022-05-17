@@ -83,7 +83,6 @@ const CourseQuiz = () => {
   return (
 
     <div className="background ">
-
       <div className="main">
 
 
@@ -102,13 +101,12 @@ const CourseQuiz = () => {
                   <div class="bg-blue-600 h-2.5 rounded-full" style={{ width: `${velue}%` }}></div>
                 </div>
                 <span>{currentQuestion + 1}</span>/{Questionbank.length}
-
               </div>
               <div className="question-text text-2xl">
                 {Questionbank[currentQuestion].question}
 
               </div>
-              <div className="answer-section text-0xl">
+              <div className="answer-section text-0xl ">
                 {Questionbank[currentQuestion].AnswersText?.map((answer) =>
                 (
                   <button className=" course_quiz_button block m-5" onClick={() => handelOnclick(answer.isCorrect)}>{answer.Answers}</button>

@@ -44,6 +44,9 @@ import Instructor from "./pages/Home/Instructor/Instructor";
 // DetailsInstructor import
 import DetailsInstructor from "./pages/CourseDetails/Instructor/Instructor";
 import Events from "./pages/Home/Events/Events";
+import AddBlog from "./pages/AdminDashboard/AddBlog";
+import BlogDetail from "./pages/Home/Blog/BlogDetail";
+
 function App() {
   const { loading } = GetUser();
   const location = useLocation();
@@ -69,6 +72,7 @@ function App() {
         <Route path="/payment/failure/:id" element={<Process />} />
         <Route path="/payment/success/:id" element={<Sucess />} />
         <Route path="/payment/processing/:id" element={<Failed />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
         {/* {events Route  */}
@@ -155,6 +159,7 @@ function App() {
           />
           <Route path="certificate" element={<UserCertificate />} />
           <Route path="createAdmin" element={<CreateAdmin />} />
+          <Route path="addBlog" element={<AddBlog />} />
           <Route path="addNewCourse" element={<AddNewCourse />} />
           <Route path="addEvent" element={<AddEvent />} />
           <Route
