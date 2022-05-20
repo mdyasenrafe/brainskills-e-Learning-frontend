@@ -40,7 +40,7 @@ const Blog = (props) => {
             type="button"
             className="bg-indigo-500 ... text-white p-2 flex w-full items-center justify-center text-center mx-auto rounded-md"
           >
-            Join Now
+            See More
           </button>
         </Link>
       </div>
