@@ -81,6 +81,7 @@ export const getBookmarkApi = async (body) => {
     console.error({ err });
   }
 };
+
 export const addBookmarkApi = async (body) => {
   try {
     const res = await axios.post(url + apiUrl.addBookmark, body, {
@@ -91,6 +92,7 @@ export const addBookmarkApi = async (body) => {
     console.error({ err });
   }
 };
+
 
 export const getQuiz = async (body) => {
   try {

@@ -12,6 +12,16 @@ module.exports = {
         '13xl': '16rem',
         '14xl': '18rem',
         '15xl': '20rem',
+      },
+      keyframes: {
+        // wiggle: {
+        //   '0%': { transform: 'translate-x-full' },
+        //   '50%': { transform: 'translate-x-0' },
+        // },
+        // animation: {
+        //   'spin-slow': 'spin 3s linear infinite',
+        //   'wiggle': 'wiggle 2s linear infinite'
+        // }
       }
     },
   },

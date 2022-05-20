@@ -52,7 +52,7 @@ const AddTeacher = () => {
             className="border  p-3 outline-none rounded-md shadow-sm"
             type="text"
             {...register("instructorName", { required: true })}
-            // required
+          // required
           />
         </div>
         <div className="grid">
@@ -63,7 +63,7 @@ const AddTeacher = () => {
             className="border  p-3 outline-none rounded-md shadow-sm"
             type="file"
             onChange={(e) => handleImageSubmit(e)}
-            // required
+          // required
           />
         </div>
         <div className="grid">

@@ -49,7 +49,7 @@ const Events = () => {
                     <div className="pl-5">
                       <div className="my-4">
                         <h1 className="text-1xl font-bold">Location</h1>
-                        <h2 className="">{event.eventType}</h2>
+                        <h2 className="">{event?.eventType}</h2>
                       </div>
                       <div>
                         <h1 className="text-1xl font-bold">Speaker</h1>

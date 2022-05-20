@@ -46,6 +46,7 @@ import DetailsInstructor from "./pages/CourseDetails/Instructor/Instructor";
 import Events from "./pages/Home/Events/Events";
 import AddBlog from "./pages/AdminDashboard/AddBlog";
 import BlogDetail from "./pages/Home/Blog/BlogDetail";
+import Library from "./pages/Shop/Library/Library";
 
 function App() {
   const { loading } = GetUser();
@@ -183,6 +184,10 @@ function App() {
         />
         <Route path="/classes" element={<Classes />} />
         <Route path="/register" element={<Register />} />
+
+        {/* library */}
+        <Route path="/library" element={<Library />} />
+
         {/* <Route path="/location" element={<Location />} /> */}
         <Route path="/*" element={<NotFound />} />
       </Routes>

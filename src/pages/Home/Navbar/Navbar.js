@@ -25,6 +25,11 @@ const links = [
     name: "Course",
     url: "/course",
   },
+  {
+    id: 3,
+    name: "Library",
+    url: "/library",
+  },
 ];
 
 const Navbar = () => {
@@ -65,11 +70,10 @@ const Navbar = () => {
     <div>
       {!headerFixed && <TopNavbar />}
       <div
-        className={`${
-          headerFixed
-            ? "fixed bg-gray-100 py-1 z-30  shadow-lg"
-            : "z-30 bg-color"
-        } min-w-full  transition-all delay-75 ease-in-out`}
+        className={`${headerFixed
+          ? "fixed bg-gray-100 py-1 z-30  shadow-lg"
+          : "z-30 bg-color"
+          } min-w-full  transition-all delay-75 ease-in-out`}
       >
         <div className="relative">
           {/* For large screens */}
@@ -95,6 +99,8 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
+
+
                 {user && <Link to="/myCourses">My course</Link>}
                 <div className="relative">
                   <Link to="/cart">
@@ -177,9 +183,8 @@ const Navbar = () => {
                   <button
                     aria-label="open menu"
                     onClick={() => setShowMenu(true)}
-                    className={`${
-                      !headerFixed && "text-black"
-                    }  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}
+                    className={`${!headerFixed && "text-black"
+                      }  ml-3 outline-none rounded ease-in-out duration-300 focus:ring-gray-600`}
                   >
                     <svg
                       className="fill-stroke"
@@ -218,9 +223,8 @@ const Navbar = () => {
 
           {/* user setting  */}
           <div
-            className={`${
-              showUserSetting ? "absolute" : "hidden"
-            } top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}
+            className={`${showUserSetting ? "absolute" : "hidden"
+              } top-16 right-4 shadow-md py-5 z-30 rounded-lg w-60  border bg-white  xl:right-28`}
           >
             <div className="">
               <div className="px-4">
@@ -275,16 +279,15 @@ const Navbar = () => {
 
           {/*Screen  small*/}
           <div
-            className={`${
-              showMenu ? "flex ease-in-out duration-300 " : "hidden"
-            } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
+            className={`${showMenu ? "flex ease-in-out duration-300 " : "hidden"
+              } absolute  left-0 z-30  w-full backdrop-blur-md bg-opacity-80 bg-white h-screen`}
           >
             <div className="py-3 px-5 container mx-auto">
               <div
                 data-aos="fade-down"
                 className="grid justify-center justify-items-center pt-16 "
               >
-                <ul className=" grid gap-5 text-lg md:text-xl  ">
+                <ul className=" grid gap-5 text-lg text-center md:text-xl  ">
                   {links.map((link) => (
                     <a
                       href={link.url}
@@ -295,6 +298,7 @@ const Navbar = () => {
                       {link.name}
                     </a>
                   ))}
+                  {user && <Link to="/myCourses" className="cursor-pointer hover:text-gray-900 transform hover:translate-x-2 text-black font-semibold uppercase hover:scale-110 ease-in-out duration-300">My course</Link>}
                 </ul>
               </div>
             </div>
