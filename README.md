@@ -1,4 +1,4 @@
-### Tame Project
+### Team Project
 ## BrainSkills E-Learning
 
 ### Overview: This is e learning management.There are 3 roles like Users,Instructor And Admin. We Have All Kinds Of Courses Collection.
